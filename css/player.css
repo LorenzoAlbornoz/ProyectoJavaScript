@@ -1,0 +1,71 @@
+.navbar-brand:hover {
+    color: red;
+}
+
+#player {
+    background-color: #000000;
+    height: 15vh;
+    position:fixed;
+    bottom:0;
+    width: 100%;
+    font-family: var(--font-Montserrat);
+    box-shadow: -1px -83px 70px 16px rgba(0,0,0,0.85);
+-webkit-box-shadow: -1px -83px 70px 16px rgba(0,0,0,0.85);
+-moz-box-shadow: -1px -83px 70px 16px rgba(0,0,0,0.85);
+}
+
+#title {
+    color: #ffffff;
+    font-size: 0.8;
+}
+#artist {
+    color: var(--c-letter);
+}
+
+main{
+    min-height: 100vh;
+    background-color: rgb(15, 14, 13);
+}
+
+.imgAlbum {
+    width: 70px;
+}
+
+.timeSong {
+    color: #ffffff;
+}
+.progress-container {
+    height: 0.9rem;
+    background-color: #ffffff;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    overflow: hidden;
+}
+.progress {
+    background-color: var(--c-mainYellow);
+    height: 100%;
+    width: 0%;
+    border-radius: 0.3rem 0 0 0.3rem;
+}
+
+input[type="range"] {
+    /* -webkit-appearance: none; */
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #ffffff;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--c-mainYellow);
+    cursor: pointer;
+  }
+  
+
+  
+
+  
