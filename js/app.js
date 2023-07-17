@@ -12,6 +12,7 @@ let urlCancionMsg = document.getElementById("urlCancionMsg")
 let add = document.getElementById("add")
 let canciones = document.getElementById("canciones")
 
+
 let data = JSON.parse(localStorage.getItem("canciones")) || [];
 
 // Genera un id 
@@ -65,12 +66,13 @@ let formValidation = () => {
 
 const createMusic = () => {
     canciones.innerHTML = "";
+    //let song = audio.duration;
     data.map((cancion, idx) => {
         // contatenamos las demas tareas
         return canciones.innerHTML += `
          <div id="${idx}">
 
-         <audio src="${cancion.url}" id="audio"></audio>
+         <audio src="${cancion.url}" id="${cancion.id}"></audio>
          <ul class="songs" id="songs">
          </ul>
  
@@ -81,12 +83,10 @@ const createMusic = () => {
                      <img src="${cancion.imagen}" alt="" class="imgAlbum" id="cover">
                  </div>
                  <div class="col-1 d-flex align-items-center  gap-2 mx-5">
-                         <i class="fa-solid fa-backward-step fa-lg" style="color: #ffffff;" id="prev"></i>
-                         <i class="fa-solid fa-play fa-2x" style="color: #ffffff;" id="play"></i>
-                         <i class="fa-solid fa-forward-step fa-lg" style="color: #ffffff;" id="next"></i>
+                         <i onclick="playSong(${cancion.id})" class="fa-solid fa-play fa-2x" style="color: #ffffff;" id="play${cancion.id}"></i>
                  </div>
                  <div class="col-1 timeSong mx-3 d-flex align-items-center" id="timeTrack">
-                         3:00
+                      3:00
                  </div>
                  <div class="col d-flex justify-content-center mb-0 flex-column align-items-center">
                          <p class="mb-0" id="title">${cancion.nombre}</p>
@@ -153,3 +153,4 @@ const deleteMusic = (id) => {
     }
 }
 createMusic()
+
