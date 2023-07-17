@@ -50,9 +50,9 @@ main{
     background-color: var(--c-wrong);
 }
 
-.img-album{
+/*.img-album{
     width: 100px;
-}
+}*/
 
 .table-css{
     background-color: var(--c-player);
@@ -69,25 +69,6 @@ main{
   #generoMsg,
   #urlCancionMsg {
     color: var(--c-wrong);
-  }
-
-  #canciones div {
-    border: 3px solid #abcea1;
-    background-color: #e2eede;
-    border-radius: 6px;
-    padding: 5px;
-    /* display: grid;
-    gap: 4px; */
-  }
-  
-  #canciones div .options {
-    /* justify-self: center; */
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    gap: 20px;
-    position: relative;
-    bottom: 60px;
   }
 
 @media only screen and (max-width: 768px) and (min-width: 300px) {
