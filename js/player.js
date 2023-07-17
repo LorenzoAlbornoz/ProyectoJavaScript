@@ -11,6 +11,12 @@ const songList = [
         file:"https://cms-public-artifacts.artlist.io/Y29udGVudC9tdXNpYy9hYWMvODMxODk1XzgzMTA0Ml84MzA5MzFfRGFuaWVsX0V2ZXJfSGFkYW5pXy1fRm9yZXZlcl9hbmRfRXZlcl8tX0FPLTAwMTEyMi0xXy1fTWFzdGVyX1YyXy1fMTIyX0JwbV8tXzI3MDIyM18tX0JPVl8tX09SR18tXzI0NDQuYWFj",
         cover:"https://cdn.artlist.io/artlist-images/845583_DaniHaDani_-_Wandering_Heart_-_A_-_Thum.jpg",
         artist: "DaniHaDani"
+    },
+    {
+        title: "Wandering heart",
+        file:"https://cms-public-artifacts.artlist.io/Y29udGVudC9tdXNpYy9hYWMvODMxODk1XzgzMTA0Ml84MzA5MzFfRGFuaWVsX0V2ZXJfSGFkYW5pXy1fRm9yZXZlcl9hbmRfRXZlcl8tX0FPLTAwMTEyMi0xXy1fTWFzdGVyX1YyXy1fMTIyX0JwbV8tXzI3MDIyM18tX0JPVl8tX09SR18tXzI0NDQuYWFj",
+        cover:"https://cdn.artlist.io/artlist-images/845583_DaniHaDani_-_Wandering_Heart_-_A_-_Thum.jpg",
+        artist: "DaniHaDani"
     }
 ]
 
@@ -64,6 +70,7 @@ volumeSlider.addEventListener('input', updateVolume);
 // Actualiza el volumen del audio
 function updateVolume() {
     audio.volume = volumeSlider.value;
+    // volumeSlider.style.backgroundColor = "red"
   }
 
 // Cargar canciones y mostrar el listado
