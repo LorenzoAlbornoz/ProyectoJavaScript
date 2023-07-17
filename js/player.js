@@ -108,7 +108,6 @@ function loadSong(songIndex){
         changeSongtitle(songIndex);
         
     }
-    
 }
 
 //Actualizar el tiempo transcurrido de la cancion
