@@ -10,3 +10,10 @@
 .Active {
     font-weight: bold;
 }
+
+.actions i {
+    color: var(--c-white);
+}
+.actions i:hover {
+    color: var(--c-mainYellow);
+}

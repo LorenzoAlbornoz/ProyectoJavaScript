@@ -11,18 +11,29 @@ function updateControls(id){
     }
 }
 
-let currentAudio; // Variable para almacenar el audio actualmente reproduciéndose
+let currentAudio;
+let prevAudio; // Variable para almacenar el audio actualmente reproduciéndose
+let pausaManual=false;
 
 function playSong(id, event) {
   let audio = document.getElementById(id); // Acceder al elemento de audio utilizando el ID dinámico
 
   if (currentAudio && currentAudio !== audio) {
-    currentAudio.pause(); // Pausar el audio actual
-    currentAudio.currentTime=0;
-    document.getElementById(`play${currentAudio.id}`).classList.remove("fa-pause");
-    document.getElementById(`play${currentAudio.id}`).classList.add("fa-play");
-    document.getElementById(`timeTrack${currentAudio.id}`).classList.remove("Active");document.getElementById(`title${currentAudio.id}`).classList.remove("Active");
-  }
+
+        currentAudio.pause(); // Pausar el audio actual
+        currentAudio.currentTime=0;
+        document.getElementById(`play${currentAudio.id}`).classList.remove("fa-pause");
+        document.getElementById(`play${currentAudio.id}`).classList.add("fa-play");
+        document.getElementById(`timeTrack${currentAudio.id}`).classList.remove("Active");document.getElementById(`title${currentAudio.id}`).classList.remove("Active");
+}
+else {
+    if(pausaManual){
+        prevAudio.currentTime=0;
+        document.getElementById(`play${prevAudio.id}`).classList.remove("fa-pause");
+        document.getElementById(`play${prevAudio.id}`).classList.add("fa-play");
+        document.getElementById(`timeTrack${prevAudio.id}`).classList.remove("Active");document.getElementById(`title${prevAudio.id}`).classList.remove("Active");
+    }
+}
 
   if (audio.paused) {
     audio.play();
@@ -42,7 +53,9 @@ function playSong(id, event) {
     document.getElementById(`play${id}`).classList.add("fa-play");
     document.getElementById(`timeTrack${id}`).classList.remove("Active");
     document.getElementById(`title${id}`).classList.remove("Active");
+    prevAudio = currentAudio;
     currentAudio = null; // No hay audio reproduciéndose actualmente
+    pausaManual = true;
   }
 }
 
@@ -88,30 +101,3 @@ function setProgress (event){
 
     audio.currentTime = seekTime;
 }
-
-
-/*
-//cambiar clase activa
-function changeActiveClass(lastIndex, newIndex){
-    const links = document.querySelectorAll("a");
-    if (lastIndex !== null){
-        links[lastIndex].classList.remove('active');
-    }
-    links[newIndex].classList.add('active');
-}*/
-
-
-
-/*
-//lanzar siguiente cancion cuando se acaba la actual
-audio.addEventListener("ended",()=>{
-    if (actualSong + 1 < songList.length)
-    {        
-        nextSong();
-    }
-    else{
-        play.classList.remove("fa-pause")
-        play.classList.add("fa-play")
-        progress.style.width = "0%";
-    }
-})*/

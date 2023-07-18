@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/player.css">
         <link rel="stylesheet" href="../css/miniPlayer.css">
+        <link rel="stylesheet" href="../css/admin.css">
         <script src="https://kit.fontawesome.com/ea0d6f4a72.js" crossorigin="anonymous"></script>
 </head>
 
@@ -58,114 +59,57 @@
     </header>
 
     <main>
-        <div >
-            <h1 class="mb-3">Página de Administración</h1>
-           <!-- <table class="table-css">
-                <thead>
-                    <tr>
-                        <th>Imagen del álbum o artista</th>
-                        <th>Artista</th>
-                        <th>Nombre de la Canción</th>
-                        <th>Género</th>
-                        <th>Cancion</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>-->
-                    <!-- Aquí se generan las filas de la tabla con datos dinámicos -->
-                    <!--<tr>
-                        <td>
-                            <img src="https://res.cloudinary.com/dcwpf7ghu/image/upload/v1689532887/264x264-000000-80-0-0_phey4h.jpg"
-                                alt="Imagen del álbum 1" class="img-album">
-                        </td>
-                        <td>Whitney Houstos</td>
-                        <td>I Have Nothing</td>
-                        <td>Romantic</td>
-                        <td>
-                            <audio class="audio" controls>
-                                <source
-                                    src="https://res.cloudinary.com/dcwpf7ghu/video/upload/v1689532485/Whitney_Houston_-_I_Have_Nothing_Official_HD_Video_cugu5o.mp4"
-                                    type="audio/mpeg">
-                            </audio>
-                        </td>
-                        <td>
-                            <button class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#form">Modificar</button>
-                            <button class="btn btn-danger">Eliminar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="https://res.cloudinary.com/dcwpf7ghu/image/upload/v1689532887/264x264-000000-80-0-0_phey4h.jpg"
-                                alt="Imagen del álbum 2" class="img-album">
-                        </td>
-                        <td>Whitney Houstos</td>
-                        <td>I Will Always Love You</td>
-                        <td>Romantic</td>
-                        <td>
-                            <audio class="audio" controls>
-                                <source
-                                    src="https://res.cloudinary.com/dcwpf7ghu/video/upload/v1689532096/Whitney_Houston_-_I_Will_Always_Love_You_Official_4K_Video_xdqu1s.mp4"
-                                    type="audio/mpeg">
-                            </audio>
-                        </td>
-                        <td>
-                            <button class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#form">Modificar</button>
-                            <button class="btn btn-danger">Eliminar</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>-->
+        <!-- <div >
+            <h1 class="mb-3">Administración</h1>
+        </div> -->
+        <!-- Modal para agregar o editar canción -->
+        <form class="modal fade" id="form" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editarModalLabel">Agregar o Modificar una canción</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Formulario para agregar o editar canción -->
 
-            <!-- Modal para agregar o editar canción -->
-            <form class="modal fade" id="form" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="editarModalLabel">Agregar o Modificar una canción</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <!-- Formulario para agregar o editar canción -->
+                        <p for="url">URL de la imagen del artista</p>
+                        <input type="text" class="form-control" id="imagenInput">
 
-                            <p for="url">URL de la imagen del artista</p>
-                            <input type="text" class="form-control" id="imagenInput">
+                        <div id="imagenMsg"></div>
 
-                            <div id="imagenMsg"></div>
+                        <p for="artista">Artista</p>
+                        <input type="text" class="form-control" id="artistaInput">
 
-                            <p for="artista">Artista</p>
-                            <input type="text" class="form-control" id="artistaInput">
+                        <div id="artistaMsg"></div>
 
-                            <div id="artistaMsg"></div>
+                        <p for="nombre">Nombre de la canción</p>
+                        <input type="text" class="form-control" id="nombreInput">
 
-                            <p for="nombre">Nombre de la canción</p>
-                            <input type="text" class="form-control" id="nombreInput">
+                        <div id="nombreMsg"></div>
 
-                            <div id="nombreMsg"></div>
+                        <p for="genero">Género</p>
+                        <input type="text" class="form-control" id="generoInput">
 
-                            <p for="genero">Género</p>
-                            <input type="text" class="form-control" id="generoInput">
+                        <div id="generoMsg"></div>
 
-                            <div id="generoMsg"></div>
+                        <p for="url">URL de la canción:</p>
+                        <input type="text" name="urlCancion" class="form-control"
+                            placeholder="Ingrese la URL de la canción" id="urlCancionInput">
 
-                            <p for="url">URL de la canción:</p>
-                            <input type="text" name="urlCancion" class="form-control"
-                                placeholder="Ingrese la URL de la canción" id="urlCancionInput">
+                        <div id="urlCancionMsg"></div>
 
-                            <div id="urlCancionMsg"></div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="submit" id="add" class="btn btn-primary">Guardar</button>
-                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" id="add" class="btn btn-primary">Guardar</button>
                     </div>
                 </div>
-            </form>
-            
-            <!-- Botón para crear y cargar una nueva canción -->
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#form">Crear Nueva Canción</button>
+            </div>
+        </form>
+        <!-- Botón para crear y cargar una nueva canción -->
+        <div class="div pt-5">
+            <button class="btn botonYellow" data-bs-toggle="modal" data-bs-target="#form">Agregar Canción</button>
         </div>
         <div id="canciones"></div>
     </main>

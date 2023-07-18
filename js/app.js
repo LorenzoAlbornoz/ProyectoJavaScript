@@ -97,10 +97,10 @@ const createMusic = () => {
                          <section class="progress" id="progress${cancion.id}"></section>
                      </div>
                  </div>
-                 <div class="col-2 d-flex align-items-center gap-2 justify-content-end">
-                         <i class="fa-solid fa-download" style="color: #ffffff;"></i>
-                         <i class="fa-solid fa-star" style="color: #ffffff;"></i>
-                         <i class="fa-solid fa-share-nodes" style="color: #ffffff;"></i>
+                 <div class="actions col-2 d-flex align-items-center gap-3 justify-content-end">
+                         <i class="fa-solid fa-download" ></i>
+                         <i class="fa-solid fa-star" ></i>
+                         <i class="fa-solid fa-share-nodes"></i>
                  </div>
                  
                  <div class="col d-flex align-items-center justify-content-end gap-2">
