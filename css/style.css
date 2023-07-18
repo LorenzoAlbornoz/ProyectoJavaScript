@@ -21,6 +21,10 @@
     color: var(--c-letter);
 }
 
+.nav-link:hover{
+    color: var(--c-mainYellow);
+}
+
 .p{
    margin-top: 1.15rem;
     
