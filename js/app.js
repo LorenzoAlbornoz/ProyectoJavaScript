@@ -78,34 +78,40 @@ const createMusic = () => {
  
          <div class="player">
          <div class="container-fluid d-flex h-100 align-items-center" >
-             <div class="row d-flex w-100">
-                 <div class="col-1 d-flex align-items-center justify-content-between">
-                     <img src="${cancion.imagen}" alt="" class="imgAlbum" id="cover">
-                 </div>
-                 <div class="col-1 d-flex align-items-center  gap-2 mx-5">
+             <div class="row d-flex w-100 justify-content-between">
+                 
+                 <div class="col-2 d-flex align-items-center  gap-2 ms-3">
+                        <div class="d-flex align-items-center justify-content-between me-5">
+                            <img src="${cancion.imagen}" alt="" class="imgAlbum" id="cover">
+                        </div>
                          <i onclick="playSong(${cancion.id})" class="fa-solid fa-play fa-2x" style="color: #ffffff;" id="play${cancion.id}"></i>
+                         <div class="timeSong mx-3 d-none d-md-flex align-items-center" id="timeTrack${cancion.id}">
+                            --:--
+                        </div>
                  </div>
-                 <div class="col-1 timeSong mx-3 d-flex align-items-center" id="timeTrack${cancion.id}">
-                      --:--
-                 </div>
-                 <div class="col d-flex justify-content-center mb-0 flex-column align-items-center">
+                 
+                 <div class="col-4 d-none d-sm-flex justify-content-center mb-0 flex-column align-items-center">
                          <p class="mb-0 title" id="title${cancion.id}">${cancion.nombre}</p>
                          <p class="mb-0 artist" id="artist${cancion.id}">${cancion.artista}</p>
                  </div>
-                 <div class="col progressBar align-items-center h-100">
+                 <div class="col-1 d-none d-sm-inline progressBar align-items-center h-100">
                      <div onclick="setProgress(event)" class="progress-container my-5"  id="progress-container${cancion.id}">
                          <section class="progress" id="progress${cancion.id}"></section>
                      </div>
                  </div>
-                 <div class="actions col-2 d-flex align-items-center gap-3 justify-content-end">
+                 
+                 
+                 <div class="col-5 col-sm-4  d-flex align-items-center justify-content-end gap-2 ms-0">
+                 <div class="actions d-none d-md-flex align-items-center gap-3 justify-content-end me-3">
                          <i class="fa-solid fa-download" ></i>
                          <i class="fa-solid fa-star" ></i>
                          <i class="fa-solid fa-share-nodes"></i>
                  </div>
+                 <div class="d-flex gap-2" >
+                        <button onclick="updateMusic(${cancion.id})" data-bs-toggle="modal" data-bs-target="#form" class="btn btn-primary"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
+                        <button onclick="deleteMusic(${cancion.id})" class="btn btn-danger"><i class="fa-solid fa-delete-left"></i></button>
+                 </div>
                  
-                 <div class="col d-flex align-items-center justify-content-end gap-2">
-                 <button onclick="updateMusic(${cancion.id})" data-bs-toggle="modal" data-bs-target="#form" class="btn btn-primary"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
-                 <button onclick="deleteMusic(${cancion.id})" class="btn btn-danger"><i class="fa-solid fa-delete-left"></i></button>
                </div>
              </div>
          </div>
