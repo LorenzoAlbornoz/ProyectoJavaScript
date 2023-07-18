@@ -14,11 +14,12 @@
 -moz-box-shadow: -1px -83px 70px 16px rgba(0,0,0,0.85);
 }
 
-#title {
+.title {
     color: #ffffff;
     font-size: 0.8;
 }
-#artist {
+
+.artist {
     color: var(--c-letter);
 }
 

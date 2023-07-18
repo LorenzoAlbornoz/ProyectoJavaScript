@@ -68,7 +68,7 @@ const createMusic = () => {
     canciones.innerHTML = "";
     //let song = audio.duration;
     data.map((cancion, idx) => {
-        // contatenamos las demas tareas
+        // concatenamos las demas tareas
         return canciones.innerHTML += `
          <div id="${idx}">
 
@@ -85,16 +85,16 @@ const createMusic = () => {
                  <div class="col-1 d-flex align-items-center  gap-2 mx-5">
                          <i onclick="playSong(${cancion.id})" class="fa-solid fa-play fa-2x" style="color: #ffffff;" id="play${cancion.id}"></i>
                  </div>
-                 <div class="col-1 timeSong mx-3 d-flex align-items-center" id="timeTrack">
-                      3:00
+                 <div class="col-1 timeSong mx-3 d-flex align-items-center" id="timeTrack${cancion.id}">
+                      --:--
                  </div>
                  <div class="col d-flex justify-content-center mb-0 flex-column align-items-center">
-                         <p class="mb-0" id="title">${cancion.nombre}</p>
-                         <p class="mb-0" id="artist">${cancion.artista}</p>
+                         <p class="mb-0 title" id="title${cancion.id}">${cancion.nombre}</p>
+                         <p class="mb-0 artist" id="artist${cancion.id}">${cancion.artista}</p>
                  </div>
                  <div class="col progressBar align-items-center h-100">
-                     <div class="progress-container my-5"  id="progress-container">
-                         <section class="progress" id="progress"></section>
+                     <div onclick="setProgress(event)" class="progress-container my-5"  id="progress-container${cancion.id}">
+                         <section class="progress" id="progress${cancion.id}"></section>
                      </div>
                  </div>
                  <div class="col-2 d-flex align-items-center gap-2 justify-content-end">
@@ -102,13 +102,10 @@ const createMusic = () => {
                          <i class="fa-solid fa-star" style="color: #ffffff;"></i>
                          <i class="fa-solid fa-share-nodes" style="color: #ffffff;"></i>
                  </div>
+                 
                  <div class="col d-flex align-items-center justify-content-end gap-2">
-                     <i class="fa-solid fa-volume-high" style="color: #ffffff;"></i>
-                     <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
-                 </div>
-                 <div class="col d-flex align-items-center justify-content-end gap-2">
-                 <button onclick="updateMusic(${cancion.id})" data-bs-toggle="modal" data-bs-target="#form" class="btn btn-primary">Modificar</button>
-                 <button onclick="deleteMusic(${cancion.id})" class="btn btn-danger">Eliminar</button>
+                 <button onclick="updateMusic(${cancion.id})" data-bs-toggle="modal" data-bs-target="#form" class="btn btn-primary"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
+                 <button onclick="deleteMusic(${cancion.id})" class="btn btn-danger"><i class="fa-solid fa-delete-left"></i></button>
                </div>
              </div>
          </div>
@@ -146,7 +143,7 @@ const deleteMusic = (id) => {
             return tarea.id !== id
         })
         data = cancionFiltrada
-        localStorage.setItem("cancion", JSON.stringify(data))
+        localStorage.setItem("canciones", JSON.stringify(data))
         createMusic()
     } else {
         alert('Cancelado')
