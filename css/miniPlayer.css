@@ -9,11 +9,17 @@
 
 .title {
     color: #ffffff;
-    font-size: 0.8;
+    font-size: 1rem;
 }
 
 .artist {
     color: var(--c-letter);
+    font-size: 0.6rem;
+}
+
+.genero {
+    color: var(--c-letter);
+    font-size: 0.9rem;
 }
 
 main{
@@ -27,6 +33,7 @@ main{
 
 .timeSong {
     color: #ffffff;
+    font-size: 0.9rem;
 }
 .progress-container {
     height: 0.9rem;

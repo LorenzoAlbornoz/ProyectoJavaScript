@@ -80,25 +80,36 @@ const createMusic = () => {
          <div class="container-fluid d-flex h-100 align-items-center" >
              <div class="row d-flex w-100 justify-content-between">
                  
-                 <div class="col-2 d-flex align-items-center  gap-2 ms-3">
+                 <div class="col-3 d-flex align-items-center  gap-2 ms-3">
                         <div class="d-flex align-items-center justify-content-between me-5">
                             <img src="${cancion.imagen}" alt="" class="imgAlbum" id="cover">
                         </div>
                          <i onclick="playSong(${cancion.id})" class="fa-solid fa-play fa-2x" style="color: #ffffff;" id="play${cancion.id}"></i>
-                         <div class="timeSong mx-3 d-none d-md-flex align-items-center" id="timeTrack${cancion.id}">
+                         <div class="d-none d-sm-flex flex-column ms-3">
+                            <p class="mb-0 title" id="title${cancion.id}">${cancion.nombre}</p>
+                            <p class="mb-0 artist" id="artist${cancion.id}">${cancion.artista}</p>
+                        </div>
+                        
+                         
+                 </div>
+                 <div class="col-1 ms-3 align-items-center justify-content-start  d-none d-lg-flex">
+                            <p class="mb-0 genero" id="genero${cancion.id}">${cancion.genero}</p>
+                        </div>
+                 
+                 <div class="col d-none d-sm-flex justify-content-end justify-content-lg-evenly mb-0 align-items-center">
+                        <div class="col-md-2 timeSong d-none d-md-flex align-items-center " id="timeTrack${cancion.id}">
                             --:--
                         </div>
+                        
+
+                        <div class="w-50  d-none d-sm-inline progressBar align-items-center h-100">
+                        <div onclick="setProgress(event)" class="progress-container my-5"  id="progress-container${cancion.id}">
+                            <section class="progress" id="progress${cancion.id}"></section>
+                        </div>
+                    </div>
+                        
                  </div>
                  
-                 <div class="col-4 d-none d-sm-flex justify-content-center mb-0 flex-column align-items-center">
-                         <p class="mb-0 title" id="title${cancion.id}">${cancion.nombre}</p>
-                         <p class="mb-0 artist" id="artist${cancion.id}">${cancion.artista}</p>
-                 </div>
-                 <div class="col-1 d-none d-sm-inline progressBar align-items-center h-100">
-                     <div onclick="setProgress(event)" class="progress-container my-5"  id="progress-container${cancion.id}">
-                         <section class="progress" id="progress${cancion.id}"></section>
-                     </div>
-                 </div>
                  
                  
                  <div class="col-5 col-sm-4  d-flex align-items-center justify-content-end gap-2 ms-0">
