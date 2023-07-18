@@ -70,11 +70,10 @@ const createMusic = () => {
     data.map((cancion, idx) => {
         // concatenamos las demas tareas
         return canciones.innerHTML += `
+         <div class="contenedor-cancion">
          <div id="${idx}">
 
          <audio src="${cancion.url}" id="${cancion.id}"></audio>
-         <ul class="songs" id="songs">
-         </ul>
  
          <div class="player">
          <div class="container-fluid d-flex h-100 align-items-center" >
@@ -128,6 +127,7 @@ const createMusic = () => {
          </div>
      </div>
           </div>
+         </div>
         `
     })
 }
