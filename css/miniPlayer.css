@@ -1,3 +1,18 @@
+:root {
+    --c-background: #171717;
+    --c-navbar: #302e2e;
+    --c-player: #000000;
+    --c-letter: #b2b2b2;
+    --c-white: #ffffff;
+    --c-success: #5FC54F;
+    --c-wrong: #f44336;
+    --c-mainYellow: #ffda2a;
+    --c-secondYellow: #f7bf53;
+    --font-Montserrat: 'Montserrat', sans-serif;
+    --font-OpenSans: 'Open Sans', sans-serif;
+    --font-PTSans: 'PT Sans', sans-serif;
+}
+
 .contenedor-cancion {
     border:1px solid #2d2d2d;
 }
@@ -24,11 +39,6 @@
 .genero {
     color: var(--c-letter);
     font-size: 0.9rem;
-}
-
-main{
-    min-height: 100vh;
-    background-color: var(--c-background);
 }
 
 .imgAlbum {
