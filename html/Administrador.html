@@ -48,10 +48,10 @@
             <h1 class="mb-3">Administración</h1>
         </div> -->
     <!-- Modal para agregar o editar canción -->
-    <form class="modal fade" id="form" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
+    <form class="modal fade" data-bs-backdrop="static" data-bs-keyboart="false" id="form" tabindex="-1" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header d-flex justify-content-center">
             <h5 class="modal-title" id="editarModalLabel">Agregar o Modificar una canción</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
@@ -86,18 +86,40 @@
 
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" id="add" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cerrar">Cerrar</button>
+            <button onclick="closeWithOutSave()" type="submit" class="btn btn-secondary d-none" id="cerrarUpdate">Salir
+              sin guardar</button>
+            <button type="submit" id="add" class="btn botonYellow">Guardar</button>
           </div>
         </div>
       </div>
     </form>
-    <!-- Botón para crear y cargar una nueva canción -->
-    <div class="div pt-5">
-      <button class="btn botonYellow" data-bs-toggle="modal" data-bs-target="#form">Agregar Canción</button>
-    </div>
-    <div class="mt-2" id="canciones"></div>
-  </main>
+          <!-- Botón para crear y cargar una nueva canción -->
+          <div class="container-fluid mt-5">
+            <div class="row d-flex align-items-center justify-sm-content-between flex-column flex-sm-row">
+                <div class="col-6 col-sm-3 col-md-6">
+                    <button class="botonYellow" data-bs-toggle="modal" data-bs-target="#form">Agregar Canción</button>
+                </div>
+                <div class="col-9 col-md-6 d-flex align-items-end justify-content-end mt-2">
+                    <div class="d-flex align-items-center align-items-sm-end flex-column flex-sm-row" role="search">
+                        <select class="tipo-busqueda me-2">
+                            <option selected>Tipo de busqueda</option>
+                            <option value="1">Canción</option>
+                            <option value="2">Artista</option>
+                            <option value="3">Genero</option>
+                        </select>
+                        <input class="form-control me-2 mt-2 mt-s-0" type="search" placeholder="Buscar" aria-label="Search" id="textBuscar">
+                        <div class="d-flex mt-2 mt-s-0">
+                            <button onclick="filterTabla()" class="searchYellow ms-0 me-2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <button onclick="limpiarTabla()" class="searchYellow ms-0 me-2 d-none" id="clear"><i class="fa-solid fa-x"></i></button>
+                        </div>
+                        
+                    </div>     
+                </div>
+            </div>
+        </div>
+        <div class="mt-2" id="canciones"></div>
+    </main>
 
   <footer class="footer">
     <div class="footer-top">
