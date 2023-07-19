@@ -212,7 +212,8 @@ const filterTabla = () =>{
         clear.classList.add("d-none")
     }
     createMusic(listaFiltrada)
-    if (listaFiltrada = []){
+    console.log(listaFiltrada)
+    if (listaFiltrada.length == 0){
         canciones.innerHTML += `       
          <p class="ms-3" id="fail">No se encontraron resultados que coincidan con la busqueda</p>
         `
