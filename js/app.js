@@ -132,8 +132,6 @@ const createMusic = (data) => {
                  <div class="d-flex gap-2" >
                         <button onclick="updateMusic(${cancion.id})" data-bs-toggle="modal" data-bs-target="#form" class="btn btn-change"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
                         <button onclick="deleteMusic(${cancion.id})" class="btn btn-delete"><i class="fa-solid fa-delete-left" style="color: #ffffff;"></i></button>
-                        <button onclick="updateMusic(${cancion.id})" data-bs-toggle="modal" data-bs-target="#form" class="btn btn-edit"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
-                        <button onclick="deleteMusic(${cancion.id})" class="btn btn-delete"><i class="fa-solid fa-delete-left"></i></button>
                  </div>
                  
                </div>
