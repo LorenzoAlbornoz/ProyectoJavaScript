@@ -1,17 +1,29 @@
+:root {
+    --c-background: #171717;
+    --c-navbar: #302e2e;
+    --c-player: #000000;
+    --c-letter: #b2b2b2;
+    --c-white: #ffffff;
+    --c-success: #5FC54F;
+    --c-wrong: #f44336;
+    --c-mainYellow: #ffda2a;
+    --c-secondYellow: #f7bf53;
+    --font-Montserrat: 'Montserrat', sans-serif;
+    --font-OpenSans: 'Open Sans', sans-serif;
+    --font-PTSans: 'PT Sans', sans-serif;
+}
+
 .navbar-brand:hover {
     color: red;
 }
 
 #player {
-    background-color: #000000;
+    background-color: var(--c-background);
     height: 15vh;
-    position:fixed;
+    position:relative;
     bottom:0;
     width: 100%;
     font-family: var(--font-Montserrat);
-    box-shadow: -1px -83px 70px 16px rgba(0,0,0,0.85);
--webkit-box-shadow: -1px -83px 70px 16px rgba(0,0,0,0.85);
--moz-box-shadow: -1px -83px 70px 16px rgba(0,0,0,0.85);
 }
 
 .title {
@@ -21,11 +33,6 @@
 
 .artist {
     color: var(--c-letter);
-}
-
-main{
-    min-height: 100vh;
-    background-color: rgb(15, 14, 13);
 }
 
 .imgAlbum {

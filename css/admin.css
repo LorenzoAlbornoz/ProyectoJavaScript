@@ -1,3 +1,7 @@
+
+body {
+    background-color: var(--c-background);
+}
 .botonYellow {
     background-color: var(--c-mainYellow);
     font-family: var(--font-PTSans);
