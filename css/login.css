@@ -1,0 +1,198 @@
+:root {
+    --c-background: #171717;
+    --c-navbar: #302e2e;
+    --c-player: #000000;
+    --c-letter: #b2b2b2;
+    --c-white: #ffffff;
+    --c-success: #5FC54F;
+    --c-wrong: #f44336;
+    --c-mainYellow: #ffda2a;
+    --c-secondYellow: #f7bf53;
+    --font-Montserrat: 'Montserrat', sans-serif;
+    --font-OpenSans: 'Open Sans', sans-serif;
+    --font-PTSans: 'PT Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--c-background);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--c-letter);
+    font-family: var(--font-OpenSans);
+}
+
+.container-form {
+    width: 90%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    transition: all .5s ease-out;
+}
+
+@media only screen and (max-width: 768px) and (min-width: 300px) {
+    .container-form {
+        width: 100%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .body {
+        background-color: var(--c-navbar);
+    }
+
+    .formulario-registro,
+    .formulario-login {
+        max-width: 300px; 
+    }
+}
+
+.welcome-back {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.message {
+    padding: 1rem;
+}
+
+.message h2 {
+    font-size: 1.7rem;
+    padding: 1rem 0;
+}
+
+.message button {
+    padding: 1rem;
+    font-weight: 400;
+    background-color: var(--c-mainYellow);
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: .9rem;
+    margin-top: 2rem;
+    transition: all .3s ease-in;
+    color: var(--c-player);
+}
+
+.message button:hover {
+    background-color: var(--c-secondYellow);
+}
+
+.formulario-registro {
+    width: 400px;
+    padding: 1rem;
+    margin: 2rem;
+    background-color: var(--c-navbar);
+    text-align: center;
+}
+
+.formulario-login {
+    width: 400px;
+    padding: 1rem;
+    margin: 2rem;
+    background-color: var(--c-navbar);
+    text-align: center;
+}
+
+.create-account {
+    padding: 2.7rem 0;
+    font-size: 1.7rem;
+}
+
+.iconos {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    color: var(--c-player);
+}
+
+.border-icon {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    border: solid thin;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: all .3s ease-in;
+}
+
+.border-icon:hover {
+    background-color: var(--c-mainYellow);
+    cursor: pointer;
+}
+
+.cuenta-gratis {
+    padding: 2rem 0;
+}
+
+.formulario-login input,
+.formulario-registro input {
+    width: 70%;
+    display: block;
+    margin: auto;
+    margin-bottom: 2rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: var(--c-white) thin solid;
+    text-align: center;
+    outline: none;
+    padding: .2rem 0;
+    font-size: .9rem;
+    color: var(--c-player);
+    font-family: var(--font-PTSans);
+}
+
+/* 
+si en vez de utilizar button, utilizan input type button, se puede utilizar el siguiente código:
+.formulario-login input[type="button"],
+.formulario-registro input[type="button"]
+*/
+.formulario-login button,
+.formulario-registro button {
+    width: 60%;
+    margin: auto;
+    border: solid thin var(--c-white);
+    padding: .7rem;
+    border-radius: 2rem;
+    background-color: var(--c-white);
+    font-weight: 600;
+    margin-top: 3rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: var(--c-player);
+    font-family: var(--font-PTSans);
+}
+
+.sign-in {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sign-in.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sign-up.active {
+    opacity: 0;
+    visibility: hidden;
+}

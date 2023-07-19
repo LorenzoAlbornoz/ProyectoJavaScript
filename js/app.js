@@ -36,6 +36,14 @@ let formValidation = () => {
         nombreMsg.innerHTML = "El nombre es requerido";
         generoMsg.innerHTML = "El genero es requerido";
         urlCancionMsg.innerHTML = "La URL es requerida"
+        setTimeout(() => {
+            imagenMsg.innerHTML = "";
+        artistaMsg.innerHTML = "";
+        nombreMsg.innerHTML = "";
+        generoMsg.innerHTML = "";
+        urlCancionMsg.innerHTML = ""
+        }, 4000);
+        return;
     } else {
         // Caso contrario no mostrar las validaciones
         imagenMsg.innerHTML = "";
@@ -60,7 +68,6 @@ let formValidation = () => {
         (() => {
             add.setAttribute("data-bs-dismiss", "");
         })()
-
     }
 }
 
@@ -118,8 +125,8 @@ const createMusic = () => {
                          <i class="fa-solid fa-share-nodes"></i>
                  </div>
                  <div class="d-flex gap-2" >
-                        <button onclick="updateMusic(${cancion.id})" data-bs-toggle="modal" data-bs-target="#form" class="btn btn-primary"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
-                        <button onclick="deleteMusic(${cancion.id})" class="btn btn-danger"><i class="fa-solid fa-delete-left"></i></button>
+                        <button onclick="updateMusic(${cancion.id})" data-bs-toggle="modal" data-bs-target="#form" class="btn btn-change"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
+                        <button onclick="deleteMusic(${cancion.id})" class="btn btn-delete"><i class="fa-solid fa-delete-left" style="color: #ffffff;"></i></button>
                  </div>
                  
                </div>
@@ -156,10 +163,10 @@ const updateMusic = (id) => {
 const deleteMusic = (id) => {
     const confirmar = confirm("Desea eliminar esta cancion")
     if (confirmar) {
-        const cancionFiltrada = data.filter((tarea) => {
-            return tarea.id !== id
+        const cancionFiltrada = data.filter((cancion) => {
+            return cancion.id !== id
         })
-        data = cancionFiltrada
+        data = cancionFiltrada // te devulve un array
         localStorage.setItem("canciones", JSON.stringify(data))
         createMusic()
     } else {

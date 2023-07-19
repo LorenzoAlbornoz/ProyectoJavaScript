@@ -15,6 +15,7 @@
 
 .navbar{
     background-color: var(--c-navbar);
+    font-family: var(--font-Montserrat);
 }
 
 .nav-link{
@@ -25,9 +26,16 @@
     color: var(--c-mainYellow);
 }
 
+.navbar-toggler{
+    background-color: var(--c-mainYellow);
+}
+
 .p{
-   margin-top: 1.15rem;
-    
+   margin-top: 1.15rem;   
+}
+
+h5{
+    font-family: var(--font-Montserrat);
 }
 
 .logo1{
@@ -99,6 +107,7 @@ footer .line {
     justify-content: center;
     background-color: var(--c-mainYellow);
     border-radius: 100px;
+    color: var(--c-player);
 }
 
 .social-icons a:hover {
