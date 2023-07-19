@@ -19,15 +19,19 @@
 
 .navbar-nav .nav-link {
     font-family: var(--font-PTSans);
-    font-weight: 500;
+    font-weight: 100;
     color: var(--c-letter);
 }
 
 .logo1{
+    font-family: var(--font-PTSans);
+    font-weight: 100;   
     color: var(--c-white);
 }
 
 .logo2{
+    font-family: var(--font-PTSans);
+    font-weight: 400;
     color: var(--c-mainYellow);
 }
 
@@ -35,7 +39,7 @@
     color: var(--c-secondYellow)
 }
 
-main{
+body{
     background-color: var(--c-background);
     height: 100vh;
 }

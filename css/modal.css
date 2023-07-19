@@ -1,0 +1,35 @@
+#form .modal-header {
+    background-color: var(--c-mainYellow);
+    color:var(--c-background);;
+    border:1px solid var(--c-letter);
+    font-family: var(--font-OpenSans);
+}
+
+#form .modal-body {
+    background-color: var(--c-background);
+    color:var(--c-letter);
+    border-left:1px solid var(--c-letter);
+    border-right:1px solid var(--c-letter);
+    font-family: var(--font-PTSans);
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+#form input {
+    background-color: var(--c-background);
+    border: none;
+    border-bottom: 1px solid var(--c-letter);
+    color: var(--c-white);
+}
+
+#form input::placeholder {
+    color: var(--c-navbar);
+}
+
+#form .modal-footer {
+    background-color: var(--c-background);
+    border: none;
+    border-bottom: 1px solid var(--c-letter);
+    border-left:1px solid var(--c-letter);
+    border-right:1px solid var(--c-letter);
+}
