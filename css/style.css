@@ -57,13 +57,6 @@ main{
     background-color: var(--c-background);
 }
 
-#imagenMsg,
-  #artistaMsg,
-  #nombreMsg,
-  #generoMsg,
-  #urlCancionMsg {
-    color: var(--c-wrong);
-  }
 
   footer {
     padding-top: 20px;

@@ -73,12 +73,3 @@
 .actions i:hover {
     color: var(--c-mainYellow);
 }
-
-.btn-change{
-    background-color: var(--c-success);
-}
-
-.btn-delete{
-    background-color: var(--c-wrong);
-    
-}

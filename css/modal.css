@@ -1,3 +1,11 @@
+#imagenMsg,
+  #artistaMsg,
+  #nombreMsg,
+  #generoMsg,
+  #urlCancionMsg {
+    color: var(--c-wrong);
+  }
+
 #form .modal-header {
     background-color: var(--c-mainYellow);
     color:var(--c-background);;
