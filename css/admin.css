@@ -1,9 +1,84 @@
+
+body {
+    background-color: var(--c-background);
+}
 .botonYellow {
     background-color: var(--c-mainYellow);
     font-family: var(--font-PTSans);
     font-weight: bold;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    margin-left: 1rem;
 }
 
 .botonYellow:hover {
     background-color: var(--c-secondYellow);
+}
+
+.searchYellow {
+    background-color: var(--c-mainYellow);
+    font-family: var(--font-PTSans);
+    font-weight: bold;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.4rem .8rem;
+    margin-left: 1rem;
+}
+
+.searchYellow:hover {
+    background-color: var(--c-secondYellow);
+}
+
+.tipo-busqueda {
+    background-color:var(--c-background) ;
+    border: none;
+    color: var(--c-letter);
+    font-family: var(--font-PTSans);
+    outline: none;
+    text-align: center;
+    height: 38px;
+    border-radius: 0.3rem;
+}
+
+.tipo-busqueda:focus {
+    border:1px solid var(--c-secondYellow);
+
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(255,144,0,0.6);
+
+    outline: 0 none;
+
+}
+
+textarea:focus, input:focus, input[type]:focus {
+
+    border-color: var(--c-secondYellow);
+
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(255,144,0,0.6);
+
+    outline: 0 none;
+
+}
+
+.btn-edit {
+    background-color: var(--c-success);
+}
+.btn-edit:hover {
+    background-color: #1a6419;
+}
+
+.btn-delete {
+    background-color: var(--c-wrong);
+    color: var(--c-white);
+}
+
+.btn-delete:hover {
+    background-color: #962929;
+    color: var(--c-white);
+}
+
+#fail {
+    color: var(--c-letter);
+    font-family: var(--font-PTSans);
+    font-style: italic;
 }

@@ -39,11 +39,15 @@ h5{
 }
 
 .logo1{
+    font-family: var(--font-PTSans);
+    font-weight: 100;   
     color: var(--c-white);
     font-family: var(--font-OpenSans);
 }
 
 .logo2{
+    font-family: var(--font-PTSans);
+    font-weight: 400;
     color: var(--c-mainYellow);
     font-family: var(--font-OpenSans);
 }
