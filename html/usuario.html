@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="../css/admin.css">
         <link rel="stylesheet" href="../css/modal.css">
         <link rel="stylesheet" href="../css/player.css">
+        <link rel="stylesheet" href="../css/usuario.css">
         <script src="https://kit.fontawesome.com/ea0d6f4a72.js" crossorigin="anonymous"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -97,7 +98,7 @@
             </div>
         </form>
         <!-- Botón para crear y cargar una nueva canción -->
-        <div class="container-fluid mt-5">
+        <div class="container-fluid mt-5 mb-3">
                 <div class="col-9 col-md-12 d-flex align-items-end justify-content-end mt-2">
                     <div class="d-flex align-items-center align-items-sm-end flex-column flex-sm-row" role="search">
                         <select class="tipo-busqueda me-2">
@@ -120,34 +121,38 @@
     </main>
 
     <footer id="player">
+      <audio src="" id="audioPlayer"></audio>
       <div class="container-fluid d-flex h-100 align-items-center" >
           <div class="row d-flex w-100">
               <div class="col-1 d-flex align-items-center justify-content-between">
-                  <img src="" alt="" class="imgAlbum" id="cover">
+                  <img src="" alt="" class="imgAlbum pb-2" id="coverPlayer">
               </div>
               <div class="col-1 d-flex align-items-center  gap-2 mx-5">
-                      <i class="fa-solid fa-backward-step fa-lg" style="color: #ffffff;" id="prev"></i>
-                      <i class="fa-solid fa-play fa-2x" style="color: #ffffff;" id="play"></i>
-                      <i class="fa-solid fa-forward-step fa-lg" style="color: #ffffff;" id="next"></i>
+                      <i onclick="prevSong()" class="fa-solid fa-backward-step fa-lg" style="color: #ffffff;" id="prevPlayer"></i>
+                      <i onclick="playSongPlayer()" class="fa-solid fa-play fa-2x" style="color: #ffffff;" id="playPlayer"></i>
+                      <i onclick="nextSong()" class="fa-solid fa-forward-step fa-lg" style="color: #ffffff;" id="nextPlayer"></i>
               </div>
-              <div class="col-1 timeSong mx-3 d-flex align-items-center" id="timeTrack">
-                      3:00
+              <div class="col-1 timeSong mx-3 d-none d-sm-flex align-items-center" id="timeTrackPlayer">
+                      --:--
               </div>
               <div class="col d-flex justify-content-center mb-0 flex-column align-items-center">
-                      <p class="mb-0" id="title">Titulo</p>
-                      <p class="mb-0" id="artist">Artista</p>
+
+                      <p class="mb-0" id="titlePlayer">Titulo</p>
+                      <p id="artistPlayer" class="mb-0">Artista</p>
+
+                      
               </div>
-              <div class="col progressBar align-items-center h-100">
-                  <div class="progress-container my-5"  id="progress-container">
-                      <section class="progress" id="progress"></section>
+              <div class="col progressBar d-none d-sm-inline align-items-center h-100">
+                  <div onclick="setProgress(event)" class="progress-container my-5"  id="progress-container">
+                      <section class="progress" id="progressPlayer"></section>
                   </div>
               </div>
-              <div class="col-2 d-flex align-items-center gap-2 justify-content-end">
-                      <i class="fa-solid fa-download" style="color: #ffffff;"></i>
-                      <i class="fa-solid fa-star" style="color: #ffffff;"></i>
-                      <i class="fa-solid fa-share-nodes" style="color: #ffffff;"></i>
+              <div class="iconos col-2 d-none d-md-flex  align-items-center gap-2 justify-content-end">
+                      <i class="fa-solid fa-download"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-share-nodes"></i>
               </div>
-              <div class="col d-flex align-items-center justify-content-end gap-2">
+              <div class="col d-none d-md-flex  align-items-center justify-content-end gap-2">
                   <i class="fa-solid fa-volume-high" style="color: #ffffff;"></i>
                   <input type="range" class="drag__bar" id="volumeSlider" min="0" max="1" step="0.1" value="1">
               </div>
