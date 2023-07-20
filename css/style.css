@@ -26,6 +26,14 @@
     color: var(--c-mainYellow);
 }
 
+.navbar-nav .nav-link.active {
+    color: var(--c-letter);
+}
+
+.navbar-nav .nav-link.active:hover {
+color: var(--c-mainYellow);
+}
+
 .navbar-toggler{
     background-color: var(--c-mainYellow);
 }
@@ -116,11 +124,10 @@ footer .line {
     position: relative;
     opacity: 0;
     visibility: hidden;
-}
-
-#admin.active{
-        opacity: 1;
+  }
+  
+.admin.active {
+    opacity: 1;
     visibility: visible;
-}
-
+  }
 

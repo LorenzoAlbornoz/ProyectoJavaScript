@@ -16,8 +16,45 @@ const actualizarEstadoUsuario = () => {
   }
 };
 
-// Llama a la función para actualizar el estado del usuario al cargar la página
 actualizarEstadoUsuario();
+
+  // Función para cerrar sesión con SweetAlert
+  const cerrarSesion = () => {
+    // Mostrar un cuadro de confirmación utilizando SweetAlert
+    Swal.fire({
+      title: "Cerrar sesión",
+      text: "¿Estás seguro que deseas cerrar sesión?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "var(--c-success)",
+      cancelButtonColor: "var(--c-wrong)",
+      confirmButtonText: "Sí, cerrar sesión",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Si el usuario confirma, cerrar la sesión
+        localStorage.removeItem("usuarioLogueado");
+        actualizarEstadoUsuario();
+        location.href = "./login.html";
+      }
+    });
+  };
+
+  // Agregar evento de clic al icono de login
+  loginIcon.addEventListener("click", (event) => {
+    event.preventDefault(); // Previene la redirección inmediata al hacer clic
+
+    if (usuarioLogueado && usuarioLogueado.isLogged) {
+      // Si el usuario está logeado, mostrar SweetAlert para cerrar sesión
+      cerrarSesion();
+    } else {
+      // Si el usuario no está logeado, redirigir a la página de inicio de sesión
+      location.href = "./login.html";
+    }
+  });
+
+  // Llamar a la función para actualizar el estado del usuario cuando se cargue la página
+  document.addEventListener("DOMContentLoaded", actualizarEstadoUsuario);
 
 // Luego de hacer un login o logout (según tu implementación), llama a la función para actualizar el estado del usuario nuevamente.
 
@@ -28,11 +65,7 @@ const verificarAdminLogueado = () => {
   const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
 
   if (usuarioLogueado && usuarioLogueado.isLogged && usuarioLogueado.isAdmin) {
-    adminLink.href = "administrador.html"; // Cambia "administrador.html" por la página que corresponda para el administrador
-    adminLink.classList.add("active");
-  } else {
-    adminLink.href = "javascript:void(0);"; // Establece un enlace sin acción cuando el administrador no está logeado
-    adminLink.classList.remove("active");
+    adminLink.classList.add("active");// Si no es administrador, quitamos la clase 'active' para ocultar el enlaceL
   }
 };
 
