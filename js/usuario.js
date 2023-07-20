@@ -157,11 +157,12 @@ const updateMusic = (id) => {
 }
 
 const deleteMusic = (id) => {
+
     const confirmar = confirm("Desea eliminar esta cancion")
     if (confirmar) {
         const cancionFiltrada = data.filter((tarea) => {
             return tarea.id !== id
-        })
+        })      
         data = cancionFiltrada
         localStorage.setItem("canciones", JSON.stringify(data))
         createMusic(data)

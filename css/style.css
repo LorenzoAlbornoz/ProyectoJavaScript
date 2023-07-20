@@ -111,3 +111,16 @@ footer .line {
     background-color: var(--c-secondYellow);
     color: var(--c-player);
 }
+
+.admin {
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#admin.active{
+        opacity: 1;
+    visibility: visible;
+}
+
+

@@ -161,7 +161,7 @@ formLogin.addEventListener("submit", (e) => {
             if (validarEmail.isAdmin) { // Verifica si el usuario es administrador
                 window.location.href = "../html/Administrador.html"; // Redirige a la página de administrador si es administrador
             } else {
-                window.location.href = "../html/player.html"; // Redirige a la página normal si no es administrador
+                window.location.href = "../html/usuario.html"; // Redirige a la página normal si no es administrador
             }
         }
     }, 2000);
@@ -170,3 +170,5 @@ formLogin.addEventListener("submit", (e) => {
 const logout = () => {
     localStorage.removeItem('usuarioLogueado'); //cuando cierras el navegador se deslogea
 }
+
+
