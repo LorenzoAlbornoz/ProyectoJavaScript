@@ -40,6 +40,14 @@ let formValidation = () => {
         nombreMsg.innerHTML = "El nombre es requerido";
         generoMsg.innerHTML = "El genero es requerido";
         urlCancionMsg.innerHTML = "La URL es requerida"
+        setTimeout(() => {
+            imagenMsg.innerHTML = "";
+        artistaMsg.innerHTML = "";
+        nombreMsg.innerHTML = "";
+        generoMsg.innerHTML = "";
+        urlCancionMsg.innerHTML = ""
+        }, 4000);
+        return;
     } else {
         // Caso contrario no mostrar las validaciones
         imagenMsg.innerHTML = "";
