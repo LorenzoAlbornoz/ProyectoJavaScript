@@ -63,6 +63,13 @@ let formValidation = () => {
         // esta funcion lo limpia una vez se hace click y se guarda
         (() => {
             add.setAttribute("data-bs-dismiss", "");
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Canción creada exitosamente",
+                showConfirmButton: false,
+                timer: 1500,
+            });
             form.reset();
             // location. reload()
         })()
@@ -138,7 +145,7 @@ const createMusic = (data) => {
 }
 
 const updateMusic = (id) => {
-    cerrar.classList.add("d-none")
+    // cerrar.classList.add("d-none")
     xClose.classList.add("d-none")
     cerrarM.classList.remove("d-none")
     const cancionBuscada = data.find((cancion) => {
@@ -159,19 +166,70 @@ const updateMusic = (id) => {
     createMusic(data)
 }
 
+// const deleteMusic = (id) => {
+//   const confirmar =  Swal.fire({
+//         position: "center",
+//         icon: "warning",
+//         title: "¿Desea eliminar esta canción?",
+//         showConfirmButton: true,
+//         showCancelButton: true,
+//         confirmButtonText: "Sí",
+//         cancelButtonText: "Cancelar",
+//     })
+//     if (confirmar) {
+//         const cancionFiltrada = data.filter((tarea) => {
+//             return tarea.id !== id
+//         })
+//         data = cancionFiltrada
+//         localStorage.setItem("canciones", JSON.stringify(data))
+//         createMusic(data)
+//     } else {
+//         Swal.fire({
+//             position: "center",
+//             icon: "info",
+//             title: "Eliminación cancelada",
+//             showConfirmButton: false,
+//             timer: 1500,
+//         });
+//     }
+// }
+
 const deleteMusic = (id) => {
-    const confirmar = confirm("Desea eliminar esta cancion")
-    if (confirmar) {
-        const cancionFiltrada = data.filter((tarea) => {
-            return tarea.id !== id
-        })
-        data = cancionFiltrada
-        localStorage.setItem("canciones", JSON.stringify(data))
-        createMusic(data)
-    } else {
-        alert('Cancelado')
-    }
-}
+    Swal.fire({
+        position: "center",
+        icon: "warning",
+        title: "¿Desea eliminar esta canción?",
+        showConfirmButton: true,
+        showCancelButton: true,
+        confirmButtonText: "Sí",
+        cancelButtonText: "Cancelar",
+    }).then((result) => { //el código de eliminación se coloca dentro de la función then para que se ejecute después de que el usuario interactúe con el mensaje de confirmación.
+        if (result.isConfirmed) {
+            const cancionFiltrada = data.filter((tarea) => {
+                return tarea.id !== id;
+            });
+            data = cancionFiltrada;
+            localStorage.setItem("canciones", JSON.stringify(data));
+            createMusic(data);
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Canción eliminada exitosamente",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+        } else {
+            Swal.fire({
+                position: "center",
+                icon: "info",
+                title: "Eliminación cancelada",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+        }
+    });
+};
+
 
 const closeWithOutSave= () =>{
     localStorage.setItem("canciones", JSON.stringify(data))

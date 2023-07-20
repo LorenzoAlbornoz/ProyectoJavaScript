@@ -86,12 +86,12 @@ const createMusic = (data) => {
                  
                  <div class="col-3 d-flex align-items-center  gap-2 ms-3">
                         <div class="d-flex align-items-center justify-content-between me-5">
-                            <img src="${cancion.imagen}" alt="" class="imgAlbum" id="cover">
+                            <img src="${cancion.imagen}" alt="" class="coverAlbum" id="cover${cancion.id}">
                         </div>
-                        <i class="fa-solid fa-backward-step fa-lg" style="color: #ffffff;" id="prev"></i>
+                        
                         <i onclick="playSong(${cancion.id})" class="fa-solid fa-play fa-2x" style="color: #ffffff;" id="play${cancion.id}"></i>
-                        <i class="fa-solid fa-forward-step fa-lg" style="color: #ffffff;" id="next"></i>
-                        <div class="d-none d-sm-flex flex-column ms-3">
+                        
+                        <div class="d-flex flex-column ms-3">
                             <p class="mb-0 title" id="title${cancion.id}">${cancion.nombre}</p>
                             <p class="mb-0 artist" id="artist${cancion.id}">${cancion.artista}</p>
                         </div>
@@ -157,11 +157,12 @@ const updateMusic = (id) => {
 }
 
 const deleteMusic = (id) => {
+
     const confirmar = confirm("Desea eliminar esta cancion")
     if (confirmar) {
         const cancionFiltrada = data.filter((tarea) => {
             return tarea.id !== id
-        })
+        })      
         data = cancionFiltrada
         localStorage.setItem("canciones", JSON.stringify(data))
         createMusic(data)
