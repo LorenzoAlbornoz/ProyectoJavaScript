@@ -10,6 +10,25 @@
     height: 100%;
 }
 
+.the-scroll {
+    height:340px;
+    overflow-y: scroll;
+}
+
+.the-scroll::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+.the-scroll::-webkit-scrollbar-track {
+    background: var(--c-navbar);        /* color of the tracking area */
+    border-radius: 20px;
+  }
+  
+.the-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--c-letter);    
+    border-radius: 20px;       
+
+  }
 
 .menu-categorias li:hover {
     color: var(--c-white);
