@@ -18,6 +18,7 @@ let xClose = document.getElementById("xClose")
 
 let data = JSON.parse(localStorage.getItem("canciones")) || [];
 let listaFiltrada = JSON.parse(localStorage.getItem("canciones")) || [];
+let datosSinGuardar = [];
 
 // Genera un id 
 const idRandom = () => {
@@ -100,8 +101,9 @@ const createMusic = (data) => {
          <div class="container-fluid d-flex h-100 align-items-center" >
              <div class="row d-flex w-100 justify-content-between">
                  
-             <div class="col-6 col-sm-5 d-flex align-items-center  gap-2 ms-3">
-             <div class="d-none d-sm-flex align-items-center justify-content-between me-5">
+
+                 <div class="col-6 col-sm-5 d-flex align-items-center  gap-2 ms-3">
+                        <div class="d-none d-sm-flex align-items-center justify-content-between me-5">
                             <img src="${cancion.imagen}" alt="" class="imgAlbum" id="cover">
                         </div>
                          <i onclick="playSong(${cancion.id})" class="fa-solid fa-play fa-2x" style="color: #ffffff;" id="play${cancion.id}"></i>
@@ -116,6 +118,7 @@ const createMusic = (data) => {
                             <p class="mb-0 genero" id="genero${cancion.id}">${cancion.genero}</p>
                         </div>
                  
+
                         <div class="col-2 col-sm-3 d-none d-sm-flex justify-content-end justify-content-lg-evenly mb-0 align-items-center">
                         <div class="col-md-2 timeSong d-none d-md-flex align-items-center " id="timeTrack${cancion.id}">
                             --:--
