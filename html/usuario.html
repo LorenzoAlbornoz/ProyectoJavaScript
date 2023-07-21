@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="../css/modal.css">
         <link rel="stylesheet" href="../css/player.css">
         <link rel="stylesheet" href="../css/usuario.css">
+        <link rel="stylesheet" href="../css/menuCategoria.css">
         <script src="https://kit.fontawesome.com/ea0d6f4a72.js" crossorigin="anonymous"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -47,76 +48,46 @@
     </header>
 
     <main>
-        <!-- <div >
-            <h1 class="mb-3">Administración</h1>
-        </div> -->
-        <!-- Modal para agregar o editar canción -->
-        <form class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="form" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header d-flex justify-content-center">
-                        <h5 class="modal-title" id="editarModalLabel">Agregar o Modificar una canción</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="xClose"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Formulario para agregar o editar canción -->
-
-                        <p class="mb-1" for="url">URL de la imagen del artista</p>
-                        <input type="text" class="form-control" id="imagenInput">
-
-                        <div id="imagenMsg"></div>
-
-                        <p class="mb-1 mt-2" for="artista">Artista</p>
-                        <input type="text" class="form-control" id="artistaInput">
-
-                        <div id="artistaMsg"></div>
-
-                        <p class="mb-1 mt-2" for="nombre">Nombre de la canción</p>
-                        <input type="text" class="form-control" id="nombreInput">
-
-                        <div id="nombreMsg"></div>
-
-                        <p class="mb-1 mt-2" for="genero">Género</p>
-                        <input type="text" class="form-control" id="generoInput">
-
-                        <div id="generoMsg"></div>
-
-                        <p class="mb-1 mt-2" for="url">URL de la canción:</p>
-                        <input type="text" name="urlCancion" class="form-control"
-                            placeholder="Ingrese la URL de la canción" id="urlCancionInput">
-
-                        <div id="urlCancionMsg"></div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cerrar">Cerrar</button>
-                        <button onclick="closeWithOutSave()" type="submit" class="btn btn-secondary d-none" id="cerrarUpdate">Salir sin guardar</button>
-                        <button type="submit" id="add" class="btn botonYellow">Guardar</button>
-                    </div>
-                </div>
-            </div>
-        </form>
+        
         <!-- Botón para crear y cargar una nueva canción -->
-        <div class="container-fluid mt-5 mb-3">
-                <div class="col-9 col-md-12 d-flex align-items-end justify-content-end mt-2">
-                    <div class="d-flex align-items-center align-items-sm-end flex-column flex-sm-row" role="search">
-                        <select class="tipo-busqueda me-2">
-                            <option selected>Tipo de busqueda</option>
-                            <option value="1">Canción</option>
-                            <option value="2">Artista</option>
-                            <option value="3">Genero</option>
-                        </select>
-                        <input class="form-control me-2 mt-2 mt-s-0" type="search" placeholder="Buscar" aria-label="Search" id="textBuscar">
-                        <div class="d-flex mt-2 mt-s-0">
-                            <button onclick="filterTabla()" class="searchYellow ms-0 me-2"><i class="fa-solid fa-magnifying-glass"></i></button>
-                            <button onclick="limpiarTabla()" class="searchYellow ms-0 me-2 d-none" id="clear"><i class="fa-solid fa-x"></i></button>
-                        </div>
-                        
+        <div class="container-fluid d-flex justify-content-center mt-5 mb-3">
+            <div class="col-9 col-md-12 d-flex align-items-end justify-content-center  justify-content-sm-end me-0 mt-2">
+                <div class="d-flex align-items-center align-items-sm-end flex-column flex-sm-row" role="search">
+                    <select class="tipo-busqueda me-2">
+                        <option selected>Tipo de busqueda</option>
+                        <option value="1">Canción</option>
+                        <option value="2">Artista</option>
+                        <option value="3" class="d-inline d-md-none">Genero</option>
+                    </select>
+                    <input class="form-control me-2 mt-2 mt-s-0" type="search" placeholder="Buscar" aria-label="Search" id="textBuscar">
+                    <div class="d-flex mt-2 mt-s-0">
+                        <button onclick="filterTabla()" class="searchYellow ms-0 me-2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button onclick="limpiarTabla()" class="searchYellow ms-0 me-2 d-none" id="clear"><i class="fa-solid fa-x"></i></button>
+                        </div>                            
                     </div>     
                 </div>
             </div>
         </div>
-        <div class="mt-2" id="canciones"></div>
+
+        <div class="container-fluid">
+            <div class="row d-flex">
+                <div class="col-2 text-center d-none d-md-inline">
+                    
+                    <section class="menu-categorias d-flex justify-content-center ">
+                        
+                        <ul id="lista-categorias" class="d-flex flex-column align-items-center justify-content-center ms-2">
+                            <li>
+                                <button onclick="limpiarTablaCategoria()" class="mt-4 d-none" id="btn-filtro">Limpiar filtro <i class="ri-filter-off-fill"></i></button>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12 col-md-10">                    
+                    <div class="mt-2" id="canciones"></div>
+                </div>
+            </div>
+        </div>
+        
     </main>
 
     <footer id="player">
@@ -124,7 +95,7 @@
       <div class="container-fluid d-flex h-100 align-items-center" >
           <div class="row d-flex w-100">
               <div class="col-1 d-flex align-items-center justify-content-between">
-                  <img src="" alt="" class="imgAlbum pb-2" id="coverPlayer">
+                  <img src="" alt="" class="imgAlbum pb-3" id="coverPlayer">
               </div>
               <div class="col-1 d-flex align-items-center  gap-2 mx-5">
                       <i onclick="prevSong()" class="fa-solid fa-backward-step fa-lg" style="color: #ffffff;" id="prevPlayer"></i>
@@ -164,7 +135,7 @@
         crossorigin="anonymous"></script>
     <script src="../js/usuario.js"></script>
     <script src="../js/reproductor.js"></script>
-    <script src="../js/isLogged.js"></script>
+    <script src="../js/menuCategorias.js"></script>
 </body>
 </html>
 
