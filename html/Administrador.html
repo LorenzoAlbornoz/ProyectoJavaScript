@@ -56,32 +56,32 @@
           </div>
           <div class="modal-body">
             <!-- Formulario para agregar o editar canción -->
+            <div class="">
+              <input type="text" class="form-control" id="imagenInput" placeholder="URL de la imagen del artista">
 
-            <input type="text" class="form-control" id="imagenInput" placeholder="URL de la imagen del artista">
+              <div id="imagenMsg"></div>
 
-            <div id="imagenMsg"></div>
+              <input type="text" class="form-control" id="artistaInput" placeholder="Artista">
 
-            <input type="text" class="form-control" id="artistaInput" placeholder="Artista">
+              <div id="artistaMsg"></div>
 
-            <div id="artistaMsg"></div>
+              <input type="text" class="form-control" id="nombreInput" placeholder="Nombre de la canción">
 
-            <input type="text" class="form-control" id="nombreInput" placeholder="Nombre de la canción">
+              <div id="nombreMsg"></div>
 
-            <div id="nombreMsg"></div>
+              <input type="text" class="form-control" id="generoInput" placeholder="Género">
 
-            <input type="text" class="form-control" id="generoInput" placeholder="Género">
+              <div id="generoMsg"></div>
 
-            <div id="generoMsg"></div>
+              <input type="text" class="form-control" id="urlCancionInput" placeholder="URL de la canción">
 
-            <input type="text" class="form-control" id="urlCancionInput" placeholder="URL de la canción">
-
-            <div id="urlCancionMsg"></div>
-
+              <div id="urlCancionMsg"></div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-delete" data-bs-dismiss="modal" id="cerrar">Cerrar</button>
-            <button onclick="closeWithOutSave()" class="btn btn-secondary d-none" id="cerrarUpdate">Cerrar</button>
-            <button onclick="formValidation()" id="add" class="btn botonYellow">Guardar</button>
+            <button onclick="closeWithOutSave()" class="btn btn-delete d-none" id="cerrarUpdate">Cerrar</button>
+            <button onclick="formValidation()" id="add" class="btn btn-edit">Guardar</button>
           </div>
         </div>
       </div>
@@ -93,22 +93,25 @@
           <button class="botonYellow" data-bs-toggle="modal" data-bs-target="#form">Agregar Canción</button>
         </div>
         <div class="col-9 col-md-6  d-flex align-items-end justify-content-center justify-content-md-end mt-2">
-            <div class=" align-items-end text-center align-items-sm-end" role="search">
-              <select class="tipo-busqueda me-2">
-                <option selected="">Tipo de busqueda</option>
-                <option value="1">Canción</option>
-                <option value="2">Artista</option>
-                <option value="3">Genero</option>
-              </select>
-              <div class="d-flex mt-2 mt-s-0">
-                <input class="form-control me-2 mt-2 mt-s-0" type="search" placeholder="Buscar" aria-label="Search" id="textBuscar">
-                <button onclick="filterTabla()" class="searchYellow ms-0 me-2"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <button onclick="limpiarTabla()" class="searchYellow ms-0 me-2 d-none" id="clear"><i class="fa-solid fa-x"></i></button>
-              </div>
+          <div class=" align-items-end text-center align-items-sm-end" role="search">
+            <select class="tipo-busqueda me-2">
+              <option selected="">Tipo de busqueda</option>
+              <option value="1">Canción</option>
+              <option value="2">Artista</option>
+              <option value="3">Genero</option>
+            </select>
+            <div class="d-flex mt-2 mt-s-0">
+              <input class="form-control me-2 mt-2 mt-s-0" type="search" placeholder="Buscar" aria-label="Search"
+                id="textBuscar">
+              <button onclick="filterTabla()" class="searchYellow ms-0 me-2"><i
+                  class="fa-solid fa-magnifying-glass"></i></button>
+              <button onclick="limpiarTabla()" class="searchYellow ms-0 me-2 d-none" id="clear"><i
+                  class="fa-solid fa-x"></i></button>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
     <div class="mt-2" id="canciones"></div>
   </main>

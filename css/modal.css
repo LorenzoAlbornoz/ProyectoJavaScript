@@ -49,10 +49,7 @@
     color: var(--c-white);
     font-family: var(--font-PTSans);
     width: 100%;
-    display: block;
-    margin: auto;
     margin-bottom: 2rem;
-    text-align: center;
 }
 
 #form ::placeholder{
