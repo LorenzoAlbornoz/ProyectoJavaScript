@@ -120,6 +120,10 @@ footer .line {
     color: var(--c-player);
 }
 
+#login-icon:focus{
+   color: var(--c-letter);
+}
+
 .admin {
     position: relative;
     opacity: 0;

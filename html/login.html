@@ -37,7 +37,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <a class="nav-link login-icon" href="./login.html"><i class="ri-account-circle-fill"></i> <span class="user-status"></span></a>
+                        <a class="nav-link login-icon" id="login-icon" href="./login.html"><i class="ri-account-circle-fill"></i> <span class="user-status"></span></a>
                     </div>
                 </div>
             </div>
@@ -70,9 +70,11 @@
               <input id="nombre-registro" type="text" placeholder="Nombre" />
               <input id="email-registro" type="text" placeholder="Email" />
               <input id="password-registro" type="password" placeholder="Contraseña" />
+              <span class="error"></span>
+              <p class="password-description"> Tu contraseña debe tener al menos una mayuscula, una minuscula, un numero y 8 caracteres como minimo y 10 como maximo </p>
               <!-- <input type="button" value="Registrarse" /> -->
               <button type="submit">Registrarse</button>
-              <span class="error"></span>
+              
             </form>
           </div>
           <div class="container-form sign-in">
@@ -126,10 +128,8 @@
                         <h5 class="mb-0 text-white">Nosotros</h5>
                         <div class="line"></div>
                         <ul>
-                            <li><a href="#">Inicio</a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Suscripción</a></li>
-                            <li><a href="./player.html">Musica</a></li>
-                            <li><a href="./acercaDeNosotros.html">Acerca de Nosotros</a></li>
+                          <li><a href="./usuario.html">Musica</a></li>
+                          <li><a href="./acercaDeNosotros.html">Acerca de Nosotros</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-4 col-sm-6">

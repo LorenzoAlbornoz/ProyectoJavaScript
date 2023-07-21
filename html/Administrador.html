@@ -40,7 +40,7 @@
                   <a class="nav-link" aria-current="page" href="./administrador.html">Administrador</a>
                   <a class="nav-link" href="./usuario.html">Musica</a>
                   <a class="nav-link" href="./acercaDeNosotros.html">Acerca de Nosotros</a>
-                  <a class="nav-link login-icon" href="./login.html"><i class="ri-account-circle-fill"></i> <span class="user-status"></span></a>
+                  <a class="nav-link login-icon" id="login-icon" href="./login.html"><i class="ri-account-circle-fill"></i> <span class="user-status"></span></a>
                 </div>
               </div>
             </div>
@@ -48,10 +48,6 @@
     </header>
 
     <main class="pb-5">
-        <!-- <div >
-            <h1 class="mb-3">Administración</h1>
-        </div> -->
-        <!-- Modal para agregar o editar canción -->
         <form class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="form" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -62,35 +58,29 @@
                     <div class="modal-body">
                         <!-- Formulario para agregar o editar canción -->
 
-                        <p class="mb-1" for="url">URL de la imagen del artista</p>
-                        <input type="text" class="form-control" id="imagenInput">
+                        <input type="text" class="form-control" id="imagenInput" placeholder="URL de la imagen del artista">
 
                         <div id="imagenMsg"></div>
 
-                        <p class="mb-1 mt-2" for="artista">Artista</p>
-                        <input type="text" class="form-control" id="artistaInput">
+                        <input type="text" class="form-control" id="artistaInput" placeholder="Artista">
 
                         <div id="artistaMsg"></div>
 
-                        <p class="mb-1 mt-2" for="nombre">Nombre de la canción</p>
-                        <input type="text" class="form-control" id="nombreInput">
+                        <input type="text" class="form-control" id="nombreInput" placeholder="Nombre de la canción">
 
                         <div id="nombreMsg"></div>
 
-                        <p class="mb-1 mt-2" for="genero">Género</p>
-                        <input type="text" class="form-control" id="generoInput">
+                        <input type="text" class="form-control" id="generoInput" placeholder="Género">
 
                         <div id="generoMsg"></div>
 
-                        <p class="mb-1 mt-2" for="url">URL de la canción:</p>
-                        <input type="text" name="urlCancion" class="form-control"
-                            placeholder="Ingrese la URL de la canción" id="urlCancionInput">
+                        <input type="text" class="form-control" id="urlCancionInput" placeholder="URL de la canción">
 
                         <div id="urlCancionMsg"></div>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cerrar">Cerrar</button>
+                        <button type="button" class="btn btn-delete" data-bs-dismiss="modal" id="cerrar">Cerrar</button>
                         <button onclick="closeWithOutSave()" class="btn btn-secondary d-none" id="cerrarUpdate">Cerrar</button>
                         <button onclick="formValidation()" id="add" class="btn botonYellow">Guardar</button>
                     </div>
@@ -144,9 +134,7 @@
                   <h5 class="mb-0 text-white">Nosotros</h5>
                   <div class="line"></div>
                   <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Suscripción</a></li>
-                    <li><a href="./player.html">Musica</a></li>
+                    <li><a href="./usuario.html">Musica</a></li>
                     <li><a href="./acercaDeNosotros.html">Acerca de Nosotros</a></li>
                   </ul>
                 </div>

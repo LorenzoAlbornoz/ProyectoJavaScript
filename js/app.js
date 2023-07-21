@@ -42,10 +42,10 @@ let formValidation = () => {
         urlCancionMsg.innerHTML = "La URL es requerida"
         setTimeout(() => {
             imagenMsg.innerHTML = "";
-        artistaMsg.innerHTML = "";
-        nombreMsg.innerHTML = "";
-        generoMsg.innerHTML = "";
-        urlCancionMsg.innerHTML = ""
+            artistaMsg.innerHTML = "";
+            nombreMsg.innerHTML = "";
+            generoMsg.innerHTML = "";
+            urlCancionMsg.innerHTML = ""
         }, 4000);
         return;
     } else {
@@ -72,6 +72,8 @@ let formValidation = () => {
         (() => {
             add.setAttribute("data-bs-dismiss", "");
             Swal.fire({
+                background: 'var(--c-navbar)',
+                color: "var(--c-letter)",
                 position: "center",
                 icon: "success",
                 title: "Canción creada exitosamente",
@@ -99,6 +101,7 @@ const createMusic = (data) => {
          <div class="container-fluid d-flex h-100 align-items-center" >
              <div class="row d-flex w-100 justify-content-between">
                  
+
                  <div class="col-6 col-sm-5 d-flex align-items-center  gap-2 ms-3">
                         <div class="d-none d-sm-flex align-items-center justify-content-between me-5">
                             <img src="${cancion.imagen}" alt="" class="imgAlbum" id="cover">
@@ -115,7 +118,8 @@ const createMusic = (data) => {
                             <p class="mb-0 genero" id="genero${cancion.id}">${cancion.genero}</p>
                         </div>
                  
-                 <div class="col-2 col-sm-3 d-none d-sm-flex justify-content-end justify-content-lg-evenly mb-0 align-items-center">
+
+                        <div class="col-2 col-sm-3 d-none d-sm-flex justify-content-end justify-content-lg-evenly mb-0 align-items-center">
                         <div class="col-md-2 timeSong d-none d-md-flex align-items-center " id="timeTrack${cancion.id}">
                             --:--
                         </div>
@@ -165,7 +169,6 @@ const updateMusic = (id) => {
     generoInput.value = cancionBuscada.genero;
     urlCancionInput.value = cancionBuscada.url;
     datosSinGuardar = [cancionBuscada.imagen,cancionBuscada.artista,cancionBuscada.nombre,cancionBuscada.genero,cancionBuscada.url]
-    
     // traemos todas las canciones que sean distintas al id. Elimina al id y genera uno nuevo
     const filter = data.filter((cancion) => {
         return cancion.id !== id
@@ -177,41 +180,17 @@ const updateMusic = (id) => {
     cerrarM.setAttribute("data-bs-dismiss","modal")
 }
 
-// const deleteMusic = (id) => {
-//   const confirmar =  Swal.fire({
-//         position: "center",
-//         icon: "warning",
-//         title: "¿Desea eliminar esta canción?",
-//         showConfirmButton: true,
-//         showCancelButton: true,
-//         confirmButtonText: "Sí",
-//         cancelButtonText: "Cancelar",
-//     })
-//     if (confirmar) {
-//         const cancionFiltrada = data.filter((tarea) => {
-//             return tarea.id !== id
-//         })
-//         data = cancionFiltrada
-//         localStorage.setItem("canciones", JSON.stringify(data))
-//         createMusic(data)
-//     } else {
-//         Swal.fire({
-//             position: "center",
-//             icon: "info",
-//             title: "Eliminación cancelada",
-//             showConfirmButton: false,
-//             timer: 1500,
-//         });
-//     }
-// }
-
 const deleteMusic = (id) => {
     Swal.fire({
+        background: 'var(--c-navbar)',
+        color: "var(--c-letter)",
         position: "center",
         icon: "warning",
         title: "¿Desea eliminar esta canción?",
         showConfirmButton: true,
         showCancelButton: true,
+        confirmButtonColor: "var(--c-success)",
+        cancelButtonColor: "var(--c-wrong)",
         confirmButtonText: "Sí",
         cancelButtonText: "Cancelar",
     }).then((result) => { //el código de eliminación se coloca dentro de la función then para que se ejecute después de que el usuario interactúe con el mensaje de confirmación.
@@ -223,6 +202,8 @@ const deleteMusic = (id) => {
             localStorage.setItem("canciones", JSON.stringify(data));
             createMusic(data);
             Swal.fire({
+                background: 'var(--c-navbar)',
+                color: "var(--c-letter)",
                 position: "center",
                 icon: "success",
                 title: "Canción eliminada exitosamente",
@@ -234,6 +215,8 @@ const deleteMusic = (id) => {
                 position: "center",
                 icon: "info",
                 title: "Eliminación cancelada",
+                background: 'var(--c-navbar)',
+                color: "var(--c-letter)",
                 showConfirmButton: false,
                 timer: 1500,
             });
@@ -242,7 +225,7 @@ const deleteMusic = (id) => {
 };
 
 
-const closeWithOutSave= () =>{
+const closeWithOutSave = () => {
     data.push({
         id: idRandom(),
         imagen: datosSinGuardar[0],
@@ -255,45 +238,43 @@ const closeWithOutSave= () =>{
         localStorage.setItem("canciones", JSON.stringify(data))
         createMusic(data)
         datosSinGuardar = [];
-
 }
 
-const filterTabla = () =>{
+const filterTabla = () => {
     let text = document.getElementById("textBuscar").value;
     let tipoBusqueda = document.querySelector(".tipo-busqueda").value
     let clear = document.getElementById("clear");
     switch (tipoBusqueda) {
         case "1":
-                data = JSON.parse(localStorage.getItem("canciones")) || [];
-                listaFiltrada = data.filter((cancion)=>{
+            data = JSON.parse(localStorage.getItem("canciones")) || [];
+            listaFiltrada = data.filter((cancion) => {
                 return cancion.nombre.toLowerCase().includes(text.toLowerCase());
-                })
+            })
             break;
         case "2":
-                data = JSON.parse(localStorage.getItem("canciones")) || [];
-                listaFiltrada = data.filter((cancion)=>{
+            data = JSON.parse(localStorage.getItem("canciones")) || [];
+            listaFiltrada = data.filter((cancion) => {
                 return cancion.artista.toLowerCase().includes(text.toLowerCase());
-                })
+            })
             break;
         case "3":
-                data = JSON.parse(localStorage.getItem("canciones")) || [];
-                listaFiltrada = data.filter((cancion)=>{
+            data = JSON.parse(localStorage.getItem("canciones")) || [];
+            listaFiltrada = data.filter((cancion) => {
                 return cancion.genero.toLowerCase().includes(text.toLowerCase());
-                })
+            })
             break;
         default:
             break;
-    }    
-    if (text.length>0){
+    }
+    if (text.length > 0) {
         clear.classList.remove("d-none")
     }
-    else
-    {
+    else {
         clear.classList.add("d-none")
     }
     createMusic(listaFiltrada)
     console.log(listaFiltrada)
-    if (listaFiltrada.length == 0){
+    if (listaFiltrada.length == 0) {
         canciones.innerHTML += `       
          <p class="ms-3" id="fail">No se encontraron resultados que coincidan con la busqueda</p>
         `
@@ -305,8 +286,8 @@ const limpiarTabla = () => {
     clear.classList.add("d-none")
     data = JSON.parse(localStorage.getItem("canciones"))
     let text = document.getElementById("textBuscar")
-    text.value="";
+    text.value = "";
     text.focus(),
-    createMusic(data)
+        createMusic(data)
 }
 createMusic(data)

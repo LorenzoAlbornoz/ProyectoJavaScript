@@ -21,39 +21,45 @@
     color: var(--c-wrong);
   }
 
-#form .modal-header {
-    background-color: var(--c-mainYellow);
-    color:var(--c-player);;
-    border:1px solid var(--c-letter);
+.modal-title{
     font-family: var(--font-OpenSans);
-    font-weight: bold;
+}
+
+#form .modal-header {
+    background-color: var(--c-navbar);
+    color:var(--c-letter);
 }
 
 #form .modal-body {
-    background-color: var(--c-background);
+    background-color: var(--c-navbar);
     color:var(--c-letter);
-    border-left:1px solid var(--c-letter);
-    border-right:1px solid var(--c-letter);
     font-family: var(--font-PTSans);
-    font-size: 0.8rem;
+    font-size: .9rem;
     text-align: left;
 }
+#form .modal-footer {
+    background-color: var(--c-navbar);
+    border: none;
+} 
 
 #form input {
-    background-color: var(--c-background);
+    background-color: var(--c-navbar);
     border: none;
-    border-bottom: 1px solid var(--c-letter);
+    border-bottom: thin solid var(--c-letter);
     color: var(--c-white);
+    font-family: var(--font-PTSans);
+    width: 100%;
+    display: block;
+    margin: auto;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
-#form input::placeholder {
-    color: var(--c-navbar);
-}
-
-#form .modal-footer {
-    background-color: var(--c-background);
-    border: none;
-    border-bottom: 1px solid var(--c-letter);
-    border-left:1px solid var(--c-letter);
-    border-right:1px solid var(--c-letter);
+#form ::placeholder{
+    width: 400px;
+    padding: 1rem;
+    margin: 2rem;
+    background-color: var(--c-navbar);
+    text-align: center;
+    color: var(--c-letter);
 }
