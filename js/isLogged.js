@@ -25,6 +25,8 @@ actualizarEstadoUsuario();
       title: "Cerrar sesión",
       text: "¿Estás seguro que deseas cerrar sesión?",
       icon: "warning",
+      background: 'var(--c-navbar)',
+      color: "var(--c-letter)",
       showCancelButton: true,
       confirmButtonColor: "var(--c-success)",
       cancelButtonColor: "var(--c-wrong)",

@@ -62,37 +62,31 @@
                     <div class="modal-body">
                         <!-- Formulario para agregar o editar canción -->
 
-                        <p class="mb-1" for="url">URL de la imagen del artista</p>
-                        <input type="text" class="form-control" id="imagenInput">
+                        <input type="text" class="form-control" id="imagenInput" placeholder="URL de la imagen del artista">
 
                         <div id="imagenMsg"></div>
 
-                        <p class="mb-1 mt-2" for="artista">Artista</p>
-                        <input type="text" class="form-control" id="artistaInput">
+                        <input type="text" class="form-control" id="artistaInput" placeholder="Artista">
 
                         <div id="artistaMsg"></div>
 
-                        <p class="mb-1 mt-2" for="nombre">Nombre de la canción</p>
-                        <input type="text" class="form-control" id="nombreInput">
+                        <input type="text" class="form-control" id="nombreInput" placeholder="Nombre de la canción">
 
                         <div id="nombreMsg"></div>
 
-                        <p class="mb-1 mt-2" for="genero">Género</p>
-                        <input type="text" class="form-control" id="generoInput">
+                        <input type="text" class="form-control" id="generoInput" placeholder="Género">
 
                         <div id="generoMsg"></div>
 
-                        <p class="mb-1 mt-2" for="url">URL de la canción:</p>
-                        <input type="text" name="urlCancion" class="form-control"
-                            placeholder="Ingrese la URL de la canción" id="urlCancionInput">
+                        <input type="text" class="form-control" id="urlCancionInput" placeholder="URL de la canción">
 
                         <div id="urlCancionMsg"></div>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cerrar">Cerrar</button>
+                        <button type="button" class="btn btn-delete" data-bs-dismiss="modal" id="cerrar">Cerrar</button>
                         <button onclick="closeWithOutSave()" type="submit" class="btn btn-secondary d-none" id="cerrarUpdate">Salir sin guardar</button>
-                        <button type="submit" id="add" class="btn botonYellow">Guardar</button>
+                        <button type="submit" id="add" class="btn btn-edit">Guardar</button>
                     </div>
                 </div>
             </div>

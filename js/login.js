@@ -53,6 +53,10 @@ formSignUp.addEventListener("submit", (e) => {
     // validar email
     let regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     const emailValidado = regex.test(email); // Busca coincidencia
+
+    let contraseña = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,10}$/;
+    const contraseñaValidada = contraseña.test(password)
+
     if (nombre === '' || email === '' || password === '') {
         error.innerHTML = "Todos los campos son obligatorios";
         error.style.display = "block"
@@ -66,6 +70,17 @@ formSignUp.addEventListener("submit", (e) => {
             error.style.display = "none"
         }, 4000);
         return;
+    }
+    // validar que la contraseña coincida con la expresion regular
+    if(!contraseñaValidada){
+            error.innerHTML = "Contraseña no valida";
+            error.style.display = "block";
+            error.style.padding = "10px";
+            error.style.color = "var(--c-wrong)";
+            setTimeout(() => {
+                error.style.display = "none";
+            }, 4000);
+            return;
     }
     //validar el email coincida con la expresion regular
     if (!emailValidado) {
@@ -87,6 +102,8 @@ formSignUp.addEventListener("submit", (e) => {
             position: "center",
             icon: "warning",
             title: "Usuario Existente",
+            background: 'var(--c-navbar)',
+            color: "var(--c-letter)",
             showConfirmButton: false,
             timer: 1500,
         });
@@ -102,6 +119,8 @@ formSignUp.addEventListener("submit", (e) => {
         position: "center",
         icon: "success",
         title: "Registro exitoso!",
+        background: 'var(--c-navbar)',
+        color: "var(--c-letter)",
         showConfirmButton: false,
         timer: 1500,
     });
@@ -138,6 +157,8 @@ formLogin.addEventListener("submit", (e) => {
             position: "center",
             icon: "warning",
             title: "Usuario o contraseña son incorrectos",
+            background: 'var(--c-navbar)',
+            color: "var(--c-letter)",
             showConfirmButton: false,
             timer: 1500,
         });
@@ -153,6 +174,8 @@ formLogin.addEventListener("submit", (e) => {
         position: "center",
         icon: "success",
         title: "Bienvenido!",
+        background: 'var(--c-navbar)',
+        color: "var(--c-letter)",
         showConfirmButton: false,
         timer: 1500,
     });
