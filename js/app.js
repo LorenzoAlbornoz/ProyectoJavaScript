@@ -83,7 +83,6 @@ let formValidation = () => {
             form.reset();
             // location. reload()
         })()
-
     }
 }
 
@@ -238,6 +237,7 @@ const closeWithOutSave = () => {
         localStorage.setItem("canciones", JSON.stringify(data))
         createMusic(data)
         datosSinGuardar = [];
+        form.reset();
 }
 
 const filterTabla = () => {
