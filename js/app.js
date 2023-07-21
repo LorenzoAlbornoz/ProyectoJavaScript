@@ -30,7 +30,6 @@ const idRandom = () => {
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    formValidation()
 })
 
 let formValidation = () => {
@@ -101,12 +100,12 @@ const createMusic = (data) => {
          <div class="container-fluid d-flex h-100 align-items-center" >
              <div class="row d-flex w-100 justify-content-between">
                  
-                 <div class="col-3 d-flex align-items-center  gap-2 ms-3">
-                        <div class="d-flex align-items-center justify-content-between me-5">
+             <div class="col-6 col-sm-5 d-flex align-items-center  gap-2 ms-3">
+             <div class="d-none d-sm-flex align-items-center justify-content-between me-5">
                             <img src="${cancion.imagen}" alt="" class="imgAlbum" id="cover">
                         </div>
                          <i onclick="playSong(${cancion.id})" class="fa-solid fa-play fa-2x" style="color: #ffffff;" id="play${cancion.id}"></i>
-                         <div class="d-none d-sm-flex flex-column ms-3">
+                         <div class=" d-sm-flex flex-column ms-3">
                             <p class="mb-0 title" id="title${cancion.id}">${cancion.nombre}</p>
                             <p class="mb-0 artist" id="artist${cancion.id}">${cancion.artista}</p>
                         </div>
@@ -117,7 +116,7 @@ const createMusic = (data) => {
                             <p class="mb-0 genero" id="genero${cancion.id}">${cancion.genero}</p>
                         </div>
                  
-                 <div class="col d-none d-sm-flex justify-content-end justify-content-lg-evenly mb-0 align-items-center">
+                        <div class="col-2 col-sm-3 d-none d-sm-flex justify-content-end justify-content-lg-evenly mb-0 align-items-center">
                         <div class="col-md-2 timeSong d-none d-md-flex align-items-center " id="timeTrack${cancion.id}">
                             --:--
                         </div>
@@ -133,7 +132,7 @@ const createMusic = (data) => {
                  
                  
                  
-                 <div class="col-5 col-sm-4  d-flex align-items-center justify-content-end gap-2 ms-0">
+                 <div class="col-2 col-sm-2  d-flex align-items-center justify-content-end gap-2 ms-0">
                  <div class="actions d-none d-md-flex align-items-center gap-3 justify-content-end me-3">
                          <i class="fa-solid fa-download" ></i>
                          <i class="fa-solid fa-star" ></i>
@@ -155,7 +154,7 @@ const createMusic = (data) => {
 }
 
 const updateMusic = (id) => {
-    // cerrar.classList.add("d-none")
+    cerrar.classList.add("d-none")
     xClose.classList.add("d-none")
     cerrarM.classList.remove("d-none")
     const cancionBuscada = data.find((cancion) => {
@@ -166,6 +165,7 @@ const updateMusic = (id) => {
     nombreInput.value = cancionBuscada.nombre;
     generoInput.value = cancionBuscada.genero;
     urlCancionInput.value = cancionBuscada.url;
+    datosSinGuardar = [cancionBuscada.imagen,cancionBuscada.artista,cancionBuscada.nombre,cancionBuscada.genero,cancionBuscada.url]
     // traemos todas las canciones que sean distintas al id. Elimina al id y genera uno nuevo
     const filter = data.filter((cancion) => {
         return cancion.id !== id
@@ -174,35 +174,8 @@ const updateMusic = (id) => {
     // guardamos la nueva cancion
     localStorage.setItem("canciones", JSON.stringify(data))
     createMusic(data)
+    cerrarM.setAttribute("data-bs-dismiss","modal")
 }
-
-// const deleteMusic = (id) => {
-//   const confirmar =  Swal.fire({
-//         position: "center",
-//         icon: "warning",
-//         title: "¿Desea eliminar esta canción?",
-//         showConfirmButton: true,
-//         showCancelButton: true,
-//         confirmButtonText: "Sí",
-//         cancelButtonText: "Cancelar",
-//     })
-//     if (confirmar) {
-//         const cancionFiltrada = data.filter((tarea) => {
-//             return tarea.id !== id
-//         })
-//         data = cancionFiltrada
-//         localStorage.setItem("canciones", JSON.stringify(data))
-//         createMusic(data)
-//     } else {
-//         Swal.fire({
-//             position: "center",
-//             icon: "info",
-//             title: "Eliminación cancelada",
-//             showConfirmButton: false,
-//             timer: 1500,
-//         });
-//     }
-// }
 
 const deleteMusic = (id) => {
     Swal.fire({
@@ -250,8 +223,18 @@ const deleteMusic = (id) => {
 
 
 const closeWithOutSave = () => {
-    localStorage.setItem("canciones", JSON.stringify(data))
-    createMusic(data)
+    data.push({
+        id: idRandom(),
+        imagen: datosSinGuardar[0],
+        artista: datosSinGuardar[1],
+        nombre: datosSinGuardar[2],
+        genero: datosSinGuardar[3],
+        url: datosSinGuardar[4]
+        })
+
+        localStorage.setItem("canciones", JSON.stringify(data))
+        createMusic(data)
+        datosSinGuardar = [];
 }
 
 const filterTabla = () => {

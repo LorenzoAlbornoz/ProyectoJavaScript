@@ -47,11 +47,7 @@
           </nav>
     </header>
 
-    <main>
-        <!-- <div >
-            <h1 class="mb-3">Administración</h1>
-        </div> -->
-        <!-- Modal para agregar o editar canción -->
+    <main class="pb-5">
         <form class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="form" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -85,8 +81,8 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-delete" data-bs-dismiss="modal" id="cerrar">Cerrar</button>
-                        <button onclick="closeWithOutSave()" type="submit" class="btn btn-secondary d-none" id="cerrarUpdate">Salir sin guardar</button>
-                        <button type="submit" id="add" class="btn btn-edit">Guardar</button>
+                        <button onclick="closeWithOutSave()" class="btn btn-secondary d-none" id="cerrarUpdate">Cerrar</button>
+                        <button onclick="formValidation()" id="add" class="btn botonYellow">Guardar</button>
                     </div>
                 </div>
             </div>
