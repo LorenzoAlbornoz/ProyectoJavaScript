@@ -1,7 +1,6 @@
 const ul = document.getElementById("lista-categorias");
 const listaCanciones =  JSON.parse(localStorage.getItem("canciones"));
 
-
 let generosEncontrados = [];
 
 listaCanciones.forEach(function(elemento) {
