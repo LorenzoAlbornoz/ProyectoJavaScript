@@ -13,7 +13,6 @@
     --font-PTSans: 'PT Sans', sans-serif;
 }
 
-
 body {
     background-color: var(--c-background);
 }
@@ -22,9 +21,10 @@ body {
     font-family: var(--font-PTSans);
     font-weight: bold;
     border: none;
-    border-radius: 0.3rem;
     padding: 0.5rem;
     margin-left: 1rem;
+    border-radius: 2rem;
+    color: var(--c-player);
 }
 
 .botonYellow:hover {
@@ -77,6 +77,9 @@ textarea:focus, input:focus, input[type]:focus {
 
 .btn-edit {
     background-color: var(--c-success);
+    color: var(--c-white);
+    border-radius: 2rem;
+    font-family: var(--font-PTSans);
 }
 .btn-edit:hover {
     background-color: #1a6419;
@@ -85,6 +88,8 @@ textarea:focus, input:focus, input[type]:focus {
 .btn-delete {
     background-color: var(--c-wrong);
     color: var(--c-white);
+    border-radius: 2rem;
+    font-family: var(--font-PTSans);
 }
 
 .btn-delete:hover {
