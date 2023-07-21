@@ -28,8 +28,8 @@ const createMusic = (data) => {
          <div class="container-fluid d-flex h-100 align-items-center" >
              <div class="row d-flex w-100 justify-content-between">
                  
-                 <div class="col-3 d-flex align-items-center  gap-2 ms-3">
-                        <div class="d-flex align-items-center justify-content-between me-5">
+                 <div class="col-lg-3 col-sm-6 d-flex align-items-center gap-2 ms-3">
+                        <div class="d-sm-flex d-flex align-items-center justify-content-between me-5">
                             <img src="${cancion.imagen}" alt="" class="coverAlbum" id="cover${cancion.id}">
                         </div>
                         
