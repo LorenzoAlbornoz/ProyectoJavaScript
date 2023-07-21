@@ -50,7 +50,7 @@
     }
 
     .body {
-        background-color: var(--c-navbar);
+        height: 122vh;
     }
 
     .formulario-registro,

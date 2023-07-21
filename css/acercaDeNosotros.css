@@ -1,0 +1,51 @@
+.rounded-pill {
+    cursor: pointer;
+}
+.section-title {
+    margin-top: 20px;
+    color: var(--c-letter);
+}
+
+.section-title .line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--c-mainYellow);
+    margin: 16px auto 24px auto;
+}
+
+.section-title p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card {
+    margin: 30px;
+    background-color: var(--c-background);
+    color: var(--c-white);
+    width: 280px;
+    border-color: transparent;
+}
+
+.card-title {
+    font-size: 18px;
+}
+
+.card-text{
+    text-align: center;
+}
+
+.badge {
+    background-color: var(--c-mainYellow);
+    font-size: xx-small;
+    color: var(--c-player);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 20px; 
+    max-width: 100%;
+}
+
+.img-nosotros{
+    height: 300px;
+    width: 300px;
+}

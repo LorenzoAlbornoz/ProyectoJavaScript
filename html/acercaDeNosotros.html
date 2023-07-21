@@ -17,7 +17,7 @@
     <script src="https://kit.fontawesome.com/ea0d6f4a72.js" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -33,9 +33,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <a class="nav-link admin" href="./administrador.html">Administracion</a>
                         <a class="nav-link" href="./usuario.html">Musica</a>
                         <a class="nav-link" href="./acercaDeNosotros.html">Acerca de Nosotros</a>
-                        <a class="nav-link login-icon" href="./login.html"><i class="ri-account-circle-fill"></i> <span class="user-status"></span></a>
+                        <a class="nav-link login-icon" href="./login.html"><i class="ri-account-circle-fill"></i> <span
+                                class="user-status"></span></a>
                     </div>
                 </div>
             </div>
@@ -43,7 +45,68 @@
     </header>
 
     <main>
-        <h1> Acerca de nosotros</h1>
+        <section data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500" class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="section-title">
+                            <h1>Acerca de Nosotros</h1>
+                            <div class="line"></div>
+                            <p>MusicFlow es una plataforma global de música en streaming que acerca a los fans a sus
+                                artistas preferidos con experienciaS únicas y la mejor calidad de sonido.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-md-2 row-cols-lg-3 row-cols-1 card-container" data-aos="fade-down"
+                    data-aos-easing="linear" data-aos-duration="500">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mt-2 mb-5">
+                        <div class="card h-100">
+                            <img src="../assets/img/lolo.jpg" class="rounded-circle img-nosotros" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Lorenzo Albornoz</h5>
+                                <span class="badge border mb-2">CEO</span>
+
+                                <p class="card-text">
+                                    Responsable de liderar la visión estratégica del servicio de streaming musical,
+                                    tomando decisiones clave para el crecimiento y la expansión global. Asegura la
+                                    calidad de la experiencia del usuario y la sostenibilidad del negocio.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 mt-2 mb-5">
+                        <div class="card h-100">
+                            <img src="../assets/img/img-20210207-wa0004~2.jpg" class="rounded-circle img-nosotros" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Juan Pablo Salomón</h5>
+                                <span class="badge border mb-2">MANAGER</span>
+                                <p class="card-text">
+                                    Encargado de coordinar y supervisar las operaciones diarias del servicio. Gestiona
+                                    el equipo, optimiza la biblioteca musical y se enfoca en la adquisición de nuevos
+                                    suscriptores. Busca constantemente mejorar la plataforma para satisfacer las
+                                    demandas de los usuarios.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 mt-2 mb-5">
+                        <div class="card h-100">
+                            <img src="../assets/img/cyn.png" class="rounded-circle img-nosotros" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Cynthia Pistán</h5>
+                                <span class="badge border mb-2">WEB DESIGNER</span>
+                                <p class="card-text">
+                                    Diseñador creativo de la interfaz y experiencia de usuario. Crea una plataforma
+                                    visualmente atractiva y funcional, asegurando la navegación intuitiva y la
+                                    accesibilidad para todos los usuarios. Trabaja en la identidad visual de MusicFlow
+                                    para reflejar su enfoque musical único.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -66,8 +129,6 @@
                         <h5 class="mb-0 text-white">Nosotros</h5>
                         <div class="line"></div>
                         <ul>
-                            <li><a href="#">Inicio</a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Suscripción</a></li>
                             <li><a href="./usuario.html">Musica</a></li>
                             <li><a href="./acercaDeNosotros.html">Acerca de Nosotros</a></li>
                         </ul>
@@ -105,6 +166,29 @@
         crossorigin="anonymous"></script>
     <script src="../js/login.js"></script>
     <script src="../js/isLogged.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        Fancybox.bind("[data-fancybox]", {
+          Toolbar: {
+            display: {
+              left: ["infobar"],
+              middle: [
+          "zoomIn",
+          "zoomOut",
+          "toggle1to1",
+          "rotateCCW",
+          "rotateCW",
+          "flipX",
+          "flipY",
+        ],
+        right: ["slideshow", "thumbs", "close"],
+      },
+    },
+  });
+      </script>
 </body>
 
 </html>
