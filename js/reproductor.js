@@ -4,7 +4,6 @@ let idx;
 let indiceArray;
 
 let dbSongs = JSON.parse(localStorage.getItem("canciones")) || [];
-console.log(dbSongs)
 
 //actualizar controles
 function updateControls(id){
@@ -86,7 +85,10 @@ else {
 
 //Ejecuta playSong al play del reproductor Player
 const playSongPlayer = () => {
-  playSong(idx)
+  if(idx){
+    playSong(idx)
+  }
+  
 }
 
 //Actualizar los datos del reproductor

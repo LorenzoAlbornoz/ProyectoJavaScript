@@ -1,24 +1,10 @@
-let form = document.getElementById("form")
-let imagenInput = document.getElementById("imagenInput")
-let artistaInput = document.getElementById("artistaInput")
-let nombreInput = document.getElementById("nombreInput")
-let generoInput = document.getElementById("generoInput")
-let urlCancionInput = document.getElementById("urlCancionInput")
-let imagenMsg = document.getElementById("imagenMsg")
-let artistaMsg = document.getElementById("artistaMsg")
-let nombreMsg = document.getElementById("nombreMsg")
-let generoMsg = document.getElementById("generoMsg")
-let urlCancionMsg = document.getElementById("urlCancionMsg")
-let add = document.getElementById("add")
-let cerrar = document.getElementById("cerrar")
-let cerrarM = document.getElementById("cerrarUpdate")
 let canciones = document.getElementById("canciones")
-let xClose = document.getElementById("xClose")
+
 
 
 let data = JSON.parse(localStorage.getItem("canciones")) || [];
 let listaFiltrada = JSON.parse(localStorage.getItem("canciones")) || [];
-
+let categoriaPrevia=null;
 // Genera un id 
 const idRandom = () => {
     if (data.length > 0) {
@@ -27,48 +13,6 @@ const idRandom = () => {
         return Math.round(Math.random() * 100);
     }
 };
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    formValidation()
-})
-
-let formValidation = () => {
-    if (imagenInput.value === "" || artistaInput.value === "" || nombreInput.value === "" || generoInput.value === "" || urlCancionInput.value === "") {
-        imagenMsg.innerHTML = "La URL de la imagen es requerida";
-        artistaMsg.innerHTML = "El artista es requerido";
-        nombreMsg.innerHTML = "El nombre es requerido";
-        generoMsg.innerHTML = "El genero es requerido";
-        urlCancionMsg.innerHTML = "La URL es requerida"
-    } else {
-        // Caso contrario no mostrar las validaciones
-        imagenMsg.innerHTML = "";
-        artistaMsg.innerHTML = "";
-        nombreMsg.innerHTML = "";
-        generoMsg.innerHTML = "";
-        urlCancionMsg.innerHTML = "";
-        data.push({
-            id: idRandom(),
-            imagen: imagenInput.value,
-            artista: artistaInput.value,
-            nombre: nombreInput.value,
-            genero: generoInput.value,
-            url: urlCancionInput.value
-        })
-        localStorage.setItem('canciones', JSON.stringify(data))
-        createMusic(data)
-        //Cierra el modal una vez que se guarda
-        add.setAttribute("data-bs-dismiss", "modal");
-        add.click();
-        // esta funcion lo limpia una vez se hace click y se guarda
-        (() => {
-            add.setAttribute("data-bs-dismiss", "");
-            form.reset();
-            // location. reload()
-        })()
-
-    }
-}
 
 const createMusic = (data) => {
     canciones.innerHTML = "";
@@ -156,26 +100,6 @@ const updateMusic = (id) => {
     createMusic(data)
 }
 
-const deleteMusic = (id) => {
-
-    const confirmar = confirm("Desea eliminar esta cancion")
-    if (confirmar) {
-        const cancionFiltrada = data.filter((tarea) => {
-            return tarea.id !== id
-        })      
-        data = cancionFiltrada
-        localStorage.setItem("canciones", JSON.stringify(data))
-        createMusic(data)
-    } else {
-        alert('Cancelado')
-    }
-}
-
-const closeWithOutSave= () =>{
-    localStorage.setItem("canciones", JSON.stringify(data))
-    createMusic(data)
-}
-
 const filterTabla = () =>{
     let text = document.getElementById("textBuscar").value;
     let tipoBusqueda = document.querySelector(".tipo-busqueda").value
@@ -202,7 +126,7 @@ const filterTabla = () =>{
         default:
             break;
     }    
-    if (text.length>0){
+    if (text.length>0 && tipoBusqueda<=3){
         clear.classList.remove("d-none")
     }
     else
@@ -227,4 +151,34 @@ const limpiarTabla = () => {
     text.focus(),
     createMusic(data)
 }
+
+const limpiarTablaCategoria = () => {
+    let clear = document.getElementById("btn-filtro");
+    clear.classList.add("d-none")
+    data = JSON.parse(localStorage.getItem("canciones"))
+    createMusic(data)
+}
+
+
+const filtrarCategoria = (id) => {
+    document.getElementById("btn-filtro").classList.remove("d-none")
+    let text = document.getElementById(`item${id}`).innerText;
+    data = JSON.parse(localStorage.getItem("canciones")) || [];
+    listaFiltrada = data.filter((cancion)=>{
+        return cancion.genero.toLowerCase() == text.toLowerCase();
+    })
+    createMusic(listaFiltrada)
+
+    if(categoriaPrevia===null){
+        categoriaPrevia=id;
+        document.getElementById(`item${id}`).classList.add("Active")
+    }
+    else
+    {   
+        document.getElementById(`item${categoriaPrevia}`).classList.remove("Active")
+        document.getElementById(`item${id}`).classList.add("Active")
+        categoriaPrevia = id;
+    }
+}
+
 createMusic(data)

@@ -1,0 +1,63 @@
+#lista-categorias {
+    font-family: var(--font-Montserrat);
+    list-style: none;
+    color: var(--c-letter);
+    font-family: var();
+    padding: 0;
+}
+
+.menu-categorias {
+    height: 100%;
+}
+
+.the-scroll {
+    height:340px;
+    overflow-y: scroll;
+}
+
+.the-scroll::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+.the-scroll::-webkit-scrollbar-track {
+    background: var(--c-navbar);        /* color of the tracking area */
+    border-radius: 20px;
+  }
+  
+.the-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--c-letter);    
+    border-radius: 20px;       
+
+  }
+
+.menu-categorias li:hover {
+    color: var(--c-white);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.Active {
+    color: var(--c-white);
+}
+
+#btn-filtro {
+    font-family: var(--font-PTSans);
+    font-weight: 400;
+    background-color: var(--c-mainYellow);
+    border: none;
+    border-radius: 2rem;
+    color: var(--c-background);
+    border-bottom: 1px solid var(--c-mainYellow);
+    border-top: 1px solid var(--c-mainYellow);
+    padding: 0.6rem;
+}
+
+#btn-filtro:hover {
+    border-radius: 2rem;
+    padding: 0.6rem;
+    border: none;
+    background-color: var(--c-secondYellow);
+    border-bottom: 1px solid var(--c-mainYellow);
+    border-top: 1px solid var(--c-mainYellow);
+    
+}
