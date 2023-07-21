@@ -43,7 +43,7 @@
 
 @media only screen and (max-width: 768px) and (min-width: 300px) {
     .container-form {
-        width: 100%; 
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -55,7 +55,7 @@
 
     .formulario-registro,
     .formulario-login {
-        max-width: 300px; 
+        max-width: 300px;
     }
 }
 
@@ -159,7 +159,7 @@
     color: var(--c-white);
     font-family: var(--font-PTSans);
     border-radius: var(--bs-border-radius);
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 
@@ -176,11 +176,20 @@ si en vez de utilizar button, utilizan input type button, se puede utilizar el s
     border-radius: 2rem;
     background-color: var(--c-success);
     font-weight: 600;
-    margin-top: 3rem;
+    margin-top: 2rem;
     font-size: .8rem;
     cursor: pointer;
     color: var(--c-player);
     font-family: var(--font-PTSans);
+}
+
+.password-description {
+    font-size: 0.75rem;
+    font-family: var(--font-PTSans);
+}
+
+#password-registro {
+    margin-bottom: 0px;
 }
 
 .sign-in {
@@ -197,4 +206,8 @@ si en vez de utilizar button, utilizan input type button, se puede utilizar el s
 .sign-up.active {
     opacity: 0;
     visibility: hidden;
+}
+
+.login-icon:active{
+  color: var(--c-mainYellow);
 }

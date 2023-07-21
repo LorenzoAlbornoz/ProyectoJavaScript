@@ -37,7 +37,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <a class="nav-link login-icon" href="./login.html"><i class="ri-account-circle-fill"></i> <span class="user-status"></span></a>
+                        <a class="nav-link login-icon" id="login-icon" href="./login.html"><i class="ri-account-circle-fill"></i> <span class="user-status"></span></a>
                     </div>
                 </div>
             </div>
@@ -70,9 +70,11 @@
               <input id="nombre-registro" type="text" placeholder="Nombre" />
               <input id="email-registro" type="text" placeholder="Email" />
               <input id="password-registro" type="password" placeholder="Contraseña" />
+              <span class="error"></span>
+              <p class="password-description"> Tu contraseña debe tener al menos una mayuscula, una minuscula, un numero y 8 caracteres como minimo y 10 como maximo </p>
               <!-- <input type="button" value="Registrarse" /> -->
               <button type="submit">Registrarse</button>
-              <span class="error"></span>
+              
             </form>
           </div>
           <div class="container-form sign-in">

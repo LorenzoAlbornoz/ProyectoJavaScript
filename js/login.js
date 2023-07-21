@@ -62,7 +62,7 @@ formSignUp.addEventListener("submit", (e) => {
         error.style.display = "block"
         error.style.padding = "10px"
         error.style.marginTop = "10px" // se escribe en camelCase
-        error.style.color = "white"
+        error.style.color = "var(--c-white)"
         error.style.borderRadius = "10px"
         error.style.backgroundColor = "var(--c-wrong)"
         setTimeout(() => {// se borran a los 4 segundos
@@ -76,7 +76,8 @@ formSignUp.addEventListener("submit", (e) => {
             error.innerHTML = "Contraseña no valida";
             error.style.display = "block";
             error.style.padding = "10px";
-            error.style.color = "var(--c-wrong)";
+            error.style.color = "var(--c-white)";
+            error.style.backgroundColor = "var(--c-wrong)"
             setTimeout(() => {
                 error.style.display = "none";
             }, 4000);
@@ -87,7 +88,8 @@ formSignUp.addEventListener("submit", (e) => {
         error.innerHTML = "Email no valido";
         error.style.display = "block";
         error.style.padding = "10px";
-        error.style.color = "var(--c-wrong)";
+        error.style.color = "var(--c-white)";
+        error.style.backgroundColor = "var(--c-wrong)"
         setTimeout(() => {
             error.style.display = "none";
         }, 4000);
@@ -158,7 +160,7 @@ formLogin.addEventListener("submit", (e) => {
             icon: "warning",
             title: "Usuario o contraseña son incorrectos",
             background: 'var(--c-navbar)',
-            color: "var(--c-letter)",
+            color: "var(--c-white)",
             showConfirmButton: false,
             timer: 1500,
         });
