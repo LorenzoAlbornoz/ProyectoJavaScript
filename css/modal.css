@@ -13,11 +13,15 @@
     --font-PTSans: 'PT Sans', sans-serif;
 }
 
-#imagenMsg,
+#imagenMsg, 
   #artistaMsg,
   #nombreMsg,
   #generoMsg,
-  #urlCancionMsg {
+  #urlCancionMsg, #imagenMsgU, 
+  #artistaMsgU,
+  #nombreMsgU,
+  #generoMsgU,
+  #urlCancionMsgU {
     color: var(--c-wrong);
   }
 
@@ -25,24 +29,24 @@
     font-family: var(--font-OpenSans);
 }
 
-#form .modal-header {
+#form .modal-header, #edit .modal-header {
     background-color: var(--c-navbar);
     color:var(--c-letter);
 }
 
-#form .modal-body {
+#form .modal-body, #edit .modal-body {
     background-color: var(--c-navbar);
     color:var(--c-letter);
     font-family: var(--font-PTSans);
     font-size: .9rem;
     text-align: left;
 }
-#form .modal-footer {
+#form .modal-footer, #edit .modal-footer {
     background-color: var(--c-navbar);
     border: none;
 } 
 
-#form input {
+#form input, #edit input {
     background-color: var(--c-navbar);
     border: none;
     border-bottom: thin solid var(--c-letter);
@@ -52,7 +56,7 @@
     margin-bottom: 2rem;
 }
 
-#form ::placeholder{
+#form ::placeholder, #edit ::placeholder{
     width: 400px;
     padding: 1rem;
     margin: 2rem;
