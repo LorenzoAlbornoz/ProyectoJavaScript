@@ -57,23 +57,23 @@
           <div class="modal-body">
             <!-- Formulario para agregar o editar canción -->
             <div class="">
-              <input type="text" class="form-control" id="imagenInput" placeholder="URL de la imagen del artista">
+              <input type="text" autocomplete="off" class="form-control" id="imagenInput" placeholder="URL de la imagen del artista">
 
               <div id="imagenMsg"></div>
 
-              <input type="text" class="form-control" id="artistaInput" placeholder="Artista">
+              <input type="text" autocomplete="off" class="form-control" id="artistaInput" placeholder="Artista">
 
               <div id="artistaMsg"></div>
 
-              <input type="text" class="form-control" id="nombreInput" placeholder="Nombre de la canción">
+              <input type="text" autocomplete="off" class="form-control" id="nombreInput" placeholder="Nombre de la canción">
 
               <div id="nombreMsg"></div>
 
-              <input type="text" class="form-control" id="generoInput" placeholder="Género">
+              <input type="text" autocomplete="off" class="form-control" id="generoInput" placeholder="Género">
 
               <div id="generoMsg"></div>
 
-              <input type="text" class="form-control" id="urlCancionInput" placeholder="URL de la canción">
+              <input type="text" autocomplete="off" class="form-control" id="urlCancionInput" placeholder="URL de la canción">
 
               <div id="urlCancionMsg"></div>
             </div>
@@ -100,23 +100,23 @@
           <div class="modal-body">
             <!-- Formulario para agregar o editar canción -->
             <div class="">
-              <input type="text" class="form-control" id="imagenInputU" placeholder="URL de la imagen del artista">
+              <input type="text" autocomplete="off" class="form-control" id="imagenInputU" placeholder="URL de la imagen del artista">
 
               <div id="imagenMsgU"></div>
 
-              <input type="text" class="form-control" id="artistaInputU" placeholder="Artista">
+              <input type="text" autocomplete="off" class="form-control" id="artistaInputU" placeholder="Artista">
 
               <div id="artistaMsgU"></div>
 
-              <input type="text" class="form-control" id="nombreInputU" placeholder="Nombre de la canción">
+              <input type="text" autocomplete="off" class="form-control" id="nombreInputU" placeholder="Nombre de la canción">
 
               <div id="nombreMsgU"></div>
 
-              <input type="text" class="form-control" id="generoInputU" placeholder="Género">
+              <input type="text" autocomplete="off" class="form-control" id="generoInputU" placeholder="Género">
 
               <div id="generoMsgU"></div>
 
-              <input type="text" class="form-control" id="urlCancionInputU" placeholder="URL de la canción">
+              <input type="text" autocomplete="off" class="form-control" id="urlCancionInputU" placeholder="URL de la canción">
 
               <div id="urlCancionMsgU"></div>
             </div>
@@ -133,12 +133,12 @@
     <div class="container-fluid mt-5">
       <div class="row d-flex align-items-center justify-sm-content-between flex-column flex-sm-row">
         <div class="col-6 col-sm-3 col-md-6">
-          <button class="botonYellow" data-bs-toggle="modal" data-bs-target="#form">Agregar Canción</button>
+          <button onclick="resetForm()" class="botonYellow" data-bs-toggle="modal" data-bs-target="#form">Agregar Canción</button>
         </div>
         <div class="col-9 col-md-6  d-flex align-items-end justify-content-center justify-content-md-end mt-2">
           <div class=" align-items-end text-center align-items-sm-end" role="search">
-            <select class="tipo-busqueda me-2">
-              <option selected="">Tipo de busqueda</option>
+            <select class="tipo-busqueda me-2 linkPointer">
+              <option selected>Tipo de busqueda</option>
               <option value="1">Canción</option>
               <option value="2">Artista</option>
               <option value="3">Genero</option>

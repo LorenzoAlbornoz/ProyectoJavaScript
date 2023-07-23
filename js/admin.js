@@ -20,6 +20,13 @@ let data = JSON.parse(localStorage.getItem("canciones")) || [];
 let listaFiltrada = JSON.parse(localStorage.getItem("canciones")) || [];
 let datosSinGuardar = [];
 
+//Limpia el formulario de crear canción cada vez que se abre el modal
+const resetForm=()=>
+{
+    form.reset()
+}
+
+
 // Genera un id 
 const idRandom = () => {
     if (data.length > 0) {
@@ -107,7 +114,7 @@ const createMusic = () => {
                         <div class="d-sm-flex align-items-center justify-content-between me-5">
                             <img src="${cancion.imagen}" alt="" class="imgAlbum" id="cover">
                         </div>
-                         <i onclick="playSong(${cancion.id})" class="fa-solid fa-play fa-2x" style="color: #ffffff;" id="play${cancion.id}"></i>
+                         <i onclick="playSong(${cancion.id})" class="linkPointer fa-solid fa-play fa-2x" style="color: #ffffff;" id="play${cancion.id}"></i>
                          <div class=" d-sm-flex flex-column ms-3">
                             <p class="mb-0 title" id="title${cancion.id}">${cancion.nombre}</p>
                             <p class="mb-0 artist" id="artist${cancion.id}">${cancion.artista}</p>
@@ -138,9 +145,9 @@ const createMusic = () => {
                  
                  <div class="col-2 col-sm-2  d-flex align-items-center justify-content-end gap-2 ms-0">
                  <div class="actions d-none d-md-flex align-items-center gap-3 justify-content-end me-3">
-                         <i class="fa-solid fa-download" ></i>
-                         <i class="fa-solid fa-star" ></i>
-                         <i class="fa-solid fa-share-nodes"></i>
+                         <i class="linkPointer fa-solid fa-download" ></i>
+                         <i class="linkPointer fa-solid fa-star" ></i>
+                         <i class="linkPointer fa-solid fa-share-nodes"></i>
                  </div>
                  <div class="d-flex gap-2" >
                         <button onclick="updateMusic(${cancion.id})" data-bs-toggle="modal" data-bs-target="#edit" class="btn btn-edit"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
@@ -177,6 +184,7 @@ const deleteMusic = (id) => {
                 clear.classList.add("d-none")
                 let text = document.getElementById("textBuscar")
                 text.value = "";
+                document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
               }
             data = JSON.parse(localStorage.getItem("canciones")) || [];
             const cancionFiltrada = data.filter((tarea) => {
@@ -210,39 +218,47 @@ const deleteMusic = (id) => {
 };
 
 const filterTabla = () => {
+    data = JSON.parse(localStorage.getItem("canciones"))
     let text = document.getElementById("textBuscar").value;
     let tipoBusqueda = document.querySelector(".tipo-busqueda").value
     let clear = document.getElementById("clear");
+    let sinBusqueda = true;
     switch (tipoBusqueda) {
         case "1":
             // data = JSON.parse(localStorage.getItem("canciones")) || [];
-            listaFiltrada = data.filter((cancion) => {
+                sinBusqueda=false;
+                listaFiltrada = data.filter((cancion) => {
                 return cancion.nombre.toLowerCase().includes(text.toLowerCase());
+                sinBusqueda=false;
             })
             break;
         case "2":
             // data = JSON.parse(localStorage.getItem("canciones")) || [];
-            listaFiltrada = data.filter((cancion) => {
+                sinBusqueda=false;
+                listaFiltrada = data.filter((cancion) => {
                 return cancion.artista.toLowerCase().includes(text.toLowerCase());
+                
             })
             break;
         case "3":
             // data = JSON.parse(localStorage.getItem("canciones")) || [];
-            listaFiltrada = data.filter((cancion) => {
+                sinBusqueda=false;
+                listaFiltrada = data.filter((cancion) => {
                 return cancion.genero.toLowerCase().includes(text.toLowerCase());
             })
             break;
         default:
+                sinBusqueda=true;
             break;
     }
-    if (text.length > 0) {
+    if (text.length > 0 && !sinBusqueda) {
         clear.classList.remove("d-none")
+        console.log(sinBusqueda)
     }
     else {
-        clear.classList.add("d-none")
+            clear.classList.add("d-none")
     }
     refreshTabla()
-    console.log(listaFiltrada)
     if (listaFiltrada.length == 0) {
         canciones.innerHTML += `       
          <p class="ms-3" id="fail">No se encontraron resultados que coincidan con la busqueda</p>
@@ -256,6 +272,7 @@ const limpiarTabla = () => {
     data = JSON.parse(localStorage.getItem("canciones"))
     let text = document.getElementById("textBuscar")
     text.value = "";
+    document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
     text.focus(),
     createMusic()
 }
@@ -294,7 +311,7 @@ const refreshTabla = ()=>{
 
                         <div class="col-2 col-sm-3 d-none d-sm-flex justify-content-end justify-content-lg-evenly mb-0 align-items-center">
                         <div class="col-md-2 timeSong d-none d-md-flex align-items-center " id="timeTrack${cancion.id}">
-                            --:--
+                            00:00
                         </div>
                         
 

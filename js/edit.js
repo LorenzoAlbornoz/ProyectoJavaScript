@@ -16,7 +16,7 @@ let songs = document.getElementById("canciones")
 
 let songList = JSON.parse(localStorage.getItem("canciones")) || [];
 // let listaFiltrada = JSON.parse(localStorage.getItem("canciones")) || [];
-let datesSinGuardar = [];
+// let datesSinGuardar = [];
 let idCancionSeleccionada;
 
 // Genera un id 
@@ -63,6 +63,7 @@ const refreshList = () => {
         clear.classList.add("d-none")
         let text = document.getElementById("textBuscar")
         text.value = "";
+        document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
       }
 
     // datesSinGuardar = [cancionBuscada.imagen,cancionBuscada.artista,cancionBuscada.nombre,cancionBuscada.genero,cancionBuscada.url]
@@ -71,7 +72,7 @@ const refreshList = () => {
         return cancion.id !== idCancionSeleccionada
     })
     songList = filter;
-    console.log("listado filtrado", songList)
+    // console.log("listado filtrado", songList)
     // guardamos la nueva cancion
     localStorage.setItem("canciones", JSON.stringify(songList))
 
@@ -93,7 +94,7 @@ const refreshList = () => {
                         <div class="d-sm-flex align-items-center justify-content-between me-5">
                             <img src="${cancion.imagen}" alt="" class="imgAlbum" id="cover">
                         </div>
-                         <i onclick="playSong(${cancion.id})" class="fa-solid fa-play fa-2x" style="color: #ffffff;" id="play${cancion.id}"></i>
+                         <i onclick="playSong(${cancion.id})" class="linkPointer fa-solid fa-play fa-2x" style="color: #ffffff;" id="play${cancion.id}"></i>
                          <div class=" d-sm-flex flex-column ms-3">
                             <p class="mb-0 title" id="title${cancion.id}">${cancion.nombre}</p>
                             <p class="mb-0 artist" id="artist${cancion.id}">${cancion.artista}</p>
@@ -124,9 +125,9 @@ const refreshList = () => {
                  
                  <div class="col-2 col-sm-2  d-flex align-items-center justify-content-end gap-2 ms-0">
                  <div class="actions d-none d-md-flex align-items-center gap-3 justify-content-end me-3">
-                         <i class="fa-solid fa-download" ></i>
-                         <i class="fa-solid fa-star" ></i>
-                         <i class="fa-solid fa-share-nodes"></i>
+                         <i class="linkPointer fa-solid fa-download" ></i>
+                         <i class="linkPointer fa-solid fa-star" ></i>
+                         <i class="linkPointer fa-solid fa-share-nodes"></i>
                  </div>
                  <div class="d-flex gap-2" >
                         <button onclick="updateMusic(${cancion.id})" data-bs-toggle="modal" data-bs-target="#edit" class="btn btn-edit"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>

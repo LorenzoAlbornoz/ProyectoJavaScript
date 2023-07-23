@@ -140,6 +140,7 @@ const limpiarTabla = () => {
     let text = document.getElementById("textBuscar")
     text.value="";
     text.focus(),
+    document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
     createMusic(data)
 }
 
