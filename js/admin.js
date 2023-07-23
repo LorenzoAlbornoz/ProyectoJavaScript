@@ -247,19 +247,19 @@ const filterTabla = () => {
     let clear = document.getElementById("clear");
     switch (tipoBusqueda) {
         case "1":
-            data = JSON.parse(localStorage.getItem("canciones")) || [];
+            // data = JSON.parse(localStorage.getItem("canciones")) || [];
             listaFiltrada = data.filter((cancion) => {
                 return cancion.nombre.toLowerCase().includes(text.toLowerCase());
             })
             break;
         case "2":
-            data = JSON.parse(localStorage.getItem("canciones")) || [];
+            // data = JSON.parse(localStorage.getItem("canciones")) || [];
             listaFiltrada = data.filter((cancion) => {
                 return cancion.artista.toLowerCase().includes(text.toLowerCase());
             })
             break;
         case "3":
-            data = JSON.parse(localStorage.getItem("canciones")) || [];
+            // data = JSON.parse(localStorage.getItem("canciones")) || [];
             listaFiltrada = data.filter((cancion) => {
                 return cancion.genero.toLowerCase().includes(text.toLowerCase());
             })
@@ -289,7 +289,7 @@ const limpiarTabla = () => {
     let text = document.getElementById("textBuscar")
     text.value = "";
     text.focus(),
-        createMusic()
+    createMusic()
 }
 
 const refreshTabla = ()=>{

@@ -57,6 +57,13 @@ const updateMusic = (id) => {
 }
 
 const refreshList = () => {
+    if (document.querySelector("#clear")) {
+        let clear = document.getElementById("clear");
+        clear.classList.add("d-none")
+        let text = document.getElementById("textBuscar")
+        text.value = "";
+      }
+
     // datesSinGuardar = [cancionBuscada.imagen,cancionBuscada.artista,cancionBuscada.nombre,cancionBuscada.genero,cancionBuscada.url]
     // traemos todas las canciones que sean distintas al id. Elimina al id y genera uno nuevo
     const filter = songList.filter((cancion) => {
