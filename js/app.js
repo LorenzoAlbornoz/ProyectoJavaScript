@@ -102,7 +102,7 @@ const createMusic = (data) => {
                  
 
                  <div class="col-6 col-sm-5 d-flex align-items-center  gap-2 ms-3">
-                        <div class="d-none d-sm-flex align-items-center justify-content-between me-5">
+                        <div class="d-sm-flex align-items-center justify-content-between me-5">
                             <img src="${cancion.imagen}" alt="" class="imgAlbum" id="cover">
                         </div>
                          <i onclick="playSong(${cancion.id})" class="fa-solid fa-play fa-2x" style="color: #ffffff;" id="play${cancion.id}"></i>

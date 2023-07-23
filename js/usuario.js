@@ -17,63 +17,54 @@ const idRandom = () => {
 const createMusic = (data) => {
     canciones.innerHTML = "";
     data.map((cancion, idx) => {
+        // let durationSOng= obtenerDuracion(cancion.id);
         // concatenamos las demas tareas
         return canciones.innerHTML += `
-         <div class="contenedor-cancion">
-         <div id="${idx}">
+        <div class="contenedor-cancion">
+        <div id="${idx}">
 
-         <audio src="${cancion.url}" id="${cancion.id}"></audio>
- 
-         <div class="player">
-         <div class="container-fluid d-flex h-100 align-items-center" >
-             <div class="row d-flex w-100 justify-content-between">
+        <audio src="${cancion.url}" id="${cancion.id}"></audio>
+
+        <div class="player">
+            <div class="container-fluid d-flex h-100 align-items-center" >
+                <div class="row d-flex w-100 justify-content-between">
                  
-                 <div class="col-lg-3 col-sm-6 d-flex align-items-center gap-2 ms-3">
-                        <div class="d-sm-flex d-flex align-items-center justify-content-between me-5">
-                            <img src="${cancion.imagen}" alt="" class="coverAlbum" id="cover${cancion.id}">
-                        </div>
-                        
-                        <i onclick="playSong(${cancion.id})" class="fa-solid fa-play fa-2x" style="color: #ffffff;" id="play${cancion.id}"></i>
-                        
-                        <div class="d-flex flex-column ms-3">
+                <div class="col-lg-5 col-sm-6 d-flex align-items-center gap-2 ms-3">
+                    <div class="d-sm-flex d-flex align-items-center justify-content-between me-5">
+                        <img src="${cancion.imagen}" alt="" class="coverAlbum" id="cover${cancion.id}">
+                    </div>
+
+                    <i onclick="playSong(${cancion.id})" class="linkPointer fa-solid fa-play fa-2x" style="color: #ffffff;" id="play${cancion.id}"></i>                        
+                    <div class="linkPointer d-flex flex-column ms-3" onclick="cargarDatos(${cancion.id})" data-bs-toggle="modal" data-bs-target="#form">
                             <p class="mb-0 title" id="title${cancion.id}">${cancion.nombre}</p>
-                            <p class="mb-0 artist" id="artist${cancion.id}">${cancion.artista}</p>
-                        </div>
-                        
-                         
-                 </div>
-                 <div class="col-1 ms-3 align-items-center justify-content-start  d-none d-lg-flex">
-                            <p class="mb-0 genero" id="genero${cancion.id}">${cancion.genero}</p>
-                        </div>
-                 
-                 <div class="col d-none d-sm-flex justify-content-end justify-content-lg-evenly mb-0 align-items-center">
-                        <div class="col-md-2 timeSong d-none d-md-flex align-items-center " id="timeTrack${cancion.id}">
-                            --:--
-                        </div>
-                        
-
-                        <div class="w-50  d-none d-sm-inline progressBar align-items-center h-100">
+                        <p class="mb-0 artist" id="artist${cancion.id}">${cancion.artista}</p>
+                    </div>                  
+                </div>
+                <div class="col-1 ms-3 align-items-center justify-content-start  d-none d-lg-flex">
+                    <p class="mb-0 genero" id="genero${cancion.id}">${cancion.genero}</p>
+                </div>
+                <div class="col d-none d-sm-flex justify-content-end justify-content-lg-evenly mb-0 align-items-center">
+                    <div class="col-md-2 timeSong d-none d-md-flex align-items-center " id="timeTrack${cancion.id}">
+                            00:00
+                    </div>
+                    <div class="w-50  d-none d-sm-inline progressBar align-items-center h-100">
                         <div onclick="setProgress(event)" class="progress-container my-5"  id="progress-container${cancion.id}">
                             <section class="progress" id="progress${cancion.id}"></section>
                         </div>
                     </div>
-                        
-                 </div>
-                 
-                 
-                 
-                 <div class="col-5 col-sm-4  d-flex align-items-center justify-content-end gap-2 ms-0">
-                 <div class="actions d-none d-md-flex align-items-center gap-3 justify-content-end me-3">
-                         <i class="fa-solid fa-download" ></i>
-                         <i class="fa-solid fa-star" ></i>
-                         <i class="fa-solid fa-share-nodes"></i>
-                 </div>
-               </div>
-             </div>
-         </div>
-     </div>
-          </div>
-         </div>
+                </div>
+                <div class="col-5 col-sm-2  d-flex align-items-center justify-content-end gap-2 ms-0">
+                    <div class="actions d-none d-md-flex align-items-center gap-3 justify-content-end me-3">
+                        <i class="linkPointer fa-solid fa-download" ></i>
+                        <i class="linkPointer fa-solid fa-star" ></i>
+                        <i class="linkPointer fa-solid fa-share-nodes"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
         `
     })
 }
