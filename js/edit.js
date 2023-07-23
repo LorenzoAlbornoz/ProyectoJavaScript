@@ -36,6 +36,7 @@ formedit.addEventListener("submit", (e) => {
 
 const updateMusic = (id) => {
     console.log("esto es el song list", songList)
+    songList = JSON.parse(localStorage.getItem("canciones")) || [];
     const cancionBuscada = songList.find((cancion) => {
         return cancion.id === id
     })

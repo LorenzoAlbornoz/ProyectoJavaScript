@@ -82,6 +82,7 @@ let formValidation = () => {
                 timer: 1500,
             });
             form.reset();
+            document.getElementById("edit").reset();
             // location. reload()
         })()
     }
@@ -156,30 +157,6 @@ const createMusic = () => {
     })
 }
 
-// const updateMusic = (id) => {
-//     cerrar.classList.add("d-none")
-//     xClose.classList.add("d-none")
-//     cerrarM.classList.remove("d-none")
-//     const cancionBuscada = data.find((cancion) => {
-//         return cancion.id === id
-//     })
-//     imagenInput.value = cancionBuscada.imagen;
-//     artistaInput.value = cancionBuscada.artista;
-//     nombreInput.value = cancionBuscada.nombre;
-//     generoInput.value = cancionBuscada.genero;
-//     urlCancionInput.value = cancionBuscada.url;
-//     datosSinGuardar = [cancionBuscada.imagen,cancionBuscada.artista,cancionBuscada.nombre,cancionBuscada.genero,cancionBuscada.url]
-//     // traemos todas las canciones que sean distintas al id. Elimina al id y genera uno nuevo
-//     const filter = data.filter((cancion) => {
-//         return cancion.id !== id
-//     })
-//     data = filter;
-//     // guardamos la nueva cancion
-//     localStorage.setItem("canciones", JSON.stringify(data))
-//     createMusic(data)
-//     cerrarM.setAttribute("data-bs-dismiss","modal")
-// }
-
 const deleteMusic = (id) => {
     Swal.fire({
         background: 'var(--c-navbar)',
@@ -195,12 +172,20 @@ const deleteMusic = (id) => {
         cancelButtonText: "Cancelar",
     }).then((result) => { //el código de eliminación se coloca dentro de la función then para que se ejecute después de que el usuario interactúe con el mensaje de confirmación.
         if (result.isConfirmed) {
+            if (document.querySelector("#clear")) {
+                let clear = document.getElementById("clear");
+                clear.classList.add("d-none")
+                let text = document.getElementById("textBuscar")
+                text.value = "";
+              }
+            data = JSON.parse(localStorage.getItem("canciones")) || [];
             const cancionFiltrada = data.filter((tarea) => {
                 return tarea.id !== id;
             });
             data = cancionFiltrada;
             localStorage.setItem("canciones", JSON.stringify(data));
-            createMusic(data);
+            createMusic();
+            listaFiltrada = [];
             Swal.fire({
                 background: 'var(--c-navbar)',
                 color: "var(--c-letter)",
@@ -223,23 +208,6 @@ const deleteMusic = (id) => {
         }
     });
 };
-
-
-const closeWithOutSave = () => {
-    data.push({
-        id: idRandom(),
-        imagen: datosSinGuardar[0],
-        artista: datosSinGuardar[1],
-        nombre: datosSinGuardar[2],
-        genero: datosSinGuardar[3],
-        url: datosSinGuardar[4]
-        })
-
-        localStorage.setItem("canciones", JSON.stringify(data))
-        createMusic(data)
-        datosSinGuardar = [];
-        form.reset();
-}
 
 const filterTabla = () => {
     let text = document.getElementById("textBuscar").value;
