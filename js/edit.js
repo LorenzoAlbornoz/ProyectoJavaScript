@@ -167,7 +167,7 @@ const updateSong = () => {
         nombreMsgU.innerHTML = "";
         generoMsgU.innerHTML = "";
         urlCancionMsgU.innerHTML = "";
-        songList.push({
+        songList.unshift({
             id: idShuffle(),
             imagen: imagenInputU.value,
             artista: artistaInputU.value,

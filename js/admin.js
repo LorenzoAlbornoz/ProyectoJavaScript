@@ -63,7 +63,7 @@ let formValidation = () => {
         nombreMsg.innerHTML = "";
         generoMsg.innerHTML = "";
         urlCancionMsg.innerHTML = "";
-        data.push({
+        data.unshift({
             id: idRandom(),
             imagen: imagenInput.value,
             artista: artistaInput.value,
