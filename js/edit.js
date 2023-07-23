@@ -188,7 +188,7 @@ const updateSong = () => {
                 color: "var(--c-letter)",
                 position: "center",
                 icon: "success",
-                title: "Canción creada exitosamente",
+                title: "Canción actualizada exitosamente",
                 showConfirmButton: false,
                 timer: 1500,
             });
