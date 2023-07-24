@@ -1,6 +1,10 @@
+let currentAudio;
+let prevAudio; // Variable para almacenar el audio actualmente reproduciéndose
+let pausaManual=false;
+
 //actualizar controles
 function updateControls(id){
-    if(document.getElementById(id).paused()){
+    if(currentAudio.paused()){
         document.getElementById(`play${id}`).classList.remove("fa-pause")
         document.getElementById(`play${id}`).classList.add("fa-play")
         
@@ -11,9 +15,6 @@ function updateControls(id){
     }
 }
 
-let currentAudio;
-let prevAudio; // Variable para almacenar el audio actualmente reproduciéndose
-let pausaManual=false;
 
 function playSong(id, event) {
   let audio = document.getElementById(id); // Acceder al elemento de audio utilizando el ID dinámico
@@ -22,18 +23,30 @@ function playSong(id, event) {
 
         currentAudio.pause(); // Pausar el audio actual
         currentAudio.currentTime=0;
-        document.getElementById(`play${currentAudio.id}`).classList.remove("fa-pause");
-        document.getElementById(`play${currentAudio.id}`).classList.add("fa-play");
-        document.getElementById(`timeTrack${currentAudio.id}`).classList.remove("Active");
-        document.getElementById(`title${currentAudio.id}`).classList.remove("Active");
+        if (document.getElementById(`play${currentAudio.id}`)){
+          document.getElementById(`play${currentAudio.id}`).classList.remove("fa-pause");
+          document.getElementById(`play${currentAudio.id}`).classList.add("fa-play");
+        }
+        if(document.getElementById(`timeTrack${currentAudio.id}`)){
+          document.getElementById(`timeTrack${currentAudio.id}`).classList.remove("Active");
+        }
+        if(document.getElementById(`title${currentAudio.id}`)){
+          document.getElementById(`title${currentAudio.id}`).classList.remove("Active");
+        }
 }
 else {
     if(pausaManual){
-        prevAudio.currentTime=0; // currentTime es una propieda de audio
-        document.getElementById(`play${prevAudio.id}`).classList.remove("fa-pause");
-        document.getElementById(`play${prevAudio.id}`).classList.add("fa-play");
-        document.getElementById(`timeTrack${prevAudio.id}`).classList.remove("Active");
-        document.getElementById(`title${prevAudio.id}`).classList.remove("Active");
+        // prevAudio.currentTime=0; // currentTime es una propieda de audio
+        if (document.getElementById(`play${prevAudio.id}`)){
+          document.getElementById(`play${prevAudio.id}`).classList.remove("fa-pause");
+          document.getElementById(`play${prevAudio.id}`).classList.add("fa-play");
+        }
+        if (document.getElementById(`timeTrack${prevAudio.id}`)){
+          document.getElementById(`timeTrack${prevAudio.id}`).classList.remove("Active");
+        }
+        if (document.getElementById(`title${prevAudio.id}`)){
+          document.getElementById(`title${prevAudio.id}`).classList.remove("Active");
+        }
     }
 }
 
@@ -56,18 +69,21 @@ else {
     document.getElementById(`timeTrack${id}`).classList.remove("Active");
     document.getElementById(`title${id}`).classList.remove("Active");
     prevAudio = currentAudio;
-    currentAudio = null; // No hay audio reproduciéndose actualmente
+    // currentAudio = null; // No hay audio reproduciéndose actualmente
     pausaManual = true;
   }
 }
 
 //Actualizar el tiempo transcurrido de la cancion
 function updateCurrentTime(id){
-    let minutes = Math.floor(document.getElementById(id).currentTime / 60);
-    let seconds = Math.floor(document.getElementById(id).currentTime % 60);
+    let minutes = Math.floor(currentAudio.currentTime / 60);
+    let seconds = Math.floor(currentAudio.currentTime % 60);
     // console.log(seconds)
     let timeTotal = padDigits(minutes, 2) + ':' + padDigits(seconds, 2);//un total de dos caracteres, 
-    document.getElementById(`timeTrack${id}`).innerText = `${timeTotal}`
+    if(document.getElementById(`timeTrack${id}`)){
+      document.getElementById(`timeTrack${id}`).innerText = `${timeTotal}`
+    }
+
 
 }
 //para formatear el tiempo
@@ -79,11 +95,13 @@ function padDigits(number, digits) { // number numeros y digits digitos
 function updateProgress(id){
     //total y el acutal
 
-    const duration = document.getElementById(id).duration;
-    const currentTime = document.getElementById(id).currentTime;
+    const duration = currentAudio.duration;
+    const currentTime = currentAudio.currentTime;
     const porcentaje = (currentTime/duration)*100;
-    let progress = document.getElementById(`progress${id}`)// busca un elemento en el documento HTML con un ID específico 
-    progress.style.width = porcentaje + "%" // asigna un valor al estilo de ancho (width) de un elemento con un ID específico, Al asignar porcentaje + "%", se establece el ancho del elemento en el porcentaje indicado
+    if(document.getElementById(`progress${id}`)){
+      let progress = document.getElementById(`progress${id}`)// busca un elemento en el documento HTML con un ID específico 
+      progress.style.width = porcentaje + "%" // asigna un valor al estilo de ancho (width) de un elemento con un ID específico, Al asignar porcentaje + "%", se establece el ancho del elemento en el porcentaje indicado
+    }
 }
 
 //hacer la barra de progreso clickeable

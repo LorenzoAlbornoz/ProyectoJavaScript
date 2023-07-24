@@ -19,7 +19,7 @@
     margin-right: auto;
 }
 .card {
-    margin: 30px;
+    margin: 0;
     background-color: var(--c-background);
     color: var(--c-white);
     width: 280px;
@@ -49,6 +49,20 @@
 }
 
 .img-nosotros{
-    height: 300px;
-    width: 300px;
+    height: 280px;
+    width: 280px;
 }
+
+#imgJp {
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#jp {
+    width: 330px;
+}
+
+
+

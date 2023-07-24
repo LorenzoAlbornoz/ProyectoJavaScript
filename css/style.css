@@ -135,3 +135,6 @@ footer .line {
     visibility: visible;
   }
 
+.linkPointer:hover {
+    cursor: pointer;
+}
