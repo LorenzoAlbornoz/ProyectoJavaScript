@@ -10,7 +10,6 @@ listaCanciones.forEach(function(elemento) {
 });
 
 generosEncontrados.forEach((elemento,indice)=>{
-  console.log(elemento)
     ul.innerHTML+= `<li onclick="filtrarCategoria(${indice})" class="item-categoria py-3" id="item${indice}">${elemento}</li>`
 })
 

@@ -241,14 +241,18 @@ const filterTabla = () => {
             })
             break;
         case "3":
-            // data = JSON.parse(localStorage.getItem("canciones")) || [];
+                data = JSON.parse(localStorage.getItem("canciones")) || [];
                 sinBusqueda=false;
                 listaFiltrada = data.filter((cancion) => {
                 return cancion.genero.toLowerCase().includes(text.toLowerCase());
             })
             break;
         default:
-                sinBusqueda=true;
+            data = JSON.parse(localStorage.getItem("canciones")) || [];
+            sinBusqueda=true;
+            listaFiltrada = data.filter((cancion) => {
+            return cancion.genero.toLowerCase().includes(text.toLowerCase());
+        })
             break;
     }
     if (text.length > 0 && !sinBusqueda) {
