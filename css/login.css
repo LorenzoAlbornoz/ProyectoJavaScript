@@ -111,6 +111,9 @@
     padding: 2.7rem 0;
     font-size: 1.7rem;
 }
+.bx{
+    color: var(--c-player);
+}
 
 .iconos {
     width: 200px;
@@ -118,6 +121,7 @@
     justify-content: space-around;
     margin: auto;
     color: var(--c-player);
+    text-decoration: none;
 }
 
 .border-icon {
