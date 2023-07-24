@@ -91,3 +91,4 @@ const verificarUserLogueado = () => {
 // Llamar a la función cuando se cargue la página
 document.addEventListener("DOMContentLoaded", verificarAdminLogueado);
 document.addEventListener("DOMContentLoaded", verificarUserLogueado);
+
