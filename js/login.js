@@ -195,5 +195,3 @@ formLogin.addEventListener("submit", (e) => {
 const logout = () => {
     localStorage.removeItem('usuarioLogueado'); //cuando cierras el navegador se deslogea
 }
-
-

@@ -37,7 +37,7 @@ actualizarEstadoUsuario();
         // Si el usuario confirma, cerrar la sesión
         localStorage.removeItem("usuarioLogueado");
         actualizarEstadoUsuario();
-        location.href = "./login.html";
+        location.href = "../login.html";
       }
     });
   };
@@ -51,7 +51,7 @@ actualizarEstadoUsuario();
       cerrarSesion();
     } else {
       // Si el usuario no está logeado, redirigir a la página de inicio de sesión
-      location.href = "./login.html";
+      location.href = "../login.html";
     }
   });
 
@@ -62,17 +62,32 @@ actualizarEstadoUsuario();
 
 // Función para verificar si el usuario está logueado y es administrador
 const verificarAdminLogueado = () => {
-  const adminLink = document.querySelector(".admin");
+  const adminLink = document.querySelector(".admin")
 
   const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
 
   if (usuarioLogueado && usuarioLogueado.isLogged && usuarioLogueado.isAdmin) {
     if(adminLink){
       
-      adminLink.classList.add("active");// Si no es administrador, quitamos la clase 'active' para ocultar el enlaceL
+      adminLink.classList.add("active");// Si no es administrador, quitamos la clase 'active' para ocultar el enlace a la pagina administrador
+    }
+  }
+};
+
+// Función para verificar si el usuario está logueado
+const verificarUserLogueado = () => {
+  const adminLink1 = document.querySelector(".user");
+
+  const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+
+  if (usuarioLogueado && usuarioLogueado.isLogged) {
+    if(adminLink1){
+      
+      adminLink1.classList.add("active");// Si no esta logeado, quitamos la clase 'active' para ocultar el enlace a la pagina de usuario
     }
   }
 };
 
 // Llamar a la función cuando se cargue la página
 document.addEventListener("DOMContentLoaded", verificarAdminLogueado);
+document.addEventListener("DOMContentLoaded", verificarUserLogueado);

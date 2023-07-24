@@ -47,6 +47,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     font-size: .9rem;
     text-align: left;
 }
+
 #form .modal-footer, #edit .modal-footer {
     background-color: var(--c-navbar);
     border: none;
@@ -60,6 +61,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     font-family: var(--font-PTSans);
     width: 100%;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 #form ::placeholder, #edit ::placeholder{

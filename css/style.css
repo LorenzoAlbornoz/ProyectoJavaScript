@@ -88,6 +88,7 @@ footer li,
 footer p,
 footer a {
     color: var(--c-letter);
+    text-decoration: none;
 }
 
 footer ul {
@@ -113,6 +114,7 @@ footer .line {
     background-color: var(--c-mainYellow);
     border-radius: 100px;
     color: var(--c-player);
+    text-decoration: none;
 }
 
 .social-icons a:hover {
@@ -131,6 +133,17 @@ footer .line {
   }
   
 .admin.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .user{
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+.user.active {
     opacity: 1;
     visibility: visible;
   }
