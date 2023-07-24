@@ -36,7 +36,6 @@ function playSong(id, event) {
 }
 else {
     if(pausaManual){
-        // prevAudio.currentTime=0; // currentTime es una propieda de audio
         if (document.getElementById(`play${prevAudio.id}`)){
           document.getElementById(`play${prevAudio.id}`).classList.remove("fa-pause");
           document.getElementById(`play${prevAudio.id}`).classList.add("fa-play");
@@ -69,7 +68,6 @@ else {
     document.getElementById(`timeTrack${id}`).classList.remove("Active");
     document.getElementById(`title${id}`).classList.remove("Active");
     prevAudio = currentAudio;
-    // currentAudio = null; // No hay audio reproduciéndose actualmente
     pausaManual = true;
   }
 }
@@ -78,7 +76,6 @@ else {
 function updateCurrentTime(id){
     let minutes = Math.floor(currentAudio.currentTime / 60);
     let seconds = Math.floor(currentAudio.currentTime % 60);
-    // console.log(seconds)
     let timeTotal = padDigits(minutes, 2) + ':' + padDigits(seconds, 2);//un total de dos caracteres, 
     if(document.getElementById(`timeTrack${id}`)){
       document.getElementById(`timeTrack${id}`).innerText = `${timeTotal}`
@@ -94,7 +91,6 @@ function padDigits(number, digits) { // number numeros y digits digitos
 //Actualizar barra de progreso de la cancion
 function updateProgress(id){
     //total y el acutal
-
     const duration = currentAudio.duration;
     const currentTime = currentAudio.currentTime;
     const porcentaje = (currentTime/duration)*100;
@@ -107,9 +103,7 @@ function updateProgress(id){
 //hacer la barra de progreso clickeable
 function setProgress (event){
     let clickedContainer = event.target.closest(".progress-container");// busca la clase especificada
-    console.log(clickedContainer)
     let audioId = clickedContainer.id.replace("progress-container", ""); // Obtener el ID dinámico del elemento de audio
-    console.log(audioId)
     let audio = document.getElementById(audioId); // Acceder al elemento de audio utilizando el ID dinámico
 
     let progressBar = document.getElementById("progress-container" + audioId); // Acceder al elemento de progreso utilizando el ID dinámico

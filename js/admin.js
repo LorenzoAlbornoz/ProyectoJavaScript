@@ -92,7 +92,6 @@ let formValidation = () => {
             });
             form.reset();
             document.getElementById("edit").reset();
-            // location. reload()
         })()
     }
 }
@@ -227,7 +226,6 @@ const filterTabla = () => {
     let sinBusqueda = true;
     switch (tipoBusqueda) {
         case "1":
-            // data = JSON.parse(localStorage.getItem("canciones")) || [];
                 sinBusqueda=false;
                 listaFiltrada = data.filter((cancion) => {
                 return cancion.nombre.toLowerCase().includes(text.toLowerCase());
@@ -235,7 +233,6 @@ const filterTabla = () => {
             })
             break;
         case "2":
-            // data = JSON.parse(localStorage.getItem("canciones")) || [];
                 sinBusqueda=false;
                 listaFiltrada = data.filter((cancion) => {
                 return cancion.artista.toLowerCase().includes(text.toLowerCase());

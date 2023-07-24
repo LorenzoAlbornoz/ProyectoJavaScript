@@ -15,8 +15,6 @@ let songs = document.getElementById("canciones")
 
 
 let songList = JSON.parse(localStorage.getItem("canciones")) || [];
-// let listaFiltrada = JSON.parse(localStorage.getItem("canciones")) || [];
-// let datesSinGuardar = [];
 let idCancionSeleccionada;
 
 // Genera un id 
@@ -45,15 +43,6 @@ const updateMusic = (id) => {
     nombreInputU.value = cancionBuscada.nombre;
     generoInputU.value = cancionBuscada.genero;
     urlCancionInputU.value = cancionBuscada.url;
-    // datosSinGuardar = [cancionBuscada.imagen,cancionBuscada.artista,cancionBuscada.nombre,cancionBuscada.genero,cancionBuscada.url]
-    // // traemos todas las canciones que sean distintas al id. Elimina al id y genera uno nuevo
-    // const filter = songList.filter((cancion) => {
-    //     return cancion.id !== id
-    // })
-    // songList = filter;
-    // // guardamos la nueva cancion
-    // localStorage.setItem("canciones", JSON.stringify(songList))
-    // refreshList(songList)
     idCancionSeleccionada = id;
 }
 
@@ -65,14 +54,11 @@ const refreshList = () => {
         text.value = "";
         document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
       }
-
-    // datesSinGuardar = [cancionBuscada.imagen,cancionBuscada.artista,cancionBuscada.nombre,cancionBuscada.genero,cancionBuscada.url]
     // traemos todas las canciones que sean distintas al id. Elimina al id y genera uno nuevo
     const filter = songList.filter((cancion) => {
         return cancion.id !== idCancionSeleccionada
     })
     songList = filter;
-    // console.log("listado filtrado", songList)
     // guardamos la nueva cancion
     localStorage.setItem("canciones", JSON.stringify(songList))
 
@@ -194,7 +180,6 @@ const updateSong = () => {
             });
             formedit.reset();
             idCancionSeleccionada=null;
-            // location. reload()
         })()
     }
 }

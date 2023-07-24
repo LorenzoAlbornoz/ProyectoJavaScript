@@ -1,7 +1,4 @@
 let canciones = document.getElementById("canciones")
-
-
-
 let data = JSON.parse(localStorage.getItem("canciones")) || [];
 let listaFiltrada = JSON.parse(localStorage.getItem("canciones")) || [];
 let categoriaPrevia=null;
@@ -17,7 +14,6 @@ const idRandom = () => {
 const createMusic = () => {
     canciones.innerHTML = "";
     data.map((cancion, idx) => {
-        // let durationSOng= obtenerDuracion(cancion.id);
         // concatenamos las demas tareas
         return canciones.innerHTML += `
         <div class="contenedor-cancion">
@@ -67,28 +63,6 @@ const createMusic = () => {
 </div>
         `
     })
-}
-
-const updateMusic = (id) => {
-    cerrar.classList.add("d-none")
-    xClose.classList.add("d-none")
-    cerrarM.classList.remove("d-none")
-    const cancionBuscada = data.find((cancion) => {
-        return cancion.id === id
-    })
-    imagenInput.value = cancionBuscada.imagen;
-    artistaInput.value = cancionBuscada.artista;
-    nombreInput.value = cancionBuscada.nombre;
-    generoInput.value = cancionBuscada.genero;
-    urlCancionInput.value = cancionBuscada.url;
-    // traemos todas las canciones que sean distintas al id. Elimina al id y genera uno nuevo
-    const filter = data.filter((cancion) => {
-        return cancion.id !== id
-    })
-    data = filter;
-    // guardamos la nueva cancion
-    localStorage.setItem("canciones", JSON.stringify(data))
-    createMusic()
 }
 
 const filterTabla = () =>{
@@ -163,7 +137,6 @@ const limpiarTablaCategoria = () => {
 
 const filtrarCategoria = (id) => {
     let audio = document.getElementById("audioPlayer")
-    // console.log(audio)
     audio.pause()
     audio.currentime=0
     document.getElementById("btn-filtro").classList.remove("d-none")
@@ -189,7 +162,6 @@ const filtrarCategoria = (id) => {
 const mostrarListaFiltrada = () => {
     canciones.innerHTML = "";
     listaFiltrada.map((cancion, idx) => {
-        // let durationSOng= obtenerDuracion(cancion.id);
         // concatenamos las demas tareas
         return canciones.innerHTML += `
         <div class="contenedor-cancion">
