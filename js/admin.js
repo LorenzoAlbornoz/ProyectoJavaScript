@@ -63,6 +63,7 @@ let formValidation = () => {
         nombreMsg.innerHTML = "";
         generoMsg.innerHTML = "";
         urlCancionMsg.innerHTML = "";
+        data = JSON.parse(localStorage.getItem("canciones"))
         data.unshift({
             id: idRandom(),
             imagen: imagenInput.value,
