@@ -31,8 +31,10 @@ function playSong(id, event) {
     return cancion.id == idx;
   })
   if (currentAudio && currentAudio !== audioPlayer) { // si existe audioactual y es distinto
-        currentAudio.pause(); // Pausar el audio actual
+      // console.log("entro por aqui? currenaudio",currentAudio)    
+    currentAudio.pause(); // Pausar el audio actual
         currentAudio.currentTime=0;
+        // prevAudio.currentTime=0
         if (document.getElementById(`play${currentAudio.id}`)){
           document.getElementById(`play${currentAudio.id}`).classList.remove("fa-pause");
           document.getElementById(`play${currentAudio.id}`).classList.add("fa-play");
@@ -47,7 +49,11 @@ function playSong(id, event) {
 }
 else {
     if(pausaManual){
-        // prevAudio.currentTime=0; // currentTime es una propieda de audio
+      console.log("entro por aqui? currenaudio",prevAudio) 
+      if(prevAudio!=currentAudio){
+
+        prevAudio.currentTime=0; // currentTime es una propieda de audio
+      } 
         if (document.getElementById(`play${prevAudio.id}`)){
           document.getElementById(`play${prevAudio.id}`).classList.remove("fa-pause");
           document.getElementById(`play${prevAudio.id}`).classList.add("fa-play");
