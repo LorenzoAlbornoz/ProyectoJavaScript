@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="../css/player.css">
     <link rel="stylesheet" href="../css/usuario.css">
     <link rel="stylesheet" href="../css/menuCategoria.css">
+    <link rel="stylesheet" href="../css/cancionDetalle.css">
+    <link rel="stylesheet" href="../css/modal.css">
     <script src="https://kit.fontawesome.com/ea0d6f4a72.js" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -49,8 +51,6 @@
     </header>
 
     <main>
-
-        <!-- Botón para crear y cargar una nueva canción -->
         <div class="container-fluid d-flex justify-content-center mt-5 mb-3">
             <div
                 class="col-9 col-md-12 d-flex align-items-end justify-content-center  justify-content-sm-end me-0 mt-2">
@@ -78,15 +78,10 @@
         <div class="container-fluid">
             <div class="row d-flex">
                 <div class="col-2 text-center d-none d-md-inline">
-
-                    <section class="menu-categorias d-flex justify-content-center the-scroll mt-4">
-
+                    <button onclick="limpiarTablaCategoria()" class="mt-4 d-none" id="btn-filtro">Limpiar filtro <i class="ri-filter-off-fill"></i></button>
+                    <section class="menu-categorias d-flex justify-content-center mt-4 the-scroll ">
                         <ul id="lista-categorias"
-                            class="d-flex flex-column align-items-center justify-content-center ms-2">
-                            <li>
-                                <button onclick="limpiarTablaCategoria()" class="mt-4 d-none" id="btn-filtro">Limpiar
-                                    filtro <i class="ri-filter-off-fill"></i></button>
-                            </li>
+                            class="d-flex flex-column align-items-center justify-content-center pb-2 mt-5">
                         </ul>
                     </section>
                 </div>
@@ -96,9 +91,69 @@
             </div>
         </div>
 
+
+
+        <!-- MODAL PARA EL DETALLE DE LA CANCION -->
+        <div class="modal fade"  id="form" tabindex="-1"
+      aria-labelledby="editarModalLabel" aria-hidden="true" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+           <div class="modal-body">
+            <div class="container d-flex ">
+                <div class="row d-flex flex-row-reverse flex-sm-row">
+                    <div class="col-4 col-sm-6 col-md-6 d-flex justify-content-center align-items-sm-center align-items-start">
+                        <img src="" alt="" id="imgDetalle">
+                    </div>
+                    <div class="col-8 col-sm-6 col-md-6 pe-0">
+                        <div class="container-fluid d-flex flex-column align-items-start">
+                            <div class="row">
+                                <div class="col">
+                                    <h1 class="mb-0" id="cancionModal"></h1>
+                                    <p id="artistaModal"></p>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col d-flex">
+                                    <p class="mb-1" id="detalle">Detalle</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex">
+                                    <p class="mb-0">Cod.:</p>
+                                    <p class="ms-2 mb-0" id="codModal"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex">
+                                    <p class="mb-0">Genero:</p>
+                                    <p class="ms-2 mb-0" id="generoModal"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex">
+                                    <p class="mb-0">Duración:</p>
+                                    <p class="ms-2 mb-0" id="duracionModal"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex justify-content-start justify-content-sm-center pe-0 mt-5">
+                                    <button id="playModal">Reproducir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
     </main>
 
-    <footer id="player">
+    <footer id="player" class="pb-2">
         <audio src="" id="audioPlayer"></audio>
         <div class="container-fluid d-flex h-100 align-items-center">
             <div class="row d-flex w-100">
@@ -106,11 +161,11 @@
                     <img src="" alt="" class="imgAlbum pb-3" id="coverPlayer">
                 </div>
                 <div class="col-1 d-flex align-items-center  gap-2 mx-5">
-                    <i onclick="prevSong()" class="fa-solid fa-backward-step fa-lg" style="color: #ffffff;"
+                    <i onclick="prevSong()" class="linkPointer fa-solid fa-backward-step fa-lg" style="color: #ffffff;"
                         id="prevPlayer"></i>
-                    <i onclick="playSongPlayer()" class="fa-solid fa-play fa-2x" style="color: #ffffff;"
+                    <i onclick="playSongPlayer()" class="linkPointer fa-solid fa-play fa-2x" style="color: #ffffff;"
                         id="playPlayer"></i>
-                    <i onclick="nextSong()" class="fa-solid fa-forward-step fa-lg" style="color: #ffffff;"
+                    <i onclick="nextSong()" class="linkPointer fa-solid fa-forward-step fa-lg" style="color: #ffffff;"
                         id="nextPlayer"></i>
                 </div>
                 <div class="col-1 timeSong mx-3 d-none d-sm-flex align-items-center" id="timeTrackPlayer">

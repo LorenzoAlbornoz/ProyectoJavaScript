@@ -1,0 +1,78 @@
+.modal h1 {
+    color: var(--c-white);
+}
+
+.modal-lg { max-width: 50%; }
+
+
+#playModal {
+    font-family: var(--font-PTSans);
+    font-weight: bold;
+    background-color: var(--c-mainYellow);
+    border: none;
+    border-radius: 2rem;
+    color: var(--c-background);
+    border-bottom: 1px solid var(--c-mainYellow);
+    border-top: 1px solid var(--c-mainYellow);
+    padding: 0.6rem;
+    width: 200px;
+}
+
+#playModal:hover {
+    border-radius: 2rem;
+    padding: 0.6rem;
+    border: none;
+    background-color: var(--c-secondYellow);
+    border-bottom: 1px solid var(--c-mainYellow);
+    border-top: 1px solid var(--c-mainYellow);
+    
+}
+
+#artistaModal {
+    font-weight: bold;
+}
+
+
+#imgDetalle {
+    width: 280px;
+}
+
+#detalle {
+    color: var(--c-white);
+    font-weight: bold;
+}
+
+@media only screen and (max-width:1024px){
+    #playModal {
+        width: 180px;
+    }
+}
+
+@media only screen and (max-width:988px){
+    #imgDetalle {
+        width: 200px;
+    }
+    .modal-lg { max-width: 73%; }
+    #playModal {
+        width: 130px;
+    }
+}
+
+@media only screen and (max-width:576px){
+    .modal-lg { max-width: 95%; }
+    #imgDetalle {
+        width: 180px;
+    }
+}
+
+@media only screen and (max-width:420px){
+    #imgDetalle {
+        width: 120px;
+    }
+}
+
+@media only screen and (max-width:280px){
+    #imgDetalle {
+        width: 50px;
+    }
+}

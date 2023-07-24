@@ -67,7 +67,10 @@ const verificarAdminLogueado = () => {
   const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
 
   if (usuarioLogueado && usuarioLogueado.isLogged && usuarioLogueado.isAdmin) {
-    adminLink.classList.add("active");// Si no es administrador, quitamos la clase 'active' para ocultar el enlaceL
+    if(adminLink){
+      
+      adminLink.classList.add("active");// Si no es administrador, quitamos la clase 'active' para ocultar el enlaceL
+    }
   }
 };
 

@@ -17,7 +17,11 @@
     <script src="https://kit.fontawesome.com/ea0d6f4a72.js" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+/>
 </head>
 
 <body>
@@ -53,14 +57,14 @@
                             <h1>Acerca de Nosotros</h1>
                             <div class="line"></div>
                             <p>MusicFlow es una plataforma global de música en streaming que acerca a los fans a sus
-                                artistas preferidos con experienciaS únicas y la mejor calidad de sonido.</p>
+                                artistas preferidos con experiencias únicas y la mejor calidad de sonido.</p>
                         </div>
                     </div>
                 </div>
-                <div class="row row-cols-md-2 row-cols-lg-3 row-cols-1 card-container" data-aos="fade-down"
+                <div class="row row-cols-md-2 row-cols-lg-3 row-cols-1 card-containe justify-content-center" data-aos="fade-down"
                     data-aos-easing="linear" data-aos-duration="500">
-                    <div class="col-lg-4 col-md-6 col-sm-12 mt-2 mb-5">
-                        <div class="card h-100 d-flex justify-content-center align-items-center">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mt-2 mb-5  d-flex justify-content-center">
+                        <div class="card h-100 d-flex justify-content-center align-items-center m-0">
                             <img src="../assets/img/lolo.jpg" class="rounded-circle img-nosotros" alt="">
                             <div class="card-body">
                                 <h5 class="card-title text-center">Lorenzo Albornoz</h5>
@@ -74,9 +78,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 mt-2 mb-5">
-                        <div class="card h-100 d-flex justify-content-center align-items-center">
-                            <img src="../assets/img/img-20210207-wa0004~2.jpg" class="rounded-circle img-nosotros" alt="">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mt-2 mb-5  d-flex justify-content-center">
+                        <div class="card h-100 d-flex justify-content-center align-items-center m-0">
+                            <div id="imgJp">
+                                <img src="../assets/img/img-20210207-wa0004~2.jpg" alt="" id="jp">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title text-center">Juan Pablo Salomón</h5>
                                 <div class="d-flex justify-content-center"><span class="badge mb-2">MANAGER</span></div>
@@ -89,8 +95,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 mt-2 mb-5">
-                        <div class="card h-100 d-flex justify-content-center align-items-center">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mt-2 mb-5 p-0 d-flex justify-content-center">
+                        <div class="card h-100 d-flex justify-content-center align-items-center margen">
                             <img src="../assets/img/cyn.png" class="rounded-circle img-nosotros" alt="">
                             <div class="card-body">
                                 <h5 class="card-title text-center">Cynthia Pistán</h5>

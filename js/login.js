@@ -184,7 +184,7 @@ formLogin.addEventListener("submit", (e) => {
     setTimeout(() => {
         if (validarEmail.isLogged) { // Cambia esta condición para verificar si el usuario está logueado
             if (validarEmail.isAdmin) { // Verifica si el usuario es administrador
-                window.location.href = "../html/Administrador.html"; // Redirige a la página de administrador si es administrador
+                window.location.href = "../html/admin.html"; // Redirige a la página de administrador si es administrador
             } else {
                 window.location.href = "../html/usuario.html"; // Redirige a la página normal si no es administrador
             }
