@@ -13,6 +13,7 @@
 .the-scroll {
     height:340px;
     overflow-y: scroll;
+    padding-top: 70px;
 }
 
 .the-scroll::-webkit-scrollbar {

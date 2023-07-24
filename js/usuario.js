@@ -148,6 +148,7 @@ const limpiarTablaCategoria = () => {
     let clear = document.getElementById("btn-filtro");
     clear.classList.add("d-none")
     data = JSON.parse(localStorage.getItem("canciones"))
+    document.getElementById(`item${categoriaPrevia}`).classList.remove("Active")
     createMusic(data)
 }
 
