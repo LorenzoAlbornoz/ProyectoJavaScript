@@ -63,7 +63,7 @@ let formValidation = () => {
         nombreMsg.innerHTML = "";
         generoMsg.innerHTML = "";
         urlCancionMsg.innerHTML = "";
-        // actualizamos data antes de guardar la nueva cancion
+
         data = JSON.parse(localStorage.getItem("canciones"))
         data.unshift({
             id: idRandom(),
