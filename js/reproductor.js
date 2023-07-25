@@ -30,11 +30,9 @@ function playSong(id, event) {
   indiceArray = dbSongs.findIndex((cancion)=>{
     return cancion.id == idx;
   })
-  if (currentAudio && currentAudio !== audioPlayer) { // si existe audioactual y es distinto
-      // console.log("entro por aqui? currenaudio",currentAudio)    
+  if (currentAudio && currentAudio !== audioPlayer) { // si existe audioactual y es distinto  
     currentAudio.pause(); // Pausar el audio actual
         currentAudio.currentTime=0;
-        // prevAudio.currentTime=0
         if (document.getElementById(`play${currentAudio.id}`)){
           document.getElementById(`play${currentAudio.id}`).classList.remove("fa-pause");
           document.getElementById(`play${currentAudio.id}`).classList.add("fa-play");
@@ -110,7 +108,6 @@ const playSongPlayer = () => {
 
 //Actualizar los datos del reproductor
 const updatePlayer = (id) => {
- 
   // let audio = document.getElementById(id)
   let titlePlayer = document.getElementById("titlePlayer")
   let artistPlayer = document.getElementById("artistPlayer")
@@ -140,6 +137,7 @@ function updateCurrentTime(id){
     }
     document.getElementById(`timeTrackPlayer`).innerText = `${timeTotal}`
 }
+
 //para formatear el tiempo
 function padDigits(number, digits) { // number numeros y digits digitos
     return String(number).padStart(digits, '0'); // 0 a la izquierda si no tiene dos numeros
@@ -148,7 +146,6 @@ function padDigits(number, digits) { // number numeros y digits digitos
 //Actualizar barra de progreso de la cancion
 function updateProgress(id){
     //total y el acutal
-
     const duration = audioPlayer.duration;
     const currentTime = audioPlayer.currentTime;
     const porcentaje = (currentTime/duration)*100;
@@ -156,7 +153,6 @@ function updateProgress(id){
       let progress = document.getElementById(`progress${id}`)// busca un elemento en el documento HTML con un ID específico 
       progress.style.width = porcentaje + "%" // asigna un valor al estilo de ancho (width) de un elemento con un ID específico, Al asignar porcentaje + "%", se establece el ancho del elemento en el porcentaje indicado
     }
-    
     const progressPlayer = document.getElementById("progressPlayer")
     progressPlayer.style.width = porcentaje + "%"
 }
@@ -164,13 +160,10 @@ function updateProgress(id){
 //hacer la barra de progreso clickeable
 function setProgress (event){
      let audio = document.getElementById(idx); // Acceder al elemento de audio utilizando el ID dinámico
-
     let progressBar = document.getElementById("progress-container" + idx); // Acceder al elemento de progreso utilizando el ID dinámico
-
     let progressBarWidth = progressBar.offsetWidth; // nos devuelve el ancho total de un elemento, solo el padding, valor en px
     let clickPosition = event.offsetX; // determinar la posición horizontal relativa del puntero dentro del elemento objetivo
     let seekTime = (clickPosition / progressBarWidth) * audio.duration;
-
     audio.currentTime = seekTime;
 }
 
@@ -195,7 +188,6 @@ function nextSong() {
 //retroceder cancion 
 function prevSong() {
   if (indiceArray > 0){
-    
     playSong(dbSongs[indiceArray-1].id)
   }
   
@@ -238,17 +230,14 @@ const cargarDatos = (id) => {
 
 function obtenerDuracion(id) {
     const audio = document.getElementById(id);
-  
     // Comprobamos si el archivo de audio está cargado antes de obtener la duración
     if (audio.readyState >= 2) {
       const duracion = audio.duration; // Obtenemos la duración en segundos
-  
       // Formateamos la duración en minutos y segundos
       const minutos = Math.floor(duracion / 60);
       const segundos = Math.floor(duracion % 60);
       let tiempoTotal = padDigits(minutos, 2) + ':' + padDigits(segundos, 2);//un total de dos
       const duracionFormateada = tiempoTotal + " min";
-  
       // Mostramos la duración por pantalla
       return duracionFormateada;
     } else {
