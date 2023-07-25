@@ -1,7 +1,7 @@
 let canciones = document.getElementById("canciones")
 let data = JSON.parse(localStorage.getItem("canciones")) || [];
 let listaFiltrada = JSON.parse(localStorage.getItem("canciones")) || [];
-let categoriaPrevia=null;
+let categoriaPrevia = null;
 // Genera un id 
 const idRandom = () => {
     if (data.length > 0) {
@@ -65,50 +65,49 @@ const createMusic = () => {
     })
 }
 
-const filterTabla = () =>{
+const filterTabla = () => {
     let text = document.getElementById("textBuscar").value;
     let tipoBusqueda = document.querySelector(".tipo-busqueda").value
     let clear = document.getElementById("clear");
     let sinBusqueda = true;
     switch (tipoBusqueda) {
         case "1":
-                sinBusqueda=false;
-                data = JSON.parse(localStorage.getItem("canciones")) || [];
-                listaFiltrada = data.filter((cancion)=>{
+            sinBusqueda = false;
+            data = JSON.parse(localStorage.getItem("canciones")) || [];
+            listaFiltrada = data.filter((cancion) => {
                 return cancion.nombre.toLowerCase().includes(text.toLowerCase());
-                })
+            })
             break;
         case "2":
-                sinBusqueda=false;
-                data = JSON.parse(localStorage.getItem("canciones")) || [];
-                listaFiltrada = data.filter((cancion)=>{
+            sinBusqueda = false;
+            data = JSON.parse(localStorage.getItem("canciones")) || [];
+            listaFiltrada = data.filter((cancion) => {
                 return cancion.artista.toLowerCase().includes(text.toLowerCase());
-                })
+            })
             break;
         case "3":
-                sinBusqueda=false;
-                data = JSON.parse(localStorage.getItem("canciones")) || [];
-                listaFiltrada = data.filter((cancion)=>{
+            sinBusqueda = false;
+            data = JSON.parse(localStorage.getItem("canciones")) || [];
+            listaFiltrada = data.filter((cancion) => {
                 return cancion.genero.toLowerCase().includes(text.toLowerCase());
-                })
+            })
             break;
         default:
             data = JSON.parse(localStorage.getItem("canciones")) || [];
-            sinBusqueda=false;
+            sinBusqueda = false;
             listaFiltrada = data.filter((cancion) => {
-            return cancion.genero.toLowerCase().includes(text.toLowerCase());
-        })
+                return cancion.genero.toLowerCase().includes(text.toLowerCase());
+            })
             break;
-    }    
-    if (text.length>0 && tipoBusqueda<=3 && !sinBusqueda){
+    }
+    if (text.length > 0 && tipoBusqueda <= 3 && !sinBusqueda) {
         clear.classList.remove("d-none")
     }
-    else
-    {
+    else {
         clear.classList.add("d-none")
     }
     mostrarListaFiltrada()
-    if (listaFiltrada.length == 0){
+    if (listaFiltrada.length == 0) {
         canciones.innerHTML += `       
          <p class="ms-3" id="fail">No se encontraron resultados que coincidan con la busqueda</p>
         `
@@ -120,9 +119,9 @@ const limpiarTabla = () => {
     clear.classList.add("d-none")
     data = JSON.parse(localStorage.getItem("canciones"))
     let text = document.getElementById("textBuscar")
-    text.value="";
+    text.value = "";
     text.focus(),
-    document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
+        document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
     createMusic()
 }
 
@@ -138,21 +137,20 @@ const limpiarTablaCategoria = () => {
 const filtrarCategoria = (id) => {
     let audio = document.getElementById("audioPlayer")
     audio.pause()
-    audio.currentime=0
+    audio.currentime = 0
     document.getElementById("btn-filtro").classList.remove("d-none")
     let text = document.getElementById(`item${id}`).innerText;
     data = JSON.parse(localStorage.getItem("canciones")) || [];
-    listaFiltrada = data.filter((cancion)=>{
+    listaFiltrada = data.filter((cancion) => {
         return cancion.genero.toLowerCase() == text.toLowerCase();
     })
     mostrarListaFiltrada()
 
-    if(categoriaPrevia===null){
-        categoriaPrevia=id;
+    if (categoriaPrevia === null) {
+        categoriaPrevia = id;
         document.getElementById(`item${id}`).classList.add("Active")
     }
-    else
-    {   
+    else {
         document.getElementById(`item${categoriaPrevia}`).classList.remove("Active")
         document.getElementById(`item${id}`).classList.add("Active")
         categoriaPrevia = id;

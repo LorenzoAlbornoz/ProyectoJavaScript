@@ -56,17 +56,17 @@ const eliminarUsuario = (id) => {
                     timer: 1500,
                 });
             }
-            } else {
-                Swal.fire({
-                    position: "center",
-                    icon: "info",
-                    title: "Eliminación cancelada",
-                    background: 'var(--c-navbar)',
-                    color: "var(--c-letter)",
-                    showConfirmButton: false,
-                    timer: 1500,
-                });
-            }
+        } else {
+            Swal.fire({
+                position: "center",
+                icon: "info",
+                title: "Eliminación cancelada",
+                background: 'var(--c-navbar)',
+                color: "var(--c-letter)",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+        }
     });
 };
 
@@ -76,4 +76,3 @@ const eliminarUsuario = (id) => {
 document.addEventListener("DOMContentLoaded", () => {
     actualizarUsuariosConectados();
 });
-
