@@ -12,7 +12,10 @@
     --font-OpenSans: 'Open Sans', sans-serif;
     --font-PTSans: 'PT Sans', sans-serif;
 }
-
+/*body {
+    margin: 0;
+    padding: 0;
+}*/
 .navbar{
     background-color: var(--c-navbar);
     font-family: var(--font-Montserrat);
@@ -52,16 +55,104 @@ h5 {
     color: var(--c-mainYellow);
     font-family: var(--font-OpenSans);
 }
-main{
-    height: 95vh;    
-    width: 100%;
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    background: radial-gradient(closest-side at 50% 50%, #373434, #312f2f 80%, #141414);
 }
+
 .container-error {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+.container-error img {
+   position: absolute;
+   top: 15%;
+   left: 45%;
+   width: 60%;
+   height: 100%;
+   transform: translate(-50%);
+
+}
+.container-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-265px);
+    margin-top: 50px;
+}
+.text1 {
+    position: relative;
+    font-size: 100px;
+    font-family: var(--font-Montserrat);
+    color: var(--c-mainYellow);
+    border-radius: var(--c-background);
+}
+.text2 {
+    position: relative;
+    font-size: 14px;
+    font-family: var(--font-Montserrat);
+    color: var(--c-mainYellow);
+    border-radius: var(--c-background);
+} 
+
+#a0
+{
+  animation:halfBlink 1.5s ease-in infinite;
+}
+
+#a4
+{
+  animation:distortBlink 1.5s ease-in infinite;
+}
+
+@keyframes blink
+{
+  0%{opacity:1;}
+  100%{opacity:0;}
+}
+
+@keyframes halfBlink
+{
+  0%{opacity:1;}
+  50%{opacity:0.7;}
+  70%{opactity:0.4;}
+  100%{opacity:0.6;}
+}
+@keyframes distortBlink
+{
+  0%{opacity:1;}
+  50%{opacity:0.7;
+    font-size:0.98em;}
+  70%{opactity:0.8;}
+  100%{opacity:0.9;}
+}
+/*.button {
+    position: relative;
+    top: 87%;
+    left: 43%;
+    color: var(--c-player);
+    max-width: 15%;
+}
+.btn {
+        font-size: 14px;
+        text-transform: uppercase;
+        border-radius: 0;
+        background-color: var(--c-mainYellow);
+}*/
+
+/*.container-error {
     display: flex;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    width: 100%;
+    width: 50%;
     height: 100%;
     justify-content: left;
     align-items: end;
@@ -79,29 +170,8 @@ main{
     .container-error {
         background-image: url(../assets/images/404/404movil.png); 
 
-    }
+    }*/
     
-}
-
-.text-error1 {
-    position: relative;
-    top: -130px;
-    left: 120px;
-    font-size: 135px;
-    font-family: var(--font-OpenSans);
-    color: var(--c-mainYellow);
-    border-radius: var(--c-background);
-}
-.text-error2 {
-    position: absolute;
-    bottom: 60px;
-    left: 150px;
-    font-size: 25px;
-    text-align: ceter;
-    font-family: var (var(--font-PTSans));
-}
-
-/*hasta aqui ERROR*/
 footer {
     display: relative;
     padding-top: 20px;
