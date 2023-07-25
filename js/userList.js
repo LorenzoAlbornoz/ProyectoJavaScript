@@ -13,8 +13,11 @@ const actualizarUsuariosConectados = () => {
       <tr>
           <td>${usuario.id}</td>
           <td>${usuario.nombre}</td>
-          <td>${usuario.email}</td>
-          <td><button class="btn btn-delete btn-sm" onclick="eliminarUsuario(${usuario.id})">Eliminar</button></td>
+          <td class="usuarios">${usuario.email}</td>
+          <td class="d-flex justify-content-center"><button class="btn btn-delete btn-sm d-flex align-item-center" onclick="eliminarUsuario(${usuario.id})">
+                <i class="ri-close-circle-line"></i>
+            </button>
+        </td>
       </tr>
   `);
 

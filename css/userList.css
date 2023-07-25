@@ -33,7 +33,8 @@
 }
 
 .modal-header, #edit .modal-header {
-    background-color: var(--c-navbar);r:var(--c-letter);
+    background-color: var(--c-navbar);
+    color:var(--c-letter);
 }
 
 .modal-body, #edit .modal-body {
@@ -47,4 +48,13 @@
 .modal-footer, #edit .modal-footer {
     background-color: var(--c-navbar);
     border: none;
+}
+
+.ri-close-circle-line {
+    font-size: 1rem;
+}
+
+.usuarios {
+    max-width: 100%;
+    word-break: break-all;
 }
