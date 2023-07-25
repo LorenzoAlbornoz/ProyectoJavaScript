@@ -33,7 +33,8 @@
 }
 
 .modal-header, #edit .modal-header {
-    background-color: var(--c-navbar);r:var(--c-letter);
+    background-color: var(--c-navbar);
+    color:var(--c-letter);
 }
 
 .modal-body, #edit .modal-body {
