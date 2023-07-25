@@ -1,0 +1,51 @@
+:root {
+    --c-background: #171717;
+    --c-navbar: #302e2e;
+    --c-player: #000000;
+    --c-letter: #b2b2b2;
+    --c-white: #ffffff;
+    --c-success: #5FC54F;
+    --c-wrong: #f44336;
+    --c-mainYellow: #ffda2a;
+    --c-secondYellow: #f7bf53;
+    --font-Montserrat: 'Montserrat', sans-serif;
+    --font-OpenSans: 'Open Sans', sans-serif;
+    --font-PTSans: 'PT Sans', sans-serif;
+}
+
+.btn-listUser{
+    background-color: var(--c-success);
+    font-family: var(--font-PTSans);
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    color: var(--c-player);
+}
+
+.btn-listUser:hover {
+    background-color: #1a6419;
+}
+
+.modal-title{
+    font-family: var(--font-OpenSans);
+    color: var(--c-letter);
+}
+
+.modal-header, #edit .modal-header {
+    background-color: var(--c-navbar);
+    color:var(--c-letter);
+}
+
+.modal-body, #edit .modal-body {
+    background-color: var(--c-navbar);
+    color:var(--c-letter);
+    font-family: var(--font-PTSans);
+    font-size: .9rem;
+    text-align: left;
+}
+
+.modal-footer, #edit .modal-footer {
+    background-color: var(--c-navbar);
+    border: none;
+}
