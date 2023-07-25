@@ -1,3 +1,9 @@
+//ALCANCE DEL PROYECTO
+
+En este proyecto los alumnos en forma grupal se dividirán las tareas necesarias para diseñar un sitio que permita administrar canciones.
+
+El alcance de este proyecto se centra en cómo realizar todos los pasos del CRUD y mostrará los datos en forma de un catálogo de música, también deberá realizarse el login del proyecto, se considera que solo el usuario administrador podrá administrar las canciones, mientras que los usuarios visitantes solo podrán ver y escuchar las canciones publicadas. Además hay requerimientos optativos como el registro de usuarios y poder armar una lista de reproducción diseñada por un usuario.
+
 //LOGIN
 
 Registro de usuarios: Los usuarios pueden crear una cuenta ingresando su nombre, email y contraseña. Se realizan validaciones para asegurar que los campos estén completos y que el email y la contraseña cumplan con ciertos requisitos.
@@ -9,7 +15,6 @@ Interfaz interactiva: La interfaz de usuario es interactiva y cuenta con una fun
 Mensajes de confirmación: Se utilizan mensajes de SweetAlert para mostrar confirmaciones al realizar acciones importantes, como el registro exitoso o el cierre de sesión.
 
 Administración de usuarios: Se verifica si el usuario está logueado y si es administrador, lo que le da acceso a funcionalidades adicionales en la plataforma.
-
 
 //ADMINISTRACION
 
@@ -29,7 +34,6 @@ Búsqueda de Canciones: Los usuarios pueden buscar canciones por tipo de búsque
 
 Filtrado por Categorías: Los usuarios pueden filtrar las canciones por categorías en la barra lateral. Al seleccionar una categoría específica, se mostrarán solo las canciones que pertenezcan a esa categoría.
 
-Detalle de la Canción: Cuando un usuario hace clic en una canción de la lista, se abrirá un modal que muestra los detalles de la canción seleccionada, como el artista, género, duración y código. Además, se mostrará una imagen relacionada con la canción.El modal de detalle también incluye un botón para reproducir la canción seleccionada. Al hacer clic en el botón "Reproducir", se iniciará la reproducción de la canción. 
+Detalle de la Canción: Cuando un usuario hace clic en una canción de la lista, se abrirá un modal que muestra los detalles de la canción seleccionada, como el artista, género, duración y código. Además, se mostrará una imagen relacionada con la canción.El modal de detalle también incluye un botón para reproducir la canción seleccionada. Al hacer clic en el botón "Reproducir", se iniciará la reproducción de la canción.
 
 Reproducción de Canciones: Se muestra una barra de progreso y botones para controlar la reproducción, como avanzar, retroceder y pausar.
-
