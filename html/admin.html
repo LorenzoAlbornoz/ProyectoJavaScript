@@ -170,38 +170,38 @@
       </div>
     </form>
 
-  <!-- Botón para crear y cargar una nueva canción -->
-  <div class="container-fluid mt-5">
-    <div class="row d-flex align-items-center justify-sm-content-between flex-column flex-sm-row">
-      <div class="col-6 col-sm-3 col-md-6">
-        <button onclick="resetForm()" class="botonYellow" data-bs-toggle="modal" data-bs-target="#form">Agregar
-          Canción</button>
-        <button type="button" class="btn-listUser " data-bs-toggle="modal" data-bs-target="#userListModal">
-          Ver Usuarios Registrados
-        </button>
-      </div>
-      <div class="col-9 col-md-6  d-flex align-items-end justify-content-center justify-content-md-end mt-2">
-        <div class=" align-items-end text-center align-items-sm-end" role="search">
-          <select class="tipo-busqueda me-2 linkPointer">
-            <option selected>Tipo de busqueda</option>
-            <option value="1">Canción</option>
-            <option value="2">Artista</option>
-            <option value="3">Genero</option>
-          </select>
-          <div class="d-flex mt-2 mt-s-0">
-            <input class="form-control me-2 mt-2 mt-s-0" type="search" placeholder="Buscar" aria-label="Search"
-              id="textBuscar">
-            <button onclick="filterTabla()" class="searchYellow ms-0 me-2"><i
-                class="fa-solid fa-magnifying-glass"></i></button>
-            <button onclick="limpiarTabla()" class="searchYellow ms-0 me-2 d-none" id="clear"><i
-                class="fa-solid fa-x"></i></button>
+    <!-- Botón para crear y cargar una nueva canción -->
+    <div class="container-fluid mt-5">
+      <div class="row d-flex align-items-center justify-sm-content-between flex-column flex-sm-row">
+        <div class="col-6 col-sm-3 col-md-6">
+          <button onclick="resetForm()" class="botonYellow" data-bs-toggle="modal" data-bs-target="#form">Agregar
+            Canción</button>
+          <button type="button" class="btn-listUser " data-bs-toggle="modal" data-bs-target="#userListModal">
+            Ver Usuarios Registrados
+          </button>
+        </div>
+        <div class="col-9 col-md-6  d-flex align-items-end justify-content-center justify-content-md-end mt-2">
+          <div class=" align-items-end text-center align-items-sm-end" role="search">
+            <select class="tipo-busqueda me-2 linkPointer">
+              <option selected>Tipo de busqueda</option>
+              <option value="1">Canción</option>
+              <option value="2">Artista</option>
+              <option value="3">Genero</option>
+            </select>
+            <div class="d-flex mt-2 mt-s-0">
+              <input class="form-control me-2 mt-2 mt-s-0" type="search" placeholder="Buscar" aria-label="Search"
+                id="textBuscar">
+              <button onclick="filterTabla()" class="searchYellow ms-0 me-2"><i
+                  class="fa-solid fa-magnifying-glass"></i></button>
+              <button onclick="limpiarTabla()" class="searchYellow ms-0 me-2 d-none" id="clear"><i
+                  class="fa-solid fa-x"></i></button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
-  <div class="mt-2" id="canciones"></div>
+    </div>
+    <div class="mt-2" id="canciones"></div>
   </main>
 
   <footer>
