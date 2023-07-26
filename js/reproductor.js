@@ -1,6 +1,6 @@
 let audioPlayer = document.getElementById("audioPlayer")
 let volumeSlider = document.getElementById("volumeSlider")
-let idx;
+let idx=null;
 let indiceArray;
 let url
 let dbSongs = JSON.parse(localStorage.getItem("canciones")) || [];
@@ -8,7 +8,7 @@ let dbSongs = JSON.parse(localStorage.getItem("canciones")) || [];
 //actualizar controles
 function updateControls(){
   console.log("entro a updatecontrols")
-    if(audioPlayer.paused){
+    if(audioPlayer.paused && idx!=null){
       console.log("entro audioPlayer paused");
       if (document.getElementById(`play${idx}`))
         document.getElementById(`play${idx}`).classList.remove("fa-pause")
@@ -284,9 +284,11 @@ function obtenerDuracion(id) {
 
 
   const filtrarCategoria = (id) => {
-    console.log(categoriaPrevia)
-    let audio = document.getElementById("audioPlayer")
-    if (categoriaPrevia==null)
+    if(document.getElementById("audioPlayer")){
+      let audio = document.getElementById("audioPlayer")
+    }
+
+    if (categoriaPrevia==null && idx!=null)
     {
       console.log("no deberia volver a entrar 2 veces")
       audio.pause()
