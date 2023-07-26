@@ -93,11 +93,8 @@ const filterTabla = () => {
             })
             break;
         default:
-            data = JSON.parse(localStorage.getItem("canciones")) || [];
-            sinBusqueda = false;
-            listaFiltrada = data.filter((cancion) => {
-                return cancion.genero.toLowerCase().includes(text.toLowerCase());
-            })
+
+            sinBusqueda=true;
             break;
     }
     if (text.length > 0 && tipoBusqueda <= 3 && !sinBusqueda) {
@@ -107,11 +104,13 @@ const filterTabla = () => {
         clear.classList.add("d-none")
     }
     mostrarListaFiltrada()
-    if (listaFiltrada.length == 0) {
+
+    if (listaFiltrada.length == 0 && !sinBusqueda){
         canciones.innerHTML += `       
          <p class="ms-3" id="fail">No se encontraron resultados que coincidan con la busqueda</p>
         `
     }
+    updateControls()
 }
 
 const limpiarTabla = () => {
@@ -121,8 +120,13 @@ const limpiarTabla = () => {
     let text = document.getElementById("textBuscar")
     text.value = "";
     text.focus(),
-        document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
+
+    document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
+    document.getElementById("btn-filtro").classList.add("d-none");
+    document.getElementById(`item${categoriaPrevia}`).classList.remove("Active")
+
     createMusic()
+    updateControls()
 }
 
 const limpiarTablaCategoria = () => {
@@ -130,8 +134,14 @@ const limpiarTablaCategoria = () => {
     clear.classList.add("d-none")
     data = JSON.parse(localStorage.getItem("canciones"))
     document.getElementById(`item${categoriaPrevia}`).classList.remove("Active")
+    document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
+    let text = document.getElementById("textBuscar")
+    text.value="";
+    document.getElementById("clear").classList.add("d-none");
     createMusic()
+    updateControls()
 }
+
 
 
 const filtrarCategoria = (id) => {
@@ -210,6 +220,5 @@ const mostrarListaFiltrada = () => {
         `
     })
 }
-
 
 createMusic()

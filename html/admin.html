@@ -60,19 +60,21 @@
           </div>
           <div class="modal-body">
             <!-- Tabla para mostrar los usuarios registrados -->
-            <table class="table table-dark table-striped">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Nombre</th>
-                  <th>Email</th>
-                  <th>Acciones</th>
-                </tr>
-              </thead>
-              <tbody id="userList">
-                <!-- Los elementos de la tabla se generarán dinámicamente con JavaScript -->
-              </tbody>
-            </table>
+            <div class="t">
+              <table class="table table-dark table-striped">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th class="usuarios">Email</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="userList">
+                  <!-- Los elementos de la tabla se generarán dinámicamente con JavaScript -->
+                </tbody>
+              </table>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-delete" data-bs-dismiss="modal">Cerrar</button>
@@ -173,10 +175,10 @@
     <!-- Botón para crear y cargar una nueva canción -->
     <div class="container-fluid mt-5">
       <div class="row d-flex align-items-center justify-sm-content-between flex-column flex-sm-row">
-        <div class="col-6 col-sm-3 col-md-6">
-          <button onclick="resetForm()" class="botonYellow" data-bs-toggle="modal" data-bs-target="#form">Agregar
+        <div class="col-6 col-sm-3 col-md-6 text-center text-lg-start">
+          <button onclick="resetForm()" class="botonYellow m-0" data-bs-toggle="modal" data-bs-target="#form">Agregar
             Canción</button>
-          <button type="button" class="btn-listUser " data-bs-toggle="modal" data-bs-target="#userListModal">
+          <button type="button" class="btn-listUser ms-lg-2 mt-2 mt-lg-0" data-bs-toggle="modal" data-bs-target="#userListModal">
             Ver Usuarios Registrados
           </button>
         </div>
@@ -191,7 +193,7 @@
             <div class="d-flex mt-2 mt-s-0">
               <input class="form-control me-2 mt-2 mt-s-0" type="search" placeholder="Buscar" aria-label="Search"
                 id="textBuscar">
-              <button onclick="filterTabla()" class="searchYellow ms-0 me-2"><i
+              <button onclick="filterTabla()" class="searchYellow ms-0 me-2 mt-2"><i
                   class="fa-solid fa-magnifying-glass"></i></button>
               <button onclick="limpiarTabla()" class="searchYellow ms-0 me-2 d-none" id="clear"><i
                   class="fa-solid fa-x"></i></button>
