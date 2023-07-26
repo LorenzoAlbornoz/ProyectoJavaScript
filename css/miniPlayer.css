@@ -1,0 +1,80 @@
+:root {
+    --c-background: #171717;
+    --c-navbar: #302e2e;
+    --c-player: #000000;
+    --c-letter: #b2b2b2;
+    --c-white: #ffffff;
+    --c-success: #5FC54F;
+    --c-wrong: #f44336;
+    --c-mainYellow: #ffda2a;
+    --c-secondYellow: #f7bf53;
+    --font-Montserrat: 'Montserrat', sans-serif;
+    --font-OpenSans: 'Open Sans', sans-serif;
+    --font-PTSans: 'PT Sans', sans-serif;
+}
+
+.contenedor-cancion {
+    border: 1px solid #2d2d2d;
+    border-left: none;
+    border-right: none;
+}
+
+.player {
+    background-color: var(--c-background);
+    height: 10vh;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-family: var(--font-Montserrat);
+}
+
+.title {
+    color: var(--c-white);
+    font-size: 1rem;
+}
+
+.artist {
+    color: var(--c-letter);
+    font-size: 0.6rem;
+}
+
+.genero {
+    color: var(--c-letter);
+    font-size: 0.9rem;
+}
+
+.imgAlbum {
+    width: 40px;
+}
+
+.timeSong {
+    color: var(--c-white);
+    font-size: 0.9rem;
+}
+
+.progress-container {
+    height: 0.9rem;
+    background-color: var(--c-white);
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    overflow: hidden;
+}
+
+.progress {
+    background-color: var(--c-mainYellow);
+    height: 100%;
+    width: 0%;
+    border-radius: 0.3rem 0 0 0.3rem;
+}
+
+.Active {
+    font-weight: bold;
+}
+
+.actions i {
+    color: var(--c-white);
+}
+
+.actions i:hover {
+    color: var(--c-mainYellow);
+}

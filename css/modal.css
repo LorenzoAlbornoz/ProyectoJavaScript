@@ -1,0 +1,82 @@
+:root {
+    --c-background: #171717;
+    --c-navbar: #302e2e;
+    --c-player: #000000;
+    --c-letter: #b2b2b2;
+    --c-white: #ffffff;
+    --c-success: #5FC54F;
+    --c-wrong: #f44336;
+    --c-mainYellow: #ffda2a;
+    --c-secondYellow: #f7bf53;
+    --font-Montserrat: 'Montserrat', sans-serif;
+    --font-OpenSans: 'Open Sans', sans-serif;
+    --font-PTSans: 'PT Sans', sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 50px var(--c-navbar) inset !important;
+    -webkit-border-image: none;
+}
+
+#imagenMsg,
+#artistaMsg,
+#nombreMsg,
+#generoMsg,
+#urlCancionMsg,
+#imagenMsgU,
+#artistaMsgU,
+#nombreMsgU,
+#generoMsgU,
+#urlCancionMsgU {
+    color: var(--c-wrong);
+}
+
+.modal-title {
+    font-family: var(--font-OpenSans);
+}
+
+#form .modal-header,
+#edit .modal-header {
+    background-color: var(--c-navbar);
+    color: var(--c-letter);
+}
+
+#form .modal-body,
+#edit .modal-body {
+    background-color: var(--c-navbar);
+    color: var(--c-letter);
+    font-family: var(--font-PTSans);
+    font-size: .9rem;
+    text-align: left;
+}
+
+#form .modal-footer,
+#edit .modal-footer {
+    background-color: var(--c-navbar);
+    border: none;
+}
+
+#form input,
+#edit input {
+    background-color: var(--c-navbar);
+    border: none;
+    border-bottom: thin solid var(--c-letter);
+    color: var(--c-white);
+    font-family: var(--font-PTSans);
+    width: 100%;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#form ::placeholder,
+#edit ::placeholder {
+    width: 400px;
+    padding: 1rem;
+    margin: 2rem;
+    background-color: var(--c-navbar);
+    text-align: center;
+    color: var(--c-letter);
+}

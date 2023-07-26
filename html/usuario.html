@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicFLow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&family=Open+Sans:wght@800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/miniPlayer.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/player.css">
+    <link rel="stylesheet" href="../css/usuario.css">
+    <link rel="stylesheet" href="../css/menuCategoria.css">
+    <link rel="stylesheet" href="../css/cancionDetalle.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <script src="https://kit.fontawesome.com/ea0d6f4a72.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="m-0 p-0">
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <p class="logo1 p">Music<span class="logo2">Flow</span>
+                </p>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <a class="nav-link admin" href="./admin.html">Administracion</a>
+                        <a class="nav-link user" href="./usuario.html">Musica</a>
+                        <a class="nav-link" href="./acercaDeNosotros.html">Acerca de Nosotros</a>
+                        <a class="nav-link login-icon" href="../login.html"><i class="ri-account-circle-fill"></i> <span
+                                class="user-status"></span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container-fluid d-flex justify-content-center mt-5 mb-3">
+            <div
+                class="col-9 col-md-12 d-flex align-items-end justify-content-center  justify-content-sm-end me-0 mt-2">
+                <div class="d-flex align-items-center align-items-sm-end flex-column flex-sm-row" role="search">
+                    <select class="tipo-busqueda me-2">
+                        <option selected>Tipo de busqueda</option>
+                        <option value="1">Canción</option>
+                        <option value="2">Artista</option>
+                        <option value="3" class="d-inline d-md-none">Genero</option>
+                    </select>
+
+                    <div class="d-flex mt-2 mt-s-0">
+                        <input class="form-control me-2 mt-2 mt-s-0" type="search" placeholder="Buscar"
+                            aria-label="Search" id="textBuscar">
+                        <button onclick="filterTabla()" class="searchYellow ms-0 me-2"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                        <button onclick="limpiarTabla()" class="searchYellow ms-0 me-2 d-none" id="clear"><i
+                                class="fa-solid fa-x"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row d-flex">
+                <div class="col-2 text-center d-none d-md-inline">
+                    <button onclick="limpiarTablaCategoria()" class="mt-4 d-none" id="btn-filtro">Limpiar filtro <i
+                            class="ri-filter-off-fill"></i></button>
+                    <section class="menu-categorias d-flex justify-content-center mt-4 the-scroll ">
+                        <ul id="lista-categorias"
+                            class="d-flex flex-column align-items-center justify-content-center pb-2 mt-5">
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12 col-md-10">
+                    <div class="mt-2" id="canciones"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="form" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true"
+            role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="container d-flex ">
+                            <div class="row d-flex flex-row-reverse flex-sm-row">
+                                <div
+                                    class="col-4 col-sm-6 col-md-6 d-flex justify-content-center align-items-sm-center align-items-start">
+                                    <img src="" alt="" id="imgDetalle">
+                                </div>
+                                <div class="col-8 col-sm-6 col-md-6 pe-0">
+                                    <div class="container-fluid d-flex flex-column align-items-start">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h1 class="mb-0" id="cancionModal"></h1>
+                                                <p id="artistaModal"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col d-flex">
+                                                <p class="mb-1" id="detalle">Detalle</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col d-flex">
+                                                <p class="mb-0">Cod.:</p>
+                                                <p class="ms-2 mb-0" id="codModal"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col d-flex">
+                                                <p class="mb-0">Genero:</p>
+                                                <p class="ms-2 mb-0" id="generoModal"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col d-flex">
+                                                <p class="mb-0">Duración:</p>
+                                                <p class="ms-2 mb-0" id="duracionModal"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div
+                                                class="col d-flex justify-content-start justify-content-sm-center pe-0 mt-5">
+                                                <button id="playModal">Reproducir</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </main>
+
+    <footer id="player" class="pb-2">
+        <audio src="" id="audioPlayer"></audio>
+        <div class="container-fluid d-flex h-100 align-items-center">
+            <div class="row d-flex w-100">
+                <div class="col-1 d-flex align-items-center justify-content-between">
+                    <img src="" alt="" class="imgAlbum pb-3" id="coverPlayer">
+                </div>
+                <div class="col-1 d-flex align-items-center  gap-2 mx-5">
+                    <i onclick="prevSong()" class="linkPointer fa-solid fa-backward-step fa-lg" style="color: #ffffff;"
+                        id="prevPlayer"></i>
+                    <i onclick="playSongPlayer()" class="linkPointer fa-solid fa-play fa-2x" style="color: #ffffff;"
+                        id="playPlayer"></i>
+                    <i onclick="nextSong()" class="linkPointer fa-solid fa-forward-step fa-lg" style="color: #ffffff;"
+                        id="nextPlayer"></i>
+                </div>
+                <div class="col-1 timeSong mx-3 d-none d-sm-flex align-items-center" id="timeTrackPlayer">
+                    --:--
+                </div>
+                <div class="col d-flex justify-content-center mb-0 flex-column align-items-center">
+
+                    <p class="mb-0" id="titlePlayer">Titulo</p>
+                    <p id="artistPlayer" class="mb-0">Artista</p>
+
+                </div>
+                <div class="col progressBar d-none d-sm-inline align-items-center h-100">
+                    <div onclick="setProgress(event)" class="progress-container my-5" id="progress-container">
+                        <section class="progress" id="progressPlayer"></section>
+                    </div>
+                </div>
+                <div class="iconos col-2 d-none d-md-flex  align-items-center gap-2 justify-content-end">
+                    <i class="fa-solid fa-download"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="col d-none d-md-flex  align-items-center justify-content-end gap-2">
+                    <i class="fa-solid fa-volume-high" style="color: #ffffff;"></i>
+                    <input type="range" class="drag__bar" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="../js/usuario.js"></script>
+    <script src="../js/reproductor.js"></script>
+    <script src="../js/menuCategorias.js"></script>
+    <script src="../js/isLogged.js"></script>
+</body>
+
+</html>

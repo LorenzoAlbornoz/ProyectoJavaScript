@@ -1,0 +1,80 @@
+:root {
+    --c-background: #171717;
+    --c-navbar: #302e2e;
+    --c-player: #000000;
+    --c-letter: #b2b2b2;
+    --c-white: #ffffff;
+    --c-success: #5FC54F;
+    --c-wrong: #f44336;
+    --c-mainYellow: #ffda2a;
+    --c-secondYellow: #f7bf53;
+    --font-Montserrat: 'Montserrat', sans-serif;
+    --font-OpenSans: 'Open Sans', sans-serif;
+    --font-PTSans: 'PT Sans', sans-serif;
+}
+
+.rounded-pill {
+    cursor: pointer;
+}
+.section-title {
+    margin-top: 20px;
+    color: var(--c-letter);
+}
+
+.section-title .line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--c-mainYellow);
+    margin: 16px auto 24px auto;
+}
+
+.section-title p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card {
+    margin: 0;
+    background-color: var(--c-background);
+    color: var(--c-white);
+    width: 280px;
+    border-color: transparent;
+}
+
+.card-title {
+    font-size: 18px;
+}
+
+.card-text{
+    text-align: center;
+}
+
+.badge {
+    background-color: var(--c-mainYellow);
+    font-size: xx-small;
+    color: var(--c-player);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 20px; 
+    max-width: 70%;
+    width: 40%;
+    border-radius: 20px;
+    border: none;
+}
+
+.img-nosotros{
+    height: 280px;
+    width: 280px;
+}
+
+#imgJp {
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#jp {
+    width: 330px;
+}

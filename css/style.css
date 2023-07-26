@@ -1,0 +1,153 @@
+:root {
+    --c-background: #171717;
+    --c-navbar: #302e2e;
+    --c-player: #000000;
+    --c-letter: #b2b2b2;
+    --c-white: #ffffff;
+    --c-success: #5FC54F;
+    --c-wrong: #f44336;
+    --c-mainYellow: #ffda2a;
+    --c-secondYellow: #f7bf53;
+    --font-Montserrat: 'Montserrat', sans-serif;
+    --font-OpenSans: 'Open Sans', sans-serif;
+    --font-PTSans: 'PT Sans', sans-serif;
+}
+
+.navbar{
+    background-color: var(--c-navbar);
+    font-family: var(--font-Montserrat);
+}
+
+.nav-link{
+    color: var(--c-letter);
+}
+
+.nav-link:hover{
+    color: var(--c-mainYellow);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--c-letter);
+}
+
+.navbar-nav .nav-link.active:hover {
+color: var(--c-mainYellow);
+}
+
+.navbar-toggler{
+    background-color: var(--c-mainYellow);
+}
+
+.p{
+   margin-top: 1.15rem;   
+}
+
+h5{
+    font-family: var(--font-Montserrat);
+}
+
+.logo1{
+    font-family: var(--font-PTSans);
+    font-weight: 100;   
+    color: var(--c-white);
+    font-family: var(--font-OpenSans);
+}
+
+.logo2{
+    font-family: var(--font-PTSans);
+    font-weight: 400;
+    color: var(--c-mainYellow);
+    font-family: var(--font-OpenSans);
+}
+
+main{
+    min-height: 55vh;
+    background-color: var(--c-background);
+}
+
+
+  footer {
+    padding-top: 20px;
+    text-align: center;
+    margin-top: auto;
+    background-color: var(--c-player);
+}
+
+.footer-top {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+footer li,
+footer p,
+footer a {
+    color: var(--c-letter);
+    text-decoration: none;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .line {
+    width: 50px;
+    height: 4px;
+    background-color: var(--c-mainYellow);
+    margin-top: 12px;
+    margin-bottom: 24px;
+    margin-left: 43%;
+}
+
+  .social-icons a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--c-mainYellow);
+    border-radius: 100px;
+    color: var(--c-player);
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background-color: var(--c-secondYellow);
+    color: var(--c-player);
+}
+
+#login-icon:focus{
+   color: var(--c-letter);
+}
+
+.admin {
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+.admin.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .user{
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+.user.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+.linkPointer:hover {
+    cursor: pointer;
+}

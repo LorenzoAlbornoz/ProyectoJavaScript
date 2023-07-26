@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MusicFLow</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&family=Open+Sans:wght@800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/login.css">
+  <script src="https://kit.fontawesome.com/ea0d6f4a72.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <p class="logo1 p">Music<spam class="logo2">Flow</spam>
+        </p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <a class="nav-link" href="./html/acercaDeNosotros.html">Acerca de Nosotros</a>
+            <a class="nav-link login-icon" id="login-icon" href="./login.html"><i class="ri-account-circle-fill"></i>
+              <span class="user-status"></span></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="body">
+    <div class="container-form sign-up ">
+      <div class="welcome-back">
+        <div class="message">
+          <h2>Bienvenido</h2>
+          <p>Si ya tienes cuenta por favor inicia sesion aqui</p>
+          <button class="sign-up-btn">Iniciar Sesion</button>
+        </div>
+      </div>
+      <form id="registro" class="formulario-registro">
+        <h2 class="create-account">Crear una cuenta</h2>
+        <div class="iconos">
+          <div class="border-icon">
+            <i class="bx bxl-instagram"></i>
+          </div>
+          <div class="border-icon">
+            <i class="bx bxl-linkedin"></i>
+          </div>
+          <div class="border-icon">
+            <i class="bx bxl-facebook-circle"></i>
+          </div>
+        </div>
+        <p class="cuenta-gratis">Crear una cuenta gratis</p>
+        <input id="nombre-registro" type="text" placeholder="Nombre" autocomplete="off" />
+        <input id="email-registro" type="text" placeholder="Email" autocomplete="off" />
+        <input id="password-registro" type="password" placeholder="Contraseña" autocomplete="off" />
+        <span class="error"></span>
+        <p class="password-description"> Tu contraseña debe tener al menos una mayuscula, una minuscula, un numero y 8
+          caracteres como minimo y 10 como maximo </p>
+        <button type="submit">Registrarse</button>
+      </form>
+    </div>
+    <div class="container-form sign-in">
+      <form id="login" class="formulario-login">
+        <h2 class="create-account">Iniciar Sesion</h2>
+        <div class="iconos">
+          <div class="border-icon">
+            <i class="bx bxl-instagram"></i>
+          </div>
+          <div class="border-icon">
+            <i class="bx bxl-linkedin"></i>
+          </div>
+          <div class="border-icon">
+            <i class="bx bxl-facebook-circle"></i>
+          </div>
+        </div>
+        <p class="cuenta-gratis">¿Aun no tienes una cuenta?</p>
+        <input id="email-login" type="email" placeholder="Email" autocomplete="off" />
+        <input id="password-login" type="password" placeholder="Contraseña" autocomplete="off" />
+        <button type="submit">Iniciar Sesion</button>
+        <span class="error-login"></span>
+      </form>
+      <div class="welcome-back">
+        <div class="message">
+          <h2>Bienvenido de nuevo</h2>
+          <p>Si aun no tienes una cuenta por favor registrese aqui</p>
+          <button class="sign-in-btn">Registrarse</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-5">
+          <div class="col-lg-4 col-sm-6">
+            <p class="logo1 p">Music<spam class="logo2">Flow</spam>
+            </p>
+            <div class="line"></div>
+            <p>Descubre un mundo de música infinito.</p>
+            <div class="social-icons">
+              <a href="./html/error404.html"><i class="ri-twitter-fill"></i></a>
+              <a href="./html/error404.html"><i class="ri-instagram-fill"></i></a>
+              <a href="./html/error404.html"><i class="ri-github-fill"></i></a>
+              <a href="./html/error404.html"><i class="ri-dribbble-fill"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <h5 class="mb-0 text-white">Nosotros</h5>
+            <div class="line"></div>
+            <ul>
+              <li><a href="./html/acercaDeNosotros.html">Acerca de Nosotros</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <h5 class="mb-0 text-white">Contacto</h5>
+            <div class="line"></div>
+            <ul>
+              <a class="text-decoration-none">
+                <li>MusicFlow@music.com</li>
+              </a>
+              <li>+54 38134XXXXX</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row g-4 justify-content-center">
+          <div class="col-auto">
+            <p class="mb-0">Copyright. All Rights Reserved</p>
+          </div>
+          <div class="col-auto">
+            <p class="mb-0">Desing By DOMinators</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="./js/login.js"></script>
+  <script src="./js/isLogged.js"></script>
+</body>
+
+</html>
