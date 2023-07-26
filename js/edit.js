@@ -12,12 +12,9 @@ let urlCancionMsgU = document.getElementById("urlCancionMsgU")
 let addU = document.getElementById("addU")
 let cerrarU = document.getElementById("cerrarU")
 let songs = document.getElementById("canciones")
-
-
 let songList = JSON.parse(localStorage.getItem("canciones")) || [];
 let idCancionSeleccionada;
 
-// Genera un id 
 const idShuffle = () => {
     if (data.length > 0) {
         return data[data.length - 1].id + Math.round(Math.random() * 100);
@@ -53,18 +50,15 @@ const refreshList = () => {
         let text = document.getElementById("textBuscar")
         text.value = "";
         document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
-      }
-    // traemos todas las canciones que sean distintas al id. Elimina al id y genera uno nuevo
+    }
     const filter = songList.filter((cancion) => {
         return cancion.id !== idCancionSeleccionada
     })
     songList = filter;
-    // guardamos la nueva cancion
     localStorage.setItem("canciones", JSON.stringify(songList))
 
     songs.innerHTML = "";
     songList.map((cancion, idx) => {
-        // concatenamos las demas tareas
         return songs.innerHTML += `
          <div class="contenedor-cancion">
          <div id="${idx}">
@@ -75,7 +69,6 @@ const refreshList = () => {
          <div class="container-fluid d-flex h-100 align-items-center" >
              <div class="row d-flex w-100 justify-content-between">
                  
-
                  <div class="col-6 col-sm-5 d-flex align-items-center  gap-2 ms-3">
                         <div class="d-sm-flex align-items-center justify-content-between me-5">
                             <img src="${cancion.imagen}" alt="" class="imgAlbum" id="cover">
@@ -85,29 +78,23 @@ const refreshList = () => {
                             <p class="mb-0 title" id="title${cancion.id}">${cancion.nombre}</p>
                             <p class="mb-0 artist" id="artist${cancion.id}">${cancion.artista}</p>
                         </div>
-                        
-                         
+                             
                  </div>
                  <div class="col-1 ms-3 align-items-center justify-content-start  d-none d-lg-flex">
                             <p class="mb-0 genero" id="genero${cancion.id}">${cancion.genero}</p>
                         </div>
                  
-
                         <div class="col-2 col-sm-3 d-none d-sm-flex justify-content-end justify-content-lg-evenly mb-0 align-items-center">
                         <div class="col-md-2 timeSong d-none d-md-flex align-items-center " id="timeTrack${cancion.id}">
                             --:--
                         </div>
                         
-
                         <div class="w-50  d-none d-sm-inline progressBar align-items-center h-100">
                         <div onclick="setProgress(event)" class="progress-container my-5"  id="progress-container${cancion.id}">
                             <section class="progress" id="progress${cancion.id}"></section>
                         </div>
                     </div>
-                        
                  </div>
-                 
-                 
                  
                  <div class="col-2 col-sm-2  d-flex align-items-center justify-content-end gap-2 ms-0">
                  <div class="actions d-none d-md-flex align-items-center gap-3 justify-content-end me-3">
@@ -119,7 +106,6 @@ const refreshList = () => {
                         <button onclick="updateMusic(${cancion.id})" data-bs-toggle="modal" data-bs-target="#edit" class="btn btn-edit"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
                         <button onclick="deleteMusic(${cancion.id})" class="btn btn-delete"><i class="fa-solid fa-delete-left"></i></button>
                  </div>
-                 
                </div>
              </div>
          </div>
@@ -128,7 +114,6 @@ const refreshList = () => {
          </div>
         `
     })
-
 }
 
 const updateSong = () => {
@@ -147,7 +132,6 @@ const updateSong = () => {
         }, 4000);
         return;
     } else {
-        // Caso contrario no mostrar las validaciones
         imagenMsgU.innerHTML = "";
         artistaMsgU.innerHTML = "";
         nombreMsgU.innerHTML = "";
@@ -163,10 +147,8 @@ const updateSong = () => {
         })
         localStorage.setItem('canciones', JSON.stringify(songList))
         refreshList(songList)
-        //Cierra el modal una vez que se guarda
         addU.setAttribute("data-bs-dismiss", "modal");
         addU.click();
-        // esta funcion lo limpia una vez se hace click y se guarda
         (() => {
             addU.setAttribute("data-bs-dismiss", "");
             Swal.fire({
@@ -179,7 +161,7 @@ const updateSong = () => {
                 timer: 1500,
             });
             formedit.reset();
-            idCancionSeleccionada=null;
+            idCancionSeleccionada = null;
         })()
     }
 }

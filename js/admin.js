@@ -14,20 +14,14 @@ let cerrar = document.getElementById("cerrar")
 let cerrarM = document.getElementById("cerrarUpdate")
 let canciones = document.getElementById("canciones")
 let xClose = document.getElementById("xClose")
-
-
 let data = JSON.parse(localStorage.getItem("canciones")) || [];
 let listaFiltrada = JSON.parse(localStorage.getItem("canciones")) || [];
 let datosSinGuardar = [];
 
-//Limpia el formulario de crear canción cada vez que se abre el modal
-const resetForm=()=>
-{
+const resetForm = () => {
     form.reset()
 }
 
-
-// Genera un id 
 const idRandom = () => {
     if (data.length > 0) {
         return data[data.length - 1].id + Math.round(Math.random() * 100);
@@ -57,7 +51,6 @@ let formValidation = () => {
         }, 4000);
         return;
     } else {
-        // Caso contrario no mostrar las validaciones
         imagenMsg.innerHTML = "";
         artistaMsg.innerHTML = "";
         nombreMsg.innerHTML = "";
@@ -75,10 +68,8 @@ let formValidation = () => {
         })
         localStorage.setItem('canciones', JSON.stringify(data))
         createMusic(data)
-        //Cierra el modal una vez que se guarda
         add.setAttribute("data-bs-dismiss", "modal");
         add.click();
-        // esta funcion lo limpia una vez se hace click y se guarda
         (() => {
             add.setAttribute("data-bs-dismiss", "");
             Swal.fire({
@@ -99,7 +90,6 @@ let formValidation = () => {
 const createMusic = () => {
     canciones.innerHTML = "";
     data.map((cancion, idx) => {
-        // concatenamos las demas tareas
         return canciones.innerHTML += `
          <div class="contenedor-cancion">
          <div id="${idx}">
@@ -178,7 +168,7 @@ const deleteMusic = (id) => {
         cancelButtonColor: "var(--c-wrong)",
         confirmButtonText: "Sí",
         cancelButtonText: "Cancelar",
-    }).then((result) => { //el código de eliminación se coloca dentro de la función then para que se ejecute después de que el usuario interactúe con el mensaje de confirmación.
+    }).then((result) => {
         if (result.isConfirmed) {
             if (document.querySelector("#clear")) {
                 let clear = document.getElementById("clear");
@@ -186,7 +176,7 @@ const deleteMusic = (id) => {
                 let text = document.getElementById("textBuscar")
                 text.value = "";
                 document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
-              }
+            }
             data = JSON.parse(localStorage.getItem("canciones")) || [];
             const cancionFiltrada = data.filter((tarea) => {
                 return tarea.id !== id;
@@ -226,32 +216,32 @@ const filterTabla = () => {
     let sinBusqueda = true;
     switch (tipoBusqueda) {
         case "1":
-                sinBusqueda=false;
-                listaFiltrada = data.filter((cancion) => {
+            sinBusqueda = false;
+            listaFiltrada = data.filter((cancion) => {
                 return cancion.nombre.toLowerCase().includes(text.toLowerCase());
-                sinBusqueda=false;
+                sinBusqueda = false;
             })
             break;
         case "2":
-                sinBusqueda=false;
-                listaFiltrada = data.filter((cancion) => {
+            sinBusqueda = false;
+            listaFiltrada = data.filter((cancion) => {
                 return cancion.artista.toLowerCase().includes(text.toLowerCase());
-                
+
             })
             break;
         case "3":
-                data = JSON.parse(localStorage.getItem("canciones")) || [];
-                sinBusqueda=false;
-                listaFiltrada = data.filter((cancion) => {
+            data = JSON.parse(localStorage.getItem("canciones")) || [];
+            sinBusqueda = false;
+            listaFiltrada = data.filter((cancion) => {
                 return cancion.genero.toLowerCase().includes(text.toLowerCase());
             })
             break;
         default:
             data = JSON.parse(localStorage.getItem("canciones")) || [];
-            sinBusqueda=true;
+            sinBusqueda = true;
             listaFiltrada = data.filter((cancion) => {
-            return cancion.genero.toLowerCase().includes(text.toLowerCase());
-        })
+                return cancion.genero.toLowerCase().includes(text.toLowerCase());
+            })
             break;
     }
     if (text.length > 0 && !sinBusqueda) {
@@ -259,7 +249,7 @@ const filterTabla = () => {
         console.log(sinBusqueda)
     }
     else {
-            clear.classList.add("d-none")
+        clear.classList.add("d-none")
     }
     refreshTabla()
     if (listaFiltrada.length == 0) {
@@ -277,13 +267,12 @@ const limpiarTabla = () => {
     text.value = "";
     document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
     text.focus(),
-    createMusic()
+        createMusic()
 }
 
-const refreshTabla = ()=>{
+const refreshTabla = () => {
     canciones.innerHTML = "";
     listaFiltrada.map((cancion, idx) => {
-        // concatenamos las demas tareas
         return canciones.innerHTML += `
          <div class="contenedor-cancion">
          <div id="${idx}">

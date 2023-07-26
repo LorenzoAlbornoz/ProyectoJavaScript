@@ -1,17 +1,14 @@
-//////////// funcionalidad slide ///////////////////////
 const btnSignIn = document.querySelector(".sign-in-btn"),
     btnSignUp = document.querySelector(".sign-up-btn"),
     singUp = document.querySelector(".sign-up"),
     signIn = document.querySelector(".sign-in");
 
 document.addEventListener("click", (e) => {
-    if (e.target === btnSignIn || e.target === btnSignUp) {//nos muestra elementos ocultos
-        signIn.classList.toggle("active");//Esta clase se aplica cuando se quiere mostrar el elemento con la clase, Al agregar la clase "active" al elemento con la clase .sign-in, se cambiará su visibilidad a opacity: 1; y visibility: visible;, lo que lo hará visible en la página.
-        singUp.classList.toggle("active");//Esta clase se aplica cuando se quiere ocultar el elemento con la clase, Al agregar la clase "active" al elemento con la clase .sign-up, se cambiará su visibilidad a opacity: 0; y visibility: hidden;, lo que lo ocultará de la página.
+    if (e.target === btnSignIn || e.target === btnSignUp) {
+        signIn.classList.toggle("active");
+        singUp.classList.toggle("active");
     }
-
 })
-/////////////////////////////////////////////////////////////////////
 
 const formSignUp = document.querySelector("#registro");
 const formLogin = document.querySelector("#login");
@@ -30,7 +27,6 @@ class Usuario {
     }
 }
 
-//funcion para crear ids dinamicos
 const idRandom = () => {
     if (usuarios.length > 0) {
         return usuarios[usuarios.length - 1].id + Math.round(Math.random() * 100);
@@ -39,8 +35,6 @@ const idRandom = () => {
     }
 };
 
-// funcionalidad de registro
-
 formSignUp.addEventListener("submit", (e) => {
     e.preventDefault();
     let id = idRandom();
@@ -48,9 +42,8 @@ formSignUp.addEventListener("submit", (e) => {
     let email = document.querySelector("#email-registro").value;
     let password = document.querySelector("#password-registro").value;
     let error = document.querySelector(".error");
-    error.innerHTML = ""; //empieza vacio
+    error.innerHTML = "";
 
-    // validar email
     let regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     const emailValidado = regex.test(email); // Busca coincidencia
 
@@ -61,29 +54,29 @@ formSignUp.addEventListener("submit", (e) => {
         error.innerHTML = "Todos los campos son obligatorios";
         error.style.display = "block"
         error.style.padding = "10px"
-        error.style.marginTop = "10px" // se escribe en camelCase
+        error.style.marginTop = "10px"
         error.style.color = "var(--c-white)"
         error.style.borderRadius = "10px"
         error.style.backgroundColor = "var(--c-wrong)"
-        setTimeout(() => {// se borran a los 4 segundos
+        setTimeout(() => {
             error.innerHTML = "";
             error.style.display = "none"
         }, 4000);
         return;
     }
-    // validar que la contraseña coincida con la expresion regular
-    if(!contraseñaValidada){
-            error.innerHTML = "Contraseña no valida";
-            error.style.display = "block";
-            error.style.padding = "10px";
-            error.style.color = "var(--c-white)";
-            error.style.backgroundColor = "var(--c-wrong)"
-            setTimeout(() => {
-                error.style.display = "none";
-            }, 4000);
-            return;
+
+    if (!contraseñaValidada) {
+        error.innerHTML = "Contraseña no valida";
+        error.style.display = "block";
+        error.style.padding = "10px";
+        error.style.color = "var(--c-white)";
+        error.style.backgroundColor = "var(--c-wrong)"
+        setTimeout(() => {
+            error.style.display = "none";
+        }, 4000);
+        return;
     }
-    //validar el email coincida con la expresion regular
+
     if (!emailValidado) {
         error.innerHTML = "Email no valido";
         error.style.display = "block";
@@ -95,7 +88,7 @@ formSignUp.addEventListener("submit", (e) => {
         }, 4000);
         return;
     }
-    //validar si ya existe el usuario
+
     let validarUsuario = usuarios.find((usuario) => {
         return usuario.email === email
     });
@@ -128,14 +121,12 @@ formSignUp.addEventListener("submit", (e) => {
     });
 })
 
-//fucnioalidad login
 formLogin.addEventListener("submit", (e) => {
     e.preventDefault()
     const email = document.getElementById("email-login").value;
     const password = document.getElementById("password-login").value;
     const errorLogin = document.querySelector(".error-login");
 
-    //validar que los campos no esten vacios
     if (email === "" || password === "") {
         errorLogin.innerHTML = "Debes ingresar un email y una contraseña";
         errorLogin.style.display = "block";
@@ -150,7 +141,6 @@ formLogin.addEventListener("submit", (e) => {
         return;
     }
 
-    //validar si existe el usuario con ese mail
     const validarEmail = usuarios.find((usuario) => {
         return usuario.email === email && usuario.password === password
     });
@@ -182,16 +172,16 @@ formLogin.addEventListener("submit", (e) => {
         timer: 1500,
     });
     setTimeout(() => {
-        if (validarEmail.isLogged) { // Cambia esta condición para verificar si el usuario está logueado
-            if (validarEmail.isAdmin) { // Verifica si el usuario es administrador
-                window.location.href = "../html/admin.html"; // Redirige a la página de administrador si es administrador
+        if (validarEmail.isLogged) {
+            if (validarEmail.isAdmin) {
+                window.location.href = "../html/admin.html";
             } else {
-                window.location.href = "../html/usuario.html"; // Redirige a la página normal si no es administrador
+                window.location.href = "../html/usuario.html";
             }
         }
     }, 2000);
 })
 
 const logout = () => {
-    localStorage.removeItem('usuarioLogueado'); //cuando cierras el navegador se deslogea
+    localStorage.removeItem('usuarioLogueado');
 }

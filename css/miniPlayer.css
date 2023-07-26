@@ -14,7 +14,7 @@
 }
 
 .contenedor-cancion {
-    border:1px solid #2d2d2d;
+    border: 1px solid #2d2d2d;
     border-left: none;
     border-right: none;
 }
@@ -22,14 +22,14 @@
 .player {
     background-color: var(--c-background);
     height: 10vh;
-    position:relative;
-    bottom:0;
+    position: relative;
+    bottom: 0;
     width: 100%;
     font-family: var(--font-Montserrat);
 }
 
 .title {
-    color:var(--c-white);
+    color: var(--c-white);
     font-size: 1rem;
 }
 
@@ -51,6 +51,7 @@
     color: var(--c-white);
     font-size: 0.9rem;
 }
+
 .progress-container {
     height: 0.9rem;
     background-color: var(--c-white);
@@ -58,6 +59,7 @@
     border-radius: 0.3rem;
     overflow: hidden;
 }
+
 .progress {
     background-color: var(--c-mainYellow);
     height: 100%;
@@ -72,6 +74,7 @@
 .actions i {
     color: var(--c-white);
 }
+
 .actions i:hover {
     color: var(--c-mainYellow);
 }

@@ -73,12 +73,12 @@
                 </div>
             </div>
         </div>
-        </div>
 
         <div class="container-fluid">
             <div class="row d-flex">
                 <div class="col-2 text-center d-none d-md-inline">
-                    <button onclick="limpiarTablaCategoria()" class="mt-4 d-none" id="btn-filtro">Limpiar filtro <i class="ri-filter-off-fill"></i></button>
+                    <button onclick="limpiarTablaCategoria()" class="mt-4 d-none" id="btn-filtro">Limpiar filtro <i
+                            class="ri-filter-off-fill"></i></button>
                     <section class="menu-categorias d-flex justify-content-center mt-4 the-scroll ">
                         <ul id="lista-categorias"
                             class="d-flex flex-column align-items-center justify-content-center pb-2 mt-5">
@@ -91,65 +91,64 @@
             </div>
         </div>
 
+        <div class="modal fade" id="form" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true"
+            role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="container d-flex ">
+                            <div class="row d-flex flex-row-reverse flex-sm-row">
+                                <div
+                                    class="col-4 col-sm-6 col-md-6 d-flex justify-content-center align-items-sm-center align-items-start">
+                                    <img src="" alt="" id="imgDetalle">
+                                </div>
+                                <div class="col-8 col-sm-6 col-md-6 pe-0">
+                                    <div class="container-fluid d-flex flex-column align-items-start">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h1 class="mb-0" id="cancionModal"></h1>
+                                                <p id="artistaModal"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col d-flex">
+                                                <p class="mb-1" id="detalle">Detalle</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col d-flex">
+                                                <p class="mb-0">Cod.:</p>
+                                                <p class="ms-2 mb-0" id="codModal"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col d-flex">
+                                                <p class="mb-0">Genero:</p>
+                                                <p class="ms-2 mb-0" id="generoModal"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col d-flex">
+                                                <p class="mb-0">Duración:</p>
+                                                <p class="ms-2 mb-0" id="duracionModal"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div
+                                                class="col d-flex justify-content-start justify-content-sm-center pe-0 mt-5">
+                                                <button id="playModal">Reproducir</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
 
-
-        <!-- MODAL PARA EL DETALLE DE LA CANCION -->
-        <div class="modal fade"  id="form" tabindex="-1"
-      aria-labelledby="editarModalLabel" aria-hidden="true" role="dialog">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-           <div class="modal-body">
-            <div class="container d-flex ">
-                <div class="row d-flex flex-row-reverse flex-sm-row">
-                    <div class="col-4 col-sm-6 col-md-6 d-flex justify-content-center align-items-sm-center align-items-start">
-                        <img src="" alt="" id="imgDetalle">
-                    </div>
-                    <div class="col-8 col-sm-6 col-md-6 pe-0">
-                        <div class="container-fluid d-flex flex-column align-items-start">
-                            <div class="row">
-                                <div class="col">
-                                    <h1 class="mb-0" id="cancionModal"></h1>
-                                    <p id="artistaModal"></p>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col d-flex">
-                                    <p class="mb-1" id="detalle">Detalle</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col d-flex">
-                                    <p class="mb-0">Cod.:</p>
-                                    <p class="ms-2 mb-0" id="codModal"></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col d-flex">
-                                    <p class="mb-0">Genero:</p>
-                                    <p class="ms-2 mb-0" id="generoModal"></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col d-flex">
-                                    <p class="mb-0">Duración:</p>
-                                    <p class="ms-2 mb-0" id="duracionModal"></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col d-flex justify-content-start justify-content-sm-center pe-0 mt-5">
-                                    <button id="playModal">Reproducir</button>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    
-                </div>
             </div>
-        </div>
-      </div>
-    </div>
 
     </main>
 
@@ -175,7 +174,6 @@
 
                     <p class="mb-0" id="titlePlayer">Titulo</p>
                     <p id="artistPlayer" class="mb-0">Artista</p>
-
 
                 </div>
                 <div class="col progressBar d-none d-sm-inline align-items-center h-100">

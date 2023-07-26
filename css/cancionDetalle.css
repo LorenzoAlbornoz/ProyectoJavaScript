@@ -1,9 +1,25 @@
+:root {
+    --c-background: #171717;
+    --c-navbar: #302e2e;
+    --c-player: #000000;
+    --c-letter: #b2b2b2;
+    --c-white: #ffffff;
+    --c-success: #5FC54F;
+    --c-wrong: #f44336;
+    --c-mainYellow: #ffda2a;
+    --c-secondYellow: #f7bf53;
+    --font-Montserrat: 'Montserrat', sans-serif;
+    --font-OpenSans: 'Open Sans', sans-serif;
+    --font-PTSans: 'PT Sans', sans-serif;
+}
+
 .modal h1 {
     color: var(--c-white);
 }
 
-.modal-lg { max-width: 50%; }
-
+.modal-lg {
+    max-width: 50%;
+}
 
 #playModal {
     font-family: var(--font-PTSans);
@@ -25,7 +41,7 @@
     background-color: var(--c-secondYellow);
     border-bottom: 1px solid var(--c-mainYellow);
     border-top: 1px solid var(--c-mainYellow);
-    
+
 }
 
 #artistaModal {
@@ -42,36 +58,43 @@
     font-weight: bold;
 }
 
-@media only screen and (max-width:1024px){
+@media only screen and (max-width:1024px) {
     #playModal {
         width: 180px;
     }
 }
 
-@media only screen and (max-width:988px){
+@media only screen and (max-width:988px) {
     #imgDetalle {
         width: 200px;
     }
-    .modal-lg { max-width: 73%; }
+
+    .modal-lg {
+        max-width: 73%;
+    }
+
     #playModal {
         width: 130px;
     }
 }
 
-@media only screen and (max-width:576px){
-    .modal-lg { max-width: 95%; }
+@media only screen and (max-width:576px) {
+    .modal-lg {
+        max-width: 95%;
+    }
+
     #imgDetalle {
         width: 180px;
     }
 }
 
-@media only screen and (max-width:420px){
+@media only screen and (max-width:420px) {
     #imgDetalle {
         width: 120px;
     }
 }
 
-@media only screen and (max-width:280px){
+@media only screen and (max-width:280px) {
     #imgDetalle {
         width: 50px;
     }

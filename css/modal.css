@@ -13,47 +13,54 @@
     --font-PTSans: 'PT Sans', sans-serif;
 }
 
-input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active { 
-    -webkit-box-shadow: 0 0 0 50px var(--c-navbar) inset !important; 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 50px var(--c-navbar) inset !important;
     -webkit-border-image: none;
 }
 
-
-#imagenMsg, 
-  #artistaMsg,
-  #nombreMsg,
-  #generoMsg,
-  #urlCancionMsg, #imagenMsgU, 
-  #artistaMsgU,
-  #nombreMsgU,
-  #generoMsgU,
-  #urlCancionMsgU {
+#imagenMsg,
+#artistaMsg,
+#nombreMsg,
+#generoMsg,
+#urlCancionMsg,
+#imagenMsgU,
+#artistaMsgU,
+#nombreMsgU,
+#generoMsgU,
+#urlCancionMsgU {
     color: var(--c-wrong);
-  }
+}
 
-.modal-title{
+.modal-title {
     font-family: var(--font-OpenSans);
 }
 
-#form .modal-header, #edit .modal-header {
+#form .modal-header,
+#edit .modal-header {
     background-color: var(--c-navbar);
-    color:var(--c-letter);
+    color: var(--c-letter);
 }
 
-#form .modal-body, #edit .modal-body {
+#form .modal-body,
+#edit .modal-body {
     background-color: var(--c-navbar);
-    color:var(--c-letter);
+    color: var(--c-letter);
     font-family: var(--font-PTSans);
     font-size: .9rem;
     text-align: left;
 }
 
-#form .modal-footer, #edit .modal-footer {
+#form .modal-footer,
+#edit .modal-footer {
     background-color: var(--c-navbar);
     border: none;
-} 
+}
 
-#form input, #edit input {
+#form input,
+#edit input {
     background-color: var(--c-navbar);
     border: none;
     border-bottom: thin solid var(--c-letter);
@@ -64,7 +71,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     text-align: center;
 }
 
-#form ::placeholder, #edit ::placeholder{
+#form ::placeholder,
+#edit ::placeholder {
     width: 400px;
     padding: 1rem;
     margin: 2rem;

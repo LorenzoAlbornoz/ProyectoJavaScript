@@ -17,7 +17,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 .body {
@@ -111,7 +110,8 @@
     padding: 2.7rem 0;
     font-size: 1.7rem;
 }
-.bx{
+
+.bx {
     color: var(--c-player);
 }
 
@@ -211,6 +211,6 @@ si en vez de utilizar button, utilizan input type button, se puede utilizar el s
     visibility: hidden;
 }
 
-.login-icon:active{
-  color: var(--c-mainYellow);
+.login-icon:active {
+    color: var(--c-mainYellow);
 }

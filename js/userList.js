@@ -1,14 +1,11 @@
 let usuarios = [];
 
-// Función para mostrar la lista de usuarios registrados en la tabla
 const actualizarUsuariosConectados = () => {
     const userListElement = document.getElementById("userList");
-    userListElement.innerHTML = ""; // Limpiamos la tabla antes de actualizarla
+    userListElement.innerHTML = "";
 
-    // Obtener los usuarios del localStorage
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    // Usamos map para crear un array de elementos <tr> con los datos de los usuarios
     const rows = usuarios.map((usuario) => `
       <tr>
           <td>${usuario.id}</td>
@@ -20,12 +17,9 @@ const actualizarUsuariosConectados = () => {
         </td>
       </tr>
   `);
-
-    // Unimos los elementos <tr> en una sola cadena y la agregamos a la tabla
     userListElement.innerHTML = rows.join("");
 };
 
-// Función para eliminar un usuario
 const eliminarUsuario = (id) => {
     Swal.fire({
         background: 'var(--c-navbar)',
@@ -39,7 +33,7 @@ const eliminarUsuario = (id) => {
         cancelButtonColor: "var(--c-wrong)",
         confirmButtonText: "Sí",
         cancelButtonText: "Cancelar",
-    }).then((result) => { //el código de eliminación se coloca dentro de la función then para que se ejecute después de que el usuario interactúe con el mensaje de confirmación.
+    }).then((result) => {
         if (result.isConfirmed) {
             const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
@@ -48,7 +42,6 @@ const eliminarUsuario = (id) => {
                 usuarios.splice(index, 1);
                 localStorage.setItem("usuarios", JSON.stringify(usuarios));
                 actualizarUsuariosConectados();
-                // Mostramos SweetAlert para indicar que el usuario ha sido eliminado
                 Swal.fire({
                     background: 'var(--c-navbar)',
                     color: "var(--c-letter)",
@@ -72,9 +65,6 @@ const eliminarUsuario = (id) => {
         }
     });
 };
-
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
     actualizarUsuariosConectados();

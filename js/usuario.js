@@ -2,7 +2,7 @@ let canciones = document.getElementById("canciones")
 let data = JSON.parse(localStorage.getItem("canciones")) || [];
 let listaFiltrada = JSON.parse(localStorage.getItem("canciones")) || [];
 let categoriaPrevia = null;
-// Genera un id 
+
 const idRandom = () => {
     if (data.length > 0) {
         return data[data.length - 1].id + Math.round(Math.random() * 100);
@@ -14,7 +14,6 @@ const idRandom = () => {
 const createMusic = () => {
     canciones.innerHTML = "";
     data.map((cancion, idx) => {
-        // concatenamos las demas tareas
         return canciones.innerHTML += `
         <div class="contenedor-cancion">
         <div id="${idx}">
@@ -94,7 +93,7 @@ const filterTabla = () => {
             break;
         default:
 
-            sinBusqueda=true;
+            sinBusqueda = true;
             break;
     }
     if (text.length > 0 && tipoBusqueda <= 3 && !sinBusqueda) {
@@ -105,7 +104,7 @@ const filterTabla = () => {
     }
     mostrarListaFiltrada()
 
-    if (listaFiltrada.length == 0 && !sinBusqueda){
+    if (listaFiltrada.length == 0 && !sinBusqueda) {
         canciones.innerHTML += `       
          <p class="ms-3" id="fail">No se encontraron resultados que coincidan con la busqueda</p>
         `
@@ -121,7 +120,7 @@ const limpiarTabla = () => {
     text.value = "";
     text.focus(),
 
-    document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
+        document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
     document.getElementById("btn-filtro").classList.add("d-none");
     document.getElementById(`item${categoriaPrevia}`).classList.remove("Active")
 
@@ -136,7 +135,7 @@ const limpiarTablaCategoria = () => {
     document.getElementById(`item${categoriaPrevia}`).classList.remove("Active")
     document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
     let text = document.getElementById("textBuscar")
-    text.value="";
+    text.value = "";
     document.getElementById("clear").classList.add("d-none");
     createMusic()
     updateControls()
@@ -170,7 +169,6 @@ const filtrarCategoria = (id) => {
 const mostrarListaFiltrada = () => {
     canciones.innerHTML = "";
     listaFiltrada.map((cancion, idx) => {
-        // concatenamos las demas tareas
         return canciones.innerHTML += `
         <div class="contenedor-cancion">
         <div id="${idx}">

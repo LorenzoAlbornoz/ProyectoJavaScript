@@ -1,3 +1,18 @@
+:root {
+    --c-background: #171717;
+    --c-navbar: #302e2e;
+    --c-player: #000000;
+    --c-letter: #b2b2b2;
+    --c-white: #ffffff;
+    --c-success: #5FC54F;
+    --c-wrong: #f44336;
+    --c-mainYellow: #ffda2a;
+    --c-secondYellow: #f7bf53;
+    --font-Montserrat: 'Montserrat', sans-serif;
+    --font-OpenSans: 'Open Sans', sans-serif;
+    --font-PTSans: 'PT Sans', sans-serif;
+}
+
 #lista-categorias {
     font-family: var(--font-Montserrat);
     list-style: none;
@@ -11,25 +26,25 @@
 }
 
 .the-scroll {
-    height:340px;
+    height: 340px;
     overflow-y: scroll;
     padding-top: 70px;
 }
 
 .the-scroll::-webkit-scrollbar {
-    width: 12px;               /* width of the entire scrollbar */
-  }
-  
-.the-scroll::-webkit-scrollbar-track {
-    background: var(--c-navbar);        /* color of the tracking area */
-    border-radius: 20px;
-  }
-  
-.the-scroll::-webkit-scrollbar-thumb {
-    background-color: var(--c-letter);    
-    border-radius: 20px;       
+    width: 12px;
+}
 
-  }
+.the-scroll::-webkit-scrollbar-track {
+    background: var(--c-navbar);
+    border-radius: 20px;
+}
+
+.the-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--c-letter);
+    border-radius: 20px;
+
+}
 
 .menu-categorias li:hover {
     color: var(--c-white);
@@ -60,5 +75,4 @@
     background-color: var(--c-secondYellow);
     border-bottom: 1px solid var(--c-mainYellow);
     border-top: 1px solid var(--c-mainYellow);
-    
 }

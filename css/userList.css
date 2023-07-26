@@ -13,7 +13,7 @@
     --font-PTSans: 'PT Sans', sans-serif;
 }
 
-.btn-listUser{
+.btn-listUser {
     background-color: var(--c-success);
     font-family: var(--font-PTSans);
     font-weight: bold;
@@ -27,25 +27,28 @@
     background-color: #1a6419;
 }
 
-.modal-title{
+.modal-title {
     font-family: var(--font-OpenSans);
     color: var(--c-letter);
 }
 
-.modal-header, #edit .modal-header {
+.modal-header,
+#edit .modal-header {
     background-color: var(--c-navbar);
-    color:var(--c-letter);
+    color: var(--c-letter);
 }
 
-.modal-body, #edit .modal-body {
+.modal-body,
+#edit .modal-body {
     background-color: var(--c-navbar);
-    color:var(--c-letter);
+    color: var(--c-letter);
     font-family: var(--font-PTSans);
     font-size: .9rem;
     text-align: left;
 }
 
-.modal-footer, #edit .modal-footer {
+.modal-footer,
+#edit .modal-footer {
     background-color: var(--c-navbar);
     border: none;
 }
