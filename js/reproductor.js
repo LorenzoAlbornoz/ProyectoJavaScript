@@ -250,32 +250,30 @@ function obtenerDuracion(id) {
 
 
 const filtrarCategoria = (id) => {
-  if (document.getElementById("audioPlayer")) {
-    let audio = document.getElementById("audioPlayer")
-  }
-
-  if (categoriaPrevia == null && idx != null) {
-    console.log("no deberia volver a entrar 2 veces")
-    audio.pause()
-    playSong(idx)
-  }
-  document.getElementById("btn-filtro").classList.remove("d-none")
-  let text = document.getElementById(`item${id}`).innerText;
-  data = JSON.parse(localStorage.getItem("canciones")) || [];
-  listaFiltrada = data.filter((cancion) => {
-    return cancion.genero.toLowerCase() == text.toLowerCase();
-  })
-  mostrarListaFiltrada()
-  if (categoriaPrevia === null) {
-    categoriaPrevia = id;
-    document.getElementById(`item${id}`).classList.add("Active")
-  }
-  else {
-    document.getElementById(`item${categoriaPrevia}`).classList.remove("Active")
-    document.getElementById(`item${id}`).classList.add("Active")
-    categoriaPrevia = id;
-  }
-  updateControls()
+  let audio = document.getElementById("audioPlayer")
+    if (categoriaPrevia==null)
+    {
+      audio.pause()
+      playSong(idx)
+    }
+    document.getElementById("btn-filtro").classList.remove("d-none")
+    let text = document.getElementById(`item${id}`).innerText;
+    data = JSON.parse(localStorage.getItem("canciones")) || [];
+    listaFiltrada = data.filter((cancion)=>{
+        return cancion.genero.toLowerCase() == text.toLowerCase();
+    })
+    mostrarListaFiltrada()
+    if(categoriaPrevia===null){
+        categoriaPrevia=id;
+        document.getElementById(`item${id}`).classList.add("Active")
+    }
+    else
+    {   
+        document.getElementById(`item${categoriaPrevia}`).classList.remove("Active")
+        document.getElementById(`item${id}`).classList.add("Active")
+        categoriaPrevia = id;
+    }
+    updateControls()
 }
 
 const mostrarListaFiltrada = () => {
