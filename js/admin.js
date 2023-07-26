@@ -107,11 +107,11 @@ const createMusic = () => {
          <audio src="${cancion.url}" id="${cancion.id}"></audio>
  
          <div class="player">
-         <div class="container-fluid d-flex h-100 align-items-center" >
+         <div class="container-fluid d-flex h-100 align-items-center justify-content-between" >
              <div class="row d-flex w-100 justify-content-between">
                  
 
-                 <div class="col-6 col-sm-5 d-flex align-items-center  gap-2 ms-3">
+                 <div class="col-8 col-sm-5 d-flex align-items-center  gap-2 ms-3 ps-0">
                         <div class="d-none d-sm-flex align-items-center justify-content-between me-5">
                             <img src="${cancion.imagen}" alt="" class="imgAlbum" id="cover">
                         </div>
@@ -128,8 +128,8 @@ const createMusic = () => {
                         </div>
                  
 
-                        <div class="col-2 col-sm-3 d-none d-sm-flex justify-content-end justify-content-lg-evenly mb-0 align-items-center">
-                        <div class="col-md-2 timeSong d-none d-md-flex align-items-center " id="timeTrack${cancion.id}">
+                        <div class="col-2 col-sm-3 d-none d-sm-flex justify-content-end justify-content-md-center justify-content-lg-evenly mb-0 align-items-center me-4 me-lg-0">
+                        <div class="col-md-4 timeSong d-none d-md-flex align-items-center pe-2 pe-lg-0" id="timeTrack${cancion.id}">
                             00:00
                         </div>
                         
@@ -144,8 +144,8 @@ const createMusic = () => {
                  
                  
                  
-                 <div class="col-2 col-sm-2  d-flex align-items-center justify-content-end gap-2 ms-0">
-                 <div class="actions d-none d-md-flex align-items-center gap-3 justify-content-end me-3">
+                 <div class="col-1 col-sm-2  d-flex align-items-center justify-content-end gap-2 ms-0">
+                 <div class="actions d-none d-md-flex align-items-center gap-2 justify-content-end me-3">
                          <i class="linkPointer fa-solid fa-download" ></i>
                          <i class="linkPointer fa-solid fa-star" ></i>
                          <i class="linkPointer fa-solid fa-share-nodes"></i>
