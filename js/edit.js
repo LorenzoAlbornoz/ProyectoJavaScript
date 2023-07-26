@@ -98,9 +98,9 @@ const refreshList = () => {
                  
                  <div class="col-2 col-sm-2  d-flex align-items-center justify-content-end gap-2 ms-0">
                  <div class="actions d-none d-md-flex align-items-center gap-3 justify-content-end me-3">
-                         <i class="linkPointer fa-solid fa-download" ></i>
-                         <i class="linkPointer fa-solid fa-star" ></i>
-                         <i class="linkPointer fa-solid fa-share-nodes"></i>
+                 <a href="./error404.html"> <i class="linkPointer fa-solid fa-download" ></i> </a>
+                 <a href="./error404.html"> <i class="linkPointer fa-solid fa-star" ></i> </a>
+                 <a href="./error404.html"> <i class="linkPointer fa-solid fa-share-nodes"></i> </a>
                  </div>
                  <div class="d-flex gap-2" >
                         <button onclick="updateMusic(${cancion.id})" data-bs-toggle="modal" data-bs-target="#edit" class="btn btn-edit"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
