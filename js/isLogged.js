@@ -28,7 +28,7 @@ const cerrarSesion = () => {
     if (result.isConfirmed) {
       localStorage.removeItem("usuarioLogueado");
       actualizarEstadoUsuario();
-      location.href = "../login.html";
+      location.href = "../index.html";
     }
   });
 };
@@ -39,7 +39,7 @@ loginIcon.addEventListener("click", (event) => {
   if (usuarioLogueado && usuarioLogueado.isLogged) {
     cerrarSesion();
   } else {
-    location.href = "../login.html";
+    location.href = "../index.html";
   }
 });
 

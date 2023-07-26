@@ -106,7 +106,13 @@ formSignUp.addEventListener("submit", (e) => {
         document.querySelector("#nombre-registro").focus();
         return;
     }
-    let nuevoUsuario = new Usuario(id, nombre, email, password);
+
+    let isAdmin = false;
+    if (email === "admin@gmail.com") {
+        isAdmin = true;
+    }
+
+    let nuevoUsuario = new Usuario(id, nombre, email, password, isAdmin);
     usuarios.push(nuevoUsuario);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
     formSignUp.reset()
