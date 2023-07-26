@@ -1,0 +1,100 @@
+:root {
+    --c-background: #171717;
+    --c-navbar: #302e2e;
+    --c-player: #000000;
+    --c-letter: #b2b2b2;
+    --c-white: #ffffff;
+    --c-success: #5FC54F;
+    --c-wrong: #f44336;
+    --c-mainYellow: #ffda2a;
+    --c-secondYellow: #f7bf53;
+    --font-Montserrat: 'Montserrat', sans-serif;
+    --font-OpenSans: 'Open Sans', sans-serif;
+    --font-PTSans: 'PT Sans', sans-serif;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    background: radial-gradient(closest-side at 50% 50%, #373434, #312f2f 80%, #141414);
+}
+
+
+.container-error img {
+   position: absolute;
+   top: 15%;
+   left: 50%;
+   width: 60%;
+   height: 100%;
+   transform: translate(-50%);
+
+}
+.container-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-265px);
+    margin-top: 50px;
+}
+.text1 {
+    position: relative;
+    font-size: 100px;
+    font-family: var(--font-Montserrat);
+    color: var(--c-mainYellow);
+    border-radius: var(--c-background);
+}
+.text2 {
+    position: relative;
+    font-size: 14px;
+    font-family: var(--font-Montserrat);
+    color: var(--c-mainYellow);
+    border-radius: var(--c-background);
+} 
+
+#a0
+{
+  animation:halfBlink 1.5s ease-in infinite;
+}
+
+#a4
+{
+  animation:distortBlink 1.5s ease-in infinite;
+}
+
+@keyframes blink
+{
+  0%{opacity:1;}
+  100%{opacity:0;}
+}
+
+@keyframes halfBlink
+{
+  0%{opacity:1;}
+  50%{opacity:0.7;}
+  70%{opactity:0.4;}
+  100%{opacity:0.6;}
+}
+@keyframes distortBlink
+{
+  0%{opacity:1;}
+  50%{opacity:0.7;
+    font-size:0.98em;}
+  70%{opactity:0.8;}
+  100%{opacity:0.9;}
+}
+
+
+@media only screen and (max-width: 768px) and (min-width: 300px) {
+    #fallingImg {
+      width: 300px;
+      height: 300px;
+      top: 50%;
+    }
+    .main-container{
+        height: 95vh;
+    }
+}
+    
+
