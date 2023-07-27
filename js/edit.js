@@ -82,7 +82,6 @@ const refreshList = () => {
                  <div class="col-1 ms-3 align-items-center justify-content-start  d-none d-lg-flex">
                             <p class="mb-0 genero" id="genero${cancion.id}">${cancion.genero}</p>
                         </div>
-                 
                         <div class="col-2 col-sm-3 d-none d-sm-flex justify-content-end justify-content-lg-evenly mb-0 align-items-center">
                         <div class="col-md-2 timeSong d-none d-md-flex align-items-center " id="timeTrack${cancion.id}">
                             --:--
