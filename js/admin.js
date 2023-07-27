@@ -57,7 +57,7 @@ let formValidation = () => {
         generoMsg.innerHTML = "";
         urlCancionMsg.innerHTML = "";
 
-        data = JSON.parse(localStorage.getItem("canciones"))
+        data = JSON.parse(localStorage.getItem("canciones")) || [];
         data.unshift({
             id: idRandom(),
             imagen: imagenInput.value,
@@ -237,16 +237,11 @@ const filterTabla = () => {
             })
             break;
         default:
-            data = JSON.parse(localStorage.getItem("canciones")) || [];
             sinBusqueda = true;
-            listaFiltrada = data.filter((cancion) => {
-                return cancion.genero.toLowerCase().includes(text.toLowerCase());
-            })
             break;
     }
-    if (text.length > 0 && !sinBusqueda) {
+    if (text.length > 0 && tipoBusqueda <= 3 && !sinBusqueda) {
         clear.classList.remove("d-none")
-        console.log(sinBusqueda)
     }
     else {
         clear.classList.add("d-none")

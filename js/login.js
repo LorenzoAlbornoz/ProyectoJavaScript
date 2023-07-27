@@ -14,7 +14,6 @@ const formSignUp = document.querySelector("#registro");
 const formLogin = document.querySelector("#login");
 
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-console.log(usuarios);
 
 class Usuario {
     constructor(id, nombre, email, password, isAdmin = false, isLogged = false) {
