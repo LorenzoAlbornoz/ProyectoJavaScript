@@ -1,4 +1,4 @@
-let usuarios = [];
+// let usuarios = [];
 
 const actualizarUsuariosConectados = () => {
     const userListElement = document.getElementById("userList");
