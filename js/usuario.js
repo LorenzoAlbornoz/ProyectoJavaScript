@@ -103,7 +103,6 @@ const filterTabla = () => {
         clear.classList.add("d-none")
     }
     mostrarListaFiltrada()
-
     if (listaFiltrada.length == 0 && !sinBusqueda) {
         canciones.innerHTML += `       
          <p class="ms-3" id="fail">No se encontraron resultados que coincidan con la busqueda</p>
@@ -115,15 +114,12 @@ const filterTabla = () => {
 const limpiarTabla = () => {
     let clear = document.getElementById("clear");
     clear.classList.add("d-none")
-    data = JSON.parse(localStorage.getItem("canciones"))
     let text = document.getElementById("textBuscar")
     text.value = "";
     text.focus(),
-
-        document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
+    document.querySelector(".tipo-busqueda").selectedIndex = "Tipo de busqueda"
     document.getElementById("btn-filtro").classList.add("d-none");
-    document.getElementById(`item${categoriaPrevia}`).classList.remove("Active")
-
+    cargarMenuCategorias()
     createMusic()
     updateControls()
 }

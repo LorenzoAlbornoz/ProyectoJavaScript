@@ -6,9 +6,7 @@ let url
 let dbSongs = JSON.parse(localStorage.getItem("canciones")) || [];
 
 function updateControls() {
-  console.log("entro a updatecontrols")
   if (audioPlayer.paused && idx != null) {
-    console.log("entro audioPlayer paused");
     if (document.getElementById(`play${idx}`))
       document.getElementById(`play${idx}`).classList.remove("fa-pause")
     document.getElementById(`play${idx}`).classList.add("fa-play")
@@ -93,7 +91,6 @@ function playSong(id, src) {
     if (document.getElementById(`title${id}`)) {
       document.getElementById(`title${id}`).classList.remove("Active");
     }
-    pausaManual = true;
   }
 }
 
@@ -160,8 +157,6 @@ function updateProgress(id) {
 }
 
 function setProgress(event) {
-  console.log("entra");
-
   let progressBar = document.getElementById("progress-container");
   let progressBarWidth = progressBar.offsetWidth;
   let clickPosition = event.offsetX;
@@ -224,7 +219,7 @@ const cargarDatos = (id) => {
   duracion.innerText = obtenerDuracion(id);
   play.setAttribute("data-bs-dismiss", "modal")
   play.setAttribute("onclick", `playSong(${id})`)
-  if (audio.paused) {
+  if (audioPlayer.paused) {
     play.innerText = "Reproducir";
   }
   else {
@@ -236,12 +231,10 @@ function obtenerDuracion(id) {
   const audio = document.getElementById(id);
   if (audio.readyState >= 2) {
     const duracion = audio.duration;
-
     const minutos = Math.floor(duracion / 60);
     const segundos = Math.floor(duracion % 60);
     let tiempoTotal = padDigits(minutos, 2) + ':' + padDigits(segundos, 2);
     const duracionFormateada = tiempoTotal + " min";
-
     return duracionFormateada;
   } else {
     audio.addEventListener('loadedmetadata', obtenerDuracion);
